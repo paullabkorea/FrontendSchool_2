@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+.cont{
+    display: inline-block;
+    position: relative;
+    top:117px;
+    left:50%;
+    transform: translateX(-50%);
+    margin:0 auto;
+    text-align: center;
+}
+.cont .tit{
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    color:#F2994A;
+    margin-bottom:30px;
+}
+
+#player{
+    width: 500px;
+    height: 376px;
+    border: 2px solid #828282;
+    box-sizing: border-box;
+    border-radius: 10px;;
+    text-align: center;
+}
+.cont .txt{
+    margin-bottom:50px;
+    color:#828282;
+}
+
+.cont .btn-start{
+    margin-top:20px;
+    display: block;
+    width:100%;
+    height: 60px;
+    background: #F2994A;
+    border-radius: 10px;
+    font-size:20px;
+    color:#fff;
+    transition: 0.15s;
+}
+.cont .btn-start:hover{
+    transform:scale(1.1);
+    cursor: pointer;
+}
+.title_result{
+    display: none;
+}
+.cont-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    perspective: 800px;
+}
+.item-card{
+    width: 390px;
+    height: 500px;
+    background:#F2994A;
+    color:#fff;
+    text-align: center;
+    position: relative;
+    transform: scale(0.01) rotateY(720deg);
+    transform-style: preserve-3d;
+    transition: 1.2s;
+    font-size:24px;
+    border-radius: 10px;
+}
+
+.id-card-active .item-card {
+    transform: scale(1) rotateY(0deg);
+}
+
+.fail .item-card{
+    transform: scale(0.01) rotateZ(720deg);
+    background:#828282;
+}
+
+.id-card-active.fail .item-card {
+    animation-duration: 1s, 1s;
+    animation-name: animation-fail, animation-fail-finish;
+    animation-delay: 0s, 1s;
+    animation-fill-mode: forwards;
+}
+
+.cover{
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:black;
+    display: none;
+}
+
+.cover img{
+    display: block;
+    position: relative;
+    width: 100px;
+    margin:0 auto;
+    position:relative;
+    top:50%;
+    transform:translateY(-50%);
+}
+.cont-card .txt-result{
+    display: inline-block;
+    margin-top:200px;
+    margin:200px 0 100px;
+}
+
+.cont-card .link-return{
+    display: block;
+    height:50px;
+    line-height:50px;
+    width:80%;
+    margin:0 auto 20px;
+    text-decoration: none;
+    background:#fff;
+    border-radius: 10px;
+    font-weight:bold;
+    color:black;
+}
+
+
+.cont-card.id-card-active .item-card:hover{
+    background: #ea124f;
+	transform: scale(1.1) rotateZ(3deg);
+	cursor: pointer;
+}
+
+@keyframes animation-fail {
+    100%{
+        transform: scale(1) rotateZ(-50deg);
+    }
+}
+
+@keyframes animation-fail-finish {
+    0%{
+        transform: scale(1) rotateZ(-50deg);
+    }
+    10%{
+        transform: scaleY(1.3) scaleX(0.7) rotateZ(2deg); 
+    }
+    40%{
+        transform: scale(1) rotateZ(-40deg); 
+    }
+    50%{
+        transform: scale(1.2) scaleX(0.8) rotateZ(0deg); 
+    }
+    65%{
+        transform: scale(1) rotateZ(-30deg); 
+    }
+    75%{
+        transform: scale(1.1) scaleX(0.9) rotateZ(0deg);
+    }
+    85%{
+        transform: scale(1) rotateZ(-10deg);
+    }
+    90%{
+        transform: scale(1) rotateZ(0deg);
+    }
+    95%{
+        transform: scale(1) rotateZ(-5deg);
+    }
+    97%{
+        transform: scale(1) rotateZ(0deg);
+    }
+    99%{
+        transform: scale(1) rotateZ(-2deg);
+    }
+    100%{
+        transform: scale(1) rotateZ(0deg);
+    }
+}
+
+/* 영상 배경 스타일 */
+.video-background {
+    background: #000;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -99;
+  }
+  .video-foreground,
+  .video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  @media (min-aspect-ratio: 16/9) {
+    .video-foreground { height: 300%; top: -100%; }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    .video-foreground { width: 300%; left: -100%; }
+  }
