@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <img width="200px" srcset="../images/rabbit_500.png 3x, ../images/rabbit_300.png 2x" src="../images/rabbit_150.png"
+        alt="test"> -->
+
+    <img srcset="images/rabbit_500.png 500w,
+    images/peng.png 300w, images/rabbit_150.png 150w" sizes="(min-width:960px) 500px, (min-width:640px) 300px,
+    900px" src="images/rabbit_150.png" alt="rabbit">
+
+    <picture>
+        <source srcset="images/rabbit_500.png" media="(min-width:960px)">
+        <source srcset="images/peng.png" media="(min-width:640px)">
+        <img src="images/rabbit_150.png" alt="">
+    </picture>
+
+
+</body>
+
+</html>
