@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+</head>
+<body>
+    <img src="images/dog.jpg" alt="cute_dog" width="600px;">
+
+    <img srcset="images/rabbit_500.png 500w,
+    images/rabbit_300.png 300w,
+    images/rabbit_150.png 150w" 
+    sizes="(min-width:960px) 500px, (min-width:640px) 300px, 900px"
+    src="images/rabbit_150.png" alt="rabbit">
+
+    <!-- 위) 강의로 배운 코드 아래) 의문코드 출력결과는 같음 -->
+
+    <img srcset="images/rabbit_500.png 500w,
+    images/rabbit_500.png 300w,
+    images/rabbit_550.png 150w" 
+    sizes="(min-width:960px) 500px, (min-width:640px) 300px, 900px"
+    src="images/rabbit_150.png" alt="rabbit">
+
+    <img srcset="images/rabbit_500.png 500w"
+    sizes="(min-width:960px) 500px, (min-width:640px) 300px, 900px"
+    src="images/rabbit_150.png" alt="rabbit">
+
+    <!-- sizes는 이미지 자체가 바뀌지않음 -->
+
+    <!-- <picture>
+        <source srcset="img/rabbit_500.png" media="(min-width:960px)">
+        <source srcset="img/rabbit_300.png" media="(min-width:640px)">
+        <img src="img/rabbit_150.png" alt="">
+    </picture> -->
+
+    <!-- picture를 사용하면 이미지 자체가 바뀜 -->
+
+
+</body>
+</html>
