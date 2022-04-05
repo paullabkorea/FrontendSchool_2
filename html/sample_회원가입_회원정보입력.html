@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회사이름_회원가입</title>
+</head>
+<body> 
+    <header>
+        ...생략...
+    </header>
+    <div> 
+        <article>
+            <div>
+                <p>...생략...</p>
+                <h2>MEMBERSHIP</h2>
+            </div>
+        </article>
+
+        <div>
+            <div>
+                <h3>회원가입 [정보입력]</h3> 
+                <form action="#" method="POST">
+                    <fieldset>
+                        <legend>회원정보입력</legend>   
+                    <ul>
+                        <li>
+                            <label for="member_id">아이디</label>
+                            <div>
+                                <input type="text" required placeholder="아이디 입력" id="member_id">
+                                <button type="button">
+                                    중복확인
+                                </button>
+                            </div>
+                        </li>
+                        <li>
+                            <label for="member_pw1">비밀번호 입력</label>
+                            <input type="password" required placeholder="비밀번호 입력" id="member_pw1">
+                            <input type="password" required placeholder="비밀번호 확인" id="member_pw2">
+                        </li>
+                        <li>
+                            <label for="member_name">이름</label>
+                            <input type="text" required placeholder="실명을 입력해주세요" id="member_name"> 
+                        </li>
+                        <li>
+                            <label for="member_phone">휴대폰번호</label>
+                            <input type="tel" placeholder="'-'없이 입력해주세요" id="member_phone">
+                        </li>
+                    </ul>
+
+                    <h4>본인인증</h4>
+                    <ul>
+                        <li>
+                            <label for="member_email">이메일입력</label>
+                            <div>
+                                <input type="email" required placeholder="인증받으실 이메일주소 입력" id="member_email">
+                                <button type="button">
+                                    확인메일 발송
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div>
+                        <button type="submit">
+                            가입완료
+                        </button>
+                    </div>
+                    </fieldset> 
+                </form>
+            </div>
+           
+        </div>
+    </div>
+    <footer>
+        ...생략...
+    </footer>
+</body>
+</html>

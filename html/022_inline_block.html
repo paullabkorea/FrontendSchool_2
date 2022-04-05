@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- https://fonts.google.com/specimen/Rubik+Wet+Paint -->
+    <!-- https://wit.nts-corp.com/2017/09/25/4903 -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap" rel="stylesheet">
+    <title>블록레벨 요소 Vs 인라인 요소</title>
+    <style>
+        p {
+            display: block;
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        span {
+            font-size: 16px;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+        }
+        /* 
+            여러가지 방법이 있습니다. 어떤게 정답이라고 말씀드리기 어렵습니다.
+            1. font-size:0 가 일부 브라우저에서 안먹는 경우도 있습니다.
+            2. 엔터를 삭제
+            3. -margin을 줍니다. 폰트 종류가 달라지면 딱 맞아 떨어지지 않음
+            4. 나중에 배울 float로도 해결할 수 있죠.
+        */
+        .one {
+            font-size: 0;
+        }
+        .two {
+            display: inline;
+            font-family: 'Rubik Wet Paint', cursive;
+        }
+        .three {
+            /* line-height: 1; */
+            /* line-height: 5px; */
+        }
+    </style>
+</head>
+<body>
+    <p>hello world</p>
+    <div class="one">
+        <span>hello world</span>
+        <span>hello world</span>
+    </div>
+    <div class="three">
+        <span class="two">h</span>ello
+        <span class="two">h</span>ello
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보충설명</title>
+</head>
+<body>
+    <!-- 팁 1 -->
+    <p>MDN 예제입니다.</p>
+    <form>
+        <fieldset>
+          <legend>Choose your favorite monster</legend>
+      
+          <input type="radio" id="kraken" name="monster">
+          <label for="kraken">Kraken</label><br/>
+      
+          <input type="radio" id="sasquatch" name="monster">
+          <label for="sasquatch">Sasquatch</label><br/>
+      
+          <input type="radio" id="mothman" name="monster">
+          <label for="mothman">Mothman</label>
+        </fieldset>
+    </form>
+
+    <!-- 팁 2 -->
+    <form>
+        <fieldset oninput="볼륨.value=parseInt(볼륨바.value)">
+            <legend>볼륨바</legend>
+            <input id="볼륨바" name="bar" type="range" title="범위선택"> 
+            <output name="볼륨" title="볼륨표시">0</output>
+            <input type="file" name="" id="">
+        </fieldset>
+    </form>
+    <p>위 태그들은 어떻게 구성이 되어 있는 것일까요? keyword : shadow dom!</p>
+
+    <!-- 팁 3 -->
+    <!-- 보통 저렇게 br태그로 개행을 하진 않습니다. -->
+    <form>
+        <fieldset>
+            <legend>Programming Skill</legend>
+            <label for="html">HTML</label>
+            <progress id="html" value="0.85" max="1">85%</progress><br>
+            <label for="css">CSS</label>
+            <progress id="css" value="0.85" max="1">85%</progress><br>
+            <label for="javascript">Javascript</label>
+            <progress id="javascript" value="0.35" max="1">35%</progress><br>
+        </fieldset>
+    </form>
+</body>
+</html>

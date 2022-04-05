@@ -1,0 +1,47 @@
+ <!-- form handling -->
+ <form action="/api/users" method="POST" id="add_user">
+    <div class="new_user">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="Lee Hojun">
+        </div>
+        <div class="form-group">
+            <label for="Email" class="text-light">Email</label>
+            <input type="text" name="email" value="" placeholder="example@gmail.com">
+        </div>
+
+        <div class="form-group">
+            <label for="summary" class="text-light">summary</label>
+            <input type="text" name="summary" value="" placeholder="내용 요약">
+        </div>
+
+        <div class="form-group">
+            <label for="contents" class="text-light">contents</label>
+            <div id="editor"></div>
+            <input id="hidden_input" type="hidden" name="contents" value="">
+        </div>
+        
+        <script>
+            const Editor = toastui.Editor;
+
+            const editor = new Editor({
+                el: document.querySelector('#editor'),
+                height: '600px',
+                initialEditType: 'markdown',
+                previewStyle: 'vertical'
+            });
+        </script>
+
+        <div class="form-group">
+            <label for="tag" class="text-light">tag</label>
+            <input type="text" name="tag" value="" placeholder="it, node...">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+        
+
+    </div>
+</form>

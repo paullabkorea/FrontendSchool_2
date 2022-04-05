@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Summernote with Bootstrap 4</title>
+    <!-- Toast Editor 2.0.0과 의존성 -->
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+  </head>
+  <body>
+    <!-- 해당 예제는 bootstrap 시간에 했었습니다. -->
+    <div id="editor"></div>
+    <script>
+        const Editor = toastui.Editor;
+ 
+        const editor = new Editor({
+            el: document.querySelector('#editor'),
+            height: '600px',
+            initialEditType: 'markdown',
+            previewStyle: 'vertical'
+        });
+        
+        // editor.getHTML()
+        // editor.getMarkdown()
+    </script>
+  </body>
+</html>
