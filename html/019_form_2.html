@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>나와 잘 맞는 회사는?</legend>
+            <p>가고 싶은 회사에 대한 호감도를 조사합니다. 아이고 의미 없다.</p>
+            <ul>
+                <li>
+                    <p>다음 문자중에 왠지 마음에 드는 것을 고르세요</p>
+                    <input type="radio" name="company" id="na" value="naver">
+                    <label for="na">네</label>
+                    <input type="radio" name="company" id="ka" value="kakao">
+                    <label for="ka">카</label>
+                    <input type="radio" name="company" id="li" value="line">
+                    <label for="li">라</label>
+                    <input type="radio" name="company" id="co" value="coupang">
+                    <label for="co">쿠</label>
+                    <input type="radio" name="company" id="be" value="bemin">
+                    <label for="be">배</label>
+                </li>
+                <li>
+                    <p>친구와 문자를 합니다. 다음중 어떤 메신저를 이용하시겠습니까?</p>
+                    <input type="checkbox" name="msg" id="kakao" value="kakakotalk">
+                    <label for="kakao">카카오톡</label>
+                    <input type="checkbox" name="msg" id="line" value="line">
+                    <label for="line">라인</label>
+                    <input type="checkbox" name="msg" id="ig" value="instaDM">
+                    <label for="ig">인스타그램 디엠</label>
+                    <input type="checkbox" name="msg" id="nateon" value="nateon">
+                    <label for="nateon">네이트온</label>
+                    <input type="checkbox" name="msg" id="bb" value="budybudy">
+                    <label for="bb">버디버디</label>
+                </li>
+                <li>
+                    <label for="dream">면접에서 자신의 포부를 얘기한다면?</label>
+                    <input id="dream" type="text" name="aspiration" placeholder="내 답변">
+                </li>
+                <li>
+                    <label for="saytoyou">당신은 지금 한 기업의 최종면접을 앞두고 있습니다. 면접장에 들어가기 직전, 자기 자신에게 해주고 싶은말은?</label>
+                    <textarea id="saytoyou" cols="30" rows="1" name="saytome" placeholder="내 답변"></textarea>
+                </li>
+                <li>
+                    <label for="tech">다음 중 기술 면접때 듣고 싶은 질문이 아닌것은?</label>
+                    <select id="tech">
+                        <option value="0" selected disabled>선택</option>
+                        <option value="1">자료구조와 알고리즘</option>
+                        <option value="2">웹접근성</option>
+                        <option value="3">CSS Flex와 Grid</option>
+                        <option value="4">자바스크립트 이벤트 전파과정</option>
+                        <option value="5">브라우저 리플로우 현상</option>
+                    </select>
+                </li>
+                <li>
+                    <p>취업을 희망하는 날짜를 선택해주세요</p>
+                    <label for="date">날짜</label>
+                    <input type="date" id="date" name="date">
+                </li>
+                <li>
+                    <p>업무를 시작 하기에 가장 적당한 시간을 고르세요</p>
+                    <label for="time">시간</label>
+                    <input type="time" id="time" name="time">
+                </li>
+            </ul>
+        </fieldset>
+        <button type="submit">제출</button>
+        <button type="reset">양식 지우기</button>
+    </form>
+
+
+</body>
+
+</html>
