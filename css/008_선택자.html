@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        /* 0 점 */
+        * {
+            color: red;
+        }
+        /* type 선택자 : 1점 */
+        p {
+            color: blue;
+        }
+        /* class 선택자 : 10점 */
+        .one {
+            color: green;
+        }
+        /* id 선택자 : 100점 */
+        #two {
+            color: green;
+        }
+
+        /* Selector list : 1점 why? type 선택자 */
+        h1, h2, h3, h4, h5, h6, p {color: red;}
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <p>hello world</p>
+    <p class="one" id="two">hello world</p>
+    <p id="two">hello world</p>
+    <!-- 
+        1. 추가 공부할 선택자 링크 : https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Selectors
+        2. 추가 공부할 속성 링크 : https://developer.mozilla.org/ko/docs/Web/CSS/Reference
+    -->
+</body>
+</html>

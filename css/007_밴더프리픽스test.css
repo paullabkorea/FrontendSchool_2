@@ -1,0 +1,6 @@
+/* autoprefixer를 설치하고 저장하시면 아래와 같이 자동으로 벤더프리픽스가 달립니다. */
+p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}

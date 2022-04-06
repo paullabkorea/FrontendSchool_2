@@ -1,0 +1,10 @@
+document
+#document
+document.head
+<head>​…​</head>​
+document.body
+<body>​…​</body>​
+document.body.childNodes
+NodeList(5) [h1, ul, div.wrap, span, text]
+document.body.childNodes[1].childNodes
+NodeList(2) [li, li]

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reset</title>
+    <style>
+        /* reset.css */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        body{
+            font-family:'회사에서 사용하는 기본 폰트', '맑은 고딕','Malgun Gothic', AppleGothic,sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            /* 아이폰에 reset font가 설정이 안되는 경우기 있어 설정해주어야 함  */
+            -webkit-text-size-adjust:none;
+        }
+        p,div,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,select,button,code,label,em,span,strong {
+            /* 단어 단위로 떨어져 내리게끔 */
+            word-break:keep-all;
+        }
+        /* 익스플로러 하위 버전에서 a > img일 경우 보더가 생김 */
+        img,fieldset{border:0}
+        legend{
+            position:absolute;
+            left:-9999px;
+            font-size:0;
+            overflow:hidden;
+        }
+
+        input,select,textarea{
+            /* 모바일 기본 제공 스타일 제거 */
+            -webkit-appearance:none;
+            -moz-appearance:none;
+        }
+        /* IE 셀렉박스 기본 화살표 제거 */
+        select::-ms-expand{display:none;}
+        /* 프로젝트마다 매우 상이하기 때문에 참고만 해주세요. */
+        a {
+            display: block;
+        }
+        table, th, tr, td {
+            display: block;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <h2>hello world</h2>
+    <h3>hello world</h3>
+    <h4>hello world</h4>
+    <h5>hello world</h5>
+    <h6>hello world</h6>
+    <p>hello world</p>
+</body>
+</html>
