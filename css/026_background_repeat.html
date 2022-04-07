@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보강설명</title>
+    <style>
+      div {
+        width: 425px;
+        height: 200px;
+        margin: 20px;
+        background-image: url("https://www.tvn-2.com/nacionales/Imagen-ilustrativa-gato-medio-bosque_18585331.jpg");
+        background-size: 100px auto;
+        border: 4px solid black;
+      }
+      .repeat {
+        /* 반복 */
+        background-repeat: repeat;
+      }
+      .repeat-x {
+        /* x축만 반복 */
+        background-repeat: repeat-x;
+      }
+      .repeat-y {
+        /* y축만 반복 */
+        background-repeat: repeat-y;
+      }
+      .no-repeat {
+        /* 반복 없음*/
+        background-repeat: no-repeat;
+      }
+      .round {
+        /* 이미지 짤리지 않게, 이미지 크기 변화를 줘서 간격 없이 반복*/
+        background-repeat: round;
+      }
+      .space {
+      /* 이미지 짤리지 않게 반복, 이미지 크기는 유지한채로 간격 없이 반복*/
+        background-repeat: space;
+      }
+      .cover {
+        background-size: cover;
+      }
+    </style>
+</head>
+<body>
+    <div class="repeat"></div>
+    <div class="repeat-x"></div>
+    <div class="repeat-y"></div>
+    <div class="no-repeat"></div>
+    <div class="round"></div>
+    <div class="space"></div>
+    <div class="cover"></div>
+</body>
+</html>
