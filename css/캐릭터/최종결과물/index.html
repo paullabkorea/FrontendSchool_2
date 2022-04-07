@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* animaion */
+        @keyframes 얼굴 {
+            0% {
+                transform: scale(0.8);
+            }
+
+            25% {
+                transform: scale(1.2) rotate(20deg);
+            }
+
+            50% {
+                transform: scale(0.8) rotate(0deg);
+            }
+
+            75% {
+                transform: scale(1.2) rotate(-20deg);
+            }
+
+            100% {
+                transform: scale(0.8) rotate(0deg);
+            }
+        }
+
+        @keyframes 귀오른쪽 {
+            from {
+                transform: rotate(30deg);
+            }
+
+            to {
+                transform: rotate(40deg) translateX(10px);
+            }
+        }
+
+        @keyframes 귀왼쪽 {
+            from {
+                transform: rotate(-30deg);
+            }
+
+            to {
+                transform: rotate(-40deg) translateX(-10px);
+            }
+        }
+
+        @keyframes 입 {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1.2);
+            }
+        }
+
+
+        @keyframes 홍조 {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1.4);
+            }
+        }
+
+
+        @keyframes 머리카락 {
+            from {
+                transform: translateX(-43%) rotate(0deg);
+            }
+
+            to {
+                transform: translateX(-44%) rotate(5deg);
+            }
+        }
+
+        /* setting */
+        :root {
+            --pri: #CE705F;
+            --sec: #ECD376;
+        }
+
+        /* reset */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* layout */
+        /* design */
+        *,
+        *:after,
+        *:before {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rebeccapurple;
+        }
+
+        .licat {
+            position: relative;
+            top: 100px;
+            margin: 50px auto;
+            width: 400px;
+            height: 380px;
+            animation: 얼굴 3s infinite alternate;
+        }
+
+        .licat .line.left.top {
+            position: absolute;
+            top: 165px;
+            left: -5px;
+            width: 60px;
+            height: 1px;
+            background-color: #000;
+            border: 5px solid #000;
+            border-radius: 30%;
+            transform: rotate(-30deg);
+        }
+
+        .licat .line.left.bottom {
+            position: absolute;
+            top: 200px;
+            left: 15px;
+            width: 60px;
+            height: 1px;
+            background-color: #000;
+            border: 5px solid #000;
+            border-radius: 30%;
+            transform: rotate(-35deg);
+        }
+
+        .licat .line.right.top {
+            position: absolute;
+            top: 165px;
+            right: -5px;
+            width: 60px;
+            height: 1px;
+            background-color: #000;
+            border: 5px solid #000;
+            border-radius: 30%;
+            transform: rotate(30deg);
+        }
+
+        .licat .line.right.bottom {
+            position: absolute;
+            top: 200px;
+            right: 15px;
+            width: 60px;
+            height: 1px;
+            background-color: #000;
+            border: 5px solid #000;
+            border-radius: 30%;
+            transform: rotate(35deg);
+        }
+
+        .licat .홍조.왼쪽 {
+            position: absolute;
+            top: 130px;
+            left: 80px;
+            width: 40px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--pri);
+            z-index: 3;
+            animation: 홍조 0.5s infinite alternate;
+        }
+
+        .licat .홍조.오른쪽 {
+            position: absolute;
+            top: 130px;
+            right: 80px;
+            width: 40px;
+            height: 25px;
+            border-radius: 50%;
+            background: var(--pri);
+            z-index: 3;
+            animation: 홍조 0.5s infinite alternate;
+        }
+
+        .licat .ear {
+            position: absolute;
+            top: 0;
+            width: 80px;
+            height: 92px;
+            border: 10px solid #000;
+            border-radius: 50%;
+            background: var(--sec);
+        }
+
+        .licat .ear.left {
+            top: 35px;
+            left: 65px;
+            transform: rotate(-30deg);
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: 귀왼쪽 0.3s infinite alternate;
+            /* 아래와 같은 방식을 사용하기도 합니다. */
+            /* border-bottom-left-radius: 10px; */
+            /* border-bottom-right-radius: 10px; */
+        }
+
+        .licat .ear.right {
+            top: 35px;
+            right: 65px;
+            transform: rotate(30deg);
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: 귀오른쪽 0.3s infinite alternate;
+        }
+
+        .licat .earline.left {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 60px;
+            background-color: #000;
+            border: 5px solid #000;
+            border-radius: 30%;
+            transform: rotate(90deg);
+            border-radius: 10% 0 0 50%;
+        }
+
+        .licat .earline.right {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 60px;
+            background-color: #000;
+            border: 5px solid #000;
+            border-radius: 30%;
+            transform: rotate(90deg);
+            border-radius: 50% 0 0 10%;
+        }
+
+        .licat .face {
+            position: absolute;
+            bottom: 0;
+            width: 400px;
+            height: 310px;
+            border-radius: 50%;
+            border: 10px solid #000;
+            background: var(--sec);
+            /* offset-x | offset-y | blur-radius | spread-radius | color */
+            /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); */
+        }
+
+        .licat .eye {
+            position: absolute;
+            top: 110px;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            background: #000;
+            z-index: 3;
+        }
+
+        .licat .eye.left {
+            left: 145px;
+        }
+
+        .licat .eye.right {
+            right: 145px;
+        }
+
+        .licat .nose {
+            position: absolute;
+            top: 140px;
+            left: 50%;
+            margin-left: -16px;
+            width: 35px;
+            height: 25px;
+            border-radius: 50% 50% 50% 50%;
+            background: #000;
+            z-index: 2;
+        }
+
+        .licat .mouth {
+            position: absolute;
+            top: 117px;
+            width: 73px;
+            height: 68px;
+            border: 10px solid #000;
+            border-radius: 50%;
+        }
+
+        .licat .mouth.left {
+            left: 127px;
+            background-color: var(--sec);
+            z-index: 1;
+        }
+
+        .licat .mouth.right {
+            right: 127px;
+            background-color: var(--sec);
+            z-index: 1;
+        }
+
+        .licat .mouthbottom {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            border: 10px solid #000;
+            border-radius: 50%;
+            top: 130px;
+            left: 165px;
+            z-index: 0;
+            background: #c94f53;
+            animation: 입 0.3s infinite alternate;
+        }
+
+        .licat .mouth.right:before {
+            content: "";
+            position: absolute;
+            top: -23px;
+            left: -90px;
+            width: 180px;
+            height: 50px;
+            background: var(--sec);
+            z-index: 3;
+        }
+
+        .licat .mouth.left:before {
+            left: 29px;
+        }
+
+        .licat .mouth.right:before {
+            right: 31px;
+        }
+
+        .licat .face .hair-back {
+            position: absolute;
+            width: 150%;
+            left: 50%;
+            top: -170px;
+            z-index: -1;
+            transform: translateX(-50%);
+        }
+
+        .licat .face .hair-front {
+            position: absolute;
+            width: 40%;
+            left: 50%;
+            top: -60px;
+            z-index: 10;
+            animation: 머리카락 0.5s infinite alternate;
+        }
+
+        /* media query */
+    </style>
+</head>
+
+<body>
+    <div class="licat">
+        <div class="ear left">
+            <div class="earline left"></div>
+        </div>
+        <div class="ear right">
+            <div class="earline right"></div>
+        </div>
+
+        <div class="face">
+            <img class="hair-back" src="hair_back.svg" alt="">
+            <img class="hair-front" src="hair_front.svg" alt="">
+            <div class="line left top"></div>
+            <div class="line left bottom"></div>
+            <div class="line right top"></div>
+            <div class="line right bottom"></div>
+            <div class="홍조 왼쪽"></div>
+            <div class="홍조 오른쪽"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="mouth left"></div>
+            <div class="mouth right"></div>
+            <div class="mouthbottom"></div>
+        </div>
+    </div>
+</body>
+
+</html>
