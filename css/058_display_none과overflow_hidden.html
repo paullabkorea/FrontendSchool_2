@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        .background {
+            background-color: red;
+        }
+        
+        /* naver 스타일 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+        /* daum 스타일 */
+        .screen_out {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        .display_none{
+            display: none;
+        }
+
+        .visibility_hidden{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello world</h1>
+    <div class="blind background">naver</div>
+    <div class="screen_out background">daum</div>
+    <div class="display_none background">display none</div>
+    <!-- 영역은 차지하고 있습니다. -->
+    <div class="visibility_hidden background">visibility hidden</div>
+</body>
+</html>

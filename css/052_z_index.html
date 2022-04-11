@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        div {
+            /* 같이 움직이는지 확인 */
+            /* margin: 100px; */
+            width: 800px;
+            height: 800px;
+            position: relative;
+            background-color: blanchedalmond;
+            border: 1px solid black;
+            /* 부모에 달아도 수정이 안됨 */
+            /* z-index: 1; */
+        }
+
+        img {
+            padding: 10px;
+            position: absolute;
+        }
+
+        img:nth-child(1) {
+            top: 100px;
+            left: 100px;
+            background-color: red;
+            /* 자식에게 값을 주면 부모 뒤로 감 */
+            z-index: 0;
+        }
+
+        img:nth-child(2) {
+            top: 150px;
+            left: 150px;
+            background-color: green;
+            z-index: 0;
+        }
+
+        img:nth-child(3) {
+            top: 200px;
+            left: 200px;
+            background-color: blue;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="https://via.placeholder.com/300" alt="">
+        <img src="https://via.placeholder.com/400" alt="">
+        <img src="https://via.placeholder.com/500" alt="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        li + li {
+            color:red;
+        }
+
+        ul p {
+            font-size: 22px;
+        }
+
+        li > p {
+            background-color: blue;
+        }
+
+        li.one {
+            background-color: yellowgreen;
+        }
+
+        /* 위와 비교해보세요. */
+        li .one {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <p>hello world</p>
+    <ul>
+        <li>
+            <p>hello world</p>
+        </li>
+        <li>
+            <div>
+                <div>
+                    <div>
+                        <p>hello world</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li class="one">hello world</li>
+        <li class="one">hello world</li>
+    </ul>
+</body>
+</html>
