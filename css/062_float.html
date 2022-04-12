@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        .wrap {
+            border: 4px solid blue;
+        }
+
+        .wrap::after {
+            content: 'hello!';
+            display: block;
+            clear: both;
+        }
+
+        .content {
+            float: left;
+            margin: 5px;
+            height: 20px;
+            border: 2px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="content content2">내용1</div>
+        <div class="content">내용2</div>
+    </div>
+</body>
+
+</html>
