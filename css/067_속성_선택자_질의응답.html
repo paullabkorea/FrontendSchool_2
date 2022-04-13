@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        /* 아래와 같이 공백을 뒤에 넣게 되면 의도와 다른 문제가 생기게 됩니다. 2번째 p태그를 확인해보세요.*/
+        p[class*="paul "] {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p class="paul">hello world</p>
+    <p class="paul test">hello world</p>
+    <p class="test paul">hello world</p>
+    <p class="paultest">hello world</p>
+    <p class="paullab">hello world</p>
+    <p class="koreapaullab">hello world</p>
+    <p class="paullab koreaone">hello world</p>
+    <p class="world">hello world</p>
+</body>
+</html>

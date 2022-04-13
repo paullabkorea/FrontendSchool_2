@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      input:enabled + span {
+        color: blue;
+      }
+      input:disabled + span {
+        color: red;
+      }
+      label + input:checked + span {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="./index.html" method="get">
+      <label for="이름">이름</label>
+      <input id="이름" name="name" type="text" /><span>O</span><br />
+      <label for="남">남</label>
+      <input id="남" name="성별" type="radio" value="male" /><span>O</span><br />
+      <label for="여">여</label>
+      <input id="여" name="성별" type="radio" value="female" /><span>O</span><br />
+      <label for="우주인">우주인</label>
+      <input id="우주인" name="성별" type="radio" value="female" disabled/><span>O</span>
+    </form>
+  </body>
+</html>

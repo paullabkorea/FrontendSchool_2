@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>속성선택자2</title>
+    <style>
+        /* paullab 정확하게 일치 */
+        /* paullab이라는 문자열만 정확하게 1개만 가진 것을 선택 */
+        /* 공백도 포함하지 않습니다. */
+        p[class="paullab"] {
+            font-size: 48px;
+        }
+
+        /* 단어에 paul 포함되는 것 */
+        p[class~="paul"] {
+            text-align: center;
+        }
+
+        /* 문자열 paul이 포함된 모든 것 */
+        p[class*="paul"] {
+            color: red;
+        }
+
+        /* korea로 시작하는 것 */
+        /* 클래스 순서 상관 있습니다 */
+        p[class^="korea"] {
+            color: blue;
+        }
+
+        /* lab로 끝나는 것 */
+        /* lab으로 끝나는 class를 모두 선택하는 것이 아니라 문자열에 끝만 확인 */
+        p[class$="lab"] {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <p class="paul">hello world</p>
+    <p class="paul test">hello world</p>
+    <p class="paultest">hello world</p>
+    <p class="paullab">hello world</p>
+    <p class="koreapaullab">hello world</p>
+    <p class="paullab koreaone">hello world</p>
+    <p class="world">hello world</p>
+</body>
+</html>

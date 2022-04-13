@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 300px;
+            /* flex-wrap: nowrap; */
+            flex-wrap: wrap;
+            /* 하나씩 풀어가면서 실습해보세요. */
+            /* align-items: stretch; (기본값) */ 
+            /* align-items: center; */
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            align-content: center;
+            /* align-content: flex-start; */
+            /* align-content: flex-end; */
+        }
+
+        li {
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>

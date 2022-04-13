@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        input:enabled {
+            border: solid 5px red;
+        }
+
+        input:disabled {
+            /* border: solid 5px blue; */
+            background-color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="./073_가상_클래스_선택자_6.html" method="get">
+      <label for="id">ID</label>
+      <input id="id" name="id" type="text">
+      <br>
+      <label for="pw">PW</label>
+      <input id="pw" name="pw" disabled="disabled" type="text">
+      <button>로그인</button>
+    </form>
+</body>
+</html>

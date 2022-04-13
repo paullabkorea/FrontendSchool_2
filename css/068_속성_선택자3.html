@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>속성 선택자3</title>
+    <style>
+        /* paullab 일치 */
+        /* 공백을 포함하지 않음 */
+        p[class="paullab"] {
+            font-size: 48px;
+        }
+
+        /* 시작값이 korea */
+        p[class^="korea"] {
+            color: blue;
+        }
+
+        /* 시작값이 korea라는 단어로 시작하거나 뒤에 하이픈이 있는 경우 */
+        p[class|="korea"] {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="paullab">hello world</p>
+    <p class="koreapaullab">hello world</p>
+    <p class="korea-paullab">hello world</p>
+    <p class="korea">hello world</p>
+    <p class="koreapa">hello world</p>
+</body>
+</html>
