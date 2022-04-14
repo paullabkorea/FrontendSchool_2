@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <title>menu-1</title>
+    <style>
+        .container-color {
+            background-color: cornsilk;
+            border: solid 3px black;
+            height: 75px;
+            padding: 5px;
+        }
+
+        .item-color {
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .item {
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 100px;
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 700;
+            line-height: 2.5em;
+            transition: all .5s;
+        }
+
+        .logo {
+            width: 100px;
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 700;
+            line-height: 2.5em;
+            transition: all .5s;
+        }
+
+
+        /* 이렇게 주시면 간격을 자동을 잡습니다. */
+        .logo {
+            margin-right: auto;
+        }
+
+        .item:hover {
+            width: 120px;
+            background-color: tomato;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container-color container">
+        <li class="item-color logo">LOGO</li>
+        <li class="item-color item">ABOUT</li>
+        <li class="item-color item">SKILL</li>
+        <li class="item-color item">PORTFOLIO</li>
+        <li class="item-color item">CONTACT</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!-- 지영님 코드리뷰 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습_holy grail layout</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+    header {
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aqua;
+        color: black;
+        font-size: 30px;
+        border: 5px solid black;
+        padding: 2px;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    
+    section {
+        flex: 7;
+        background-color: bisque;
+        border: 5px solid black;
+    }
+
+    article {
+        background-color: gold;
+        margin: 100px;
+    }
+
+    aside {
+        flex: 3;
+        background-color: red;
+        border: 5px solid black;
+        color: white;
+    }
+
+    footer {
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: aqua;
+        color: black;
+        font-size: 30px;
+        border: 5px solid black;
+        padding: 2px;
+    }
+
+    p {
+        font-size: 24px;
+        line-height: 20px;
+    }
+
+    @media screen and (max-width: 800px) {
+        
+        section {
+            width: 100%;
+        }
+
+        aside {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>header</header>
+        <main>
+            <section>
+                <article><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum unde quam molestias numquam vel earum, officia laborum laudantium cum recusandae at perspiciatis fugit accusamus nemo, nisi praesentium odit! Molestiae, enim.</p>
+                </article>
+            </section>
+            <aside>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut aliquam nesciunt quo fugiat saepe ex nobis sed, soluta ullam incidunt suscipit accusantium autem error vero rem eos iusto, quisquam reprehenderit!</p>
+            </aside>
+        </main>
+    <footer>footer</footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!-- 한별님 코드 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <title>menu bar pratice</title>
+</head>
+<style>
+  *{
+    box-sizing: border-box;
+  }
+  body{
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+
+  .container{
+    margin: 30px;
+    border: 2px solid black;
+  }
+
+  header{
+    /* width: 100%; */
+    /* height: 15%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 500;
+    color:red;
+    border: 3px solid red;
+  }
+
+  .middle{
+    /* height: 70%; */
+    display: flex;
+  }
+
+  .middle-left{
+    /* width: 85%; */
+    /* display: flex; */
+    flex: 7;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight:500;
+    color:red;
+    border: 3px solid red;
+  }
+
+  aside{
+    /* width: 15%; */
+    /* display: flex; */
+    flex: 3;
+    justify-content: center;
+    align-items: center;
+    font-size:1.5rem;
+    font-weight:500;
+    color: red;
+    border: 3px solid red;
+  }
+
+  footer {
+    /*width: 80%%;*/
+    /* height: 15%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size:1.5rem;
+    font-weight:500;
+    color:red;
+    border: 3px solid red;
+  }
+
+  @media screen and  (min-width:700px){
+    .container{
+      width: 100%;
+    }
+  }
+
+
+</style>
+<body>
+  <div class="container">
+    <header>i am header</header>
+    <section class="middle">
+      <article class="middle-left">section > article</article>
+      <aside>aside</aside>
+    </section>
+    <footer>i am footer</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            /* flex-wrap: wrap; */
+        }
+
+        li {
+            flex-basis: auto;
+            /* flex-basis: 0; */
+            /* flex-basis: 100px; */
+            /* 아래처럼 값을 주는 것은 잘못된 속성 값 */
+            /* flex-basis: 2; */
+            box-sizing: border-box;
+            /* width: 100px; */
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li>1 aaa</li>
+        <li>2 bb</li>
+        <li>3 cccccccccccccccccc</li>
+        <li>4 dd</li>
+        <li>5 e</li>
+        <li>6 f</li>
+        <li>1 aaa</li>
+        <li>2 bb</li>
+        <li>3 cccccccccccccccccc</li>
+        <li>4 dd</li>
+        <li>5 e</li>
+        <li>6 f</li>
+    </ul>
+</body>
+</html>

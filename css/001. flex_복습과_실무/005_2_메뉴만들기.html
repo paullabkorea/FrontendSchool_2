@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../reset.css">
+    <title>menu-1</title>
+    <style>
+        .container-color {
+            background-color: cornsilk;
+            border: solid 3px black;
+            height: 75px;
+            padding: 5px;
+        }
+
+        .item-color {
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .item {
+            flex: 1;
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 700;
+            line-height: 2.5em;
+            transition: all .5s;
+        }
+
+        .logo {
+            flex: 5;
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 700;
+            line-height: 2.5em;
+            transition: all .5s;
+        }
+
+        .item:hover {
+            flex: 1.5;
+            background-color: tomato;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container-color container">
+        <li class="item-color logo">LOGO</li>
+        <li class="item-color item">ABOUT ME</li>
+        <li class="item-color item">SKILL</li>
+        <li class="item-color item">PORTFOLIO</li>
+        <li class="item-color item">CONTACT</li>
+    </ul>
+</body>
+</html>

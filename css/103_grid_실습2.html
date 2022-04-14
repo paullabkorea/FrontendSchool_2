@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-gap: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .item1 {
+            grid-column: 1 / 4;
+            grid-row: 1 / 3;
+        }
+
+        .item2 {
+            grid-column: 4 / 6;
+            grid-row: 1 / 4;
+        }
+
+        .item3 {
+            grid-column: 1 / 3;
+        }
+
+        .item5 {
+            grid-column: 1 / 3;
+            grid-row: 4 / 6;
+        }
+
+        .item6 {
+            grid-column: 3 / 6;
+            grid-row: 4 / 6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item1"><img src="./img/1.jpg" alt=""></div>
+        <div class="item2"><img src="./img/6.jpg" alt=""></div>
+        <div class="item3"><img src="./img/2.jpg" alt=""></div>
+        <div class="item4"><img src="./img/5.webp" alt=""></div>
+        <div class="item5"><img src="./img/3.webp" alt=""></div>
+        <div class="item6"><img src="./img/4.jpg" alt=""></div>
+    </div>
+</body>
+</html>

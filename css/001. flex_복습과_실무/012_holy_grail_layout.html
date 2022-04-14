@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>holy grail layout</title>
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        /* reset */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* util */
+        .sr-only {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            border: 10px solid black;
+        }
+
+        .item {
+            border: 10px solid brown;
+        }
+
+        .item:nth-child(1) {
+            border: 10px solid darkgreen;
+            width: 100%;
+        }
+
+        .item:nth-child(2) {
+            border: 10px solid tomato;
+            width: 70%;
+        }
+
+        .item:nth-child(3) {
+            border: 10px solid tomato;
+            width: 30%;
+        }
+
+        .item:nth-child(4) {
+            border: 10px solid deeppink;
+            width: 100%;
+        }
+
+        @media screen and (max-width:800px) {
+            .item:nth-child(2) {
+                width: 100%;
+            }
+
+            .item:nth-child(3) {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="item">
+        <h1 class="sr-only">제목1</h1>
+        <nav>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+        </nav>
+    </header>
+    <section class="item">
+        <h2 class="sr-only">제목2</h2>
+        <article>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut asperiores amet vitae saepe, fugit eveniet eligendi sit qui odit, architecto, quod et? Distinctio libero suscipit nam tempora quisquam optio harum!
+        Modi soluta fugiat totam sit, iure cupiditate nemo error? Velit vero asperiores et cupiditate, minus, laudantium quaerat odit dolorum accusamus, nobis voluptatum? Modi, repudiandae voluptates quaerat ex eveniet officiis sint.</article>
+    </section>
+    <aside class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo eaque eligendi autem necessitatibus, tempora facere qui dolores voluptatum officia natus saepe aut est optio ullam, ducimus possimus asperiores! Atque, iure?</aside>
+    <footer class="item">footer</footer>
+</body>
+</html>

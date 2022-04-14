@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 실전 예제</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        .info-list__content {
+            display: flex;
+            line-height: 20px;
+        }
+        .info-list__content::before {
+           content: '️⚡';
+        }
+    </style>
+</head>
+<body>
+    <!-- http://www.jejucodingcamp.com/ 의 안내사항 -->
+    <!-- https://copychar.cc/ -->
+    <ul>
+        <li>
+            <div class="info-list__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem assumenda vel tempore ex, accusamus autem facilis dicta iste aliquam! Sed qui omnis nesciunt mollitia? Libero aperiam eos quaerat quo deserunt.</div>
+        </li>
+        <li>
+            <div class="info-list__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem assumenda vel tempore ex, accusamus autem facilis dicta iste aliquam! Sed qui omnis nesciunt mollitia? Libero aperiam eos quaerat quo deserunt.</div>
+        </li>
+        <li>
+            <div class="info-list__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem assumenda vel tempore ex, accusamus autem facilis dicta iste aliquam! Sed qui omnis nesciunt mollitia? Libero aperiam eos quaerat quo deserunt.</div>
+        </li>
+    </ul>
+</body>
+</html>

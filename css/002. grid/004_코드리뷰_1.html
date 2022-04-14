@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codepen-clone</title>
+    <style>
+      body {
+        display: flex;
+      }
+
+      header {
+        flex: 1;
+      }
+      
+      .section-board {
+        /* 내가 발견하지 못하는 문제를 누군가는 알고 있다! */
+        /* transform: rotate(60deg) rotateY(-10deg) rotateZ(50deg); */
+        transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg);
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .board-item {
+        width: 100px;
+        height: 100px;
+        transition: all .3s;
+      }
+      .board-item:hover {
+        cursor: pointer;
+        transform: translate(10px, -10px);
+      }
+      .board-item:nth-child(3n) {
+        background-color: crimson;
+      }
+      .board-item:nth-child(3n-1) {
+        background-color: darkblue;
+      }
+      .board-item:nth-child(3n-2) {
+        background-color: darkturquoise;
+      }
+
+    </style>
+  </head>
+<body>
+  <header>
+    <h1>실습</h1>
+  </header>
+    <section class="section-board">
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+      <div class="board-item"></div>
+    </section>
+</body>
+</html>

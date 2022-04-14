@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>card_2</title>
+  <link rel="stylesheet" href="../reset.css">
+  <style>
+    body {
+        perspective: 800px;
+        /* transform-style: preserve-3d; */
+    }
+
+    .container {
+        transform: rotateY(20deg);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: cornsilk;
+        border: solid 3px black;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: darkcyan;
+        border: solid 3px black;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    /* .item-img {
+        flex: 1;
+    } */
+
+    .item-desc {
+        flex: auto;
+        background-color: cornsilk;
+        padding: 10px;
+    }
+
+    @media screen and (max-width: 1330px) {
+        .item {
+            width: 500px;
+        }
+    }
+
+    @media screen and (max-width: 1110px) {
+        .item {
+            width: 80%;
+        }
+    }
+  </style>
+</head>
+<body>
+    <ul class="container">
+        <li class="item">
+            <img src="../img/a.jpg" alt="섭지코지 이미지 입니다." class="item-img">
+            <p class="item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aperiam animi eius quos dolore ex autem, nemo minima ea aspernatur, voluptatum minus voluptatibus doloremque officiis tenetur suscipit earum illum placeat.</p>
+        </li>
+        <li class="item">
+            <img src="../img/a.jpg" alt="섭지코지 이미지 입니다." class="item-img">
+            <p class="item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aperiam animi eius quos dolore ex autem, nemo minima ea aspernatur, voluptatum minus voluptatibus doloremque officiis tenetur suscipit earum illum placeat.</p>
+        </li>
+        <li class="item">
+            <img src="../img/a.jpg" alt="섭지코지 이미지 입니다." class="item-img">
+            <p class="item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aperiam animi eius quos dolore ex autem, nemo minima ea aspernatur, voluptatum minus voluptatibus doloremque officiis tenetur suscipit earum illum placeat.</p>
+        </li>
+        <li class="item">
+            <img src="../img/a.jpg" alt="섭지코지 이미지 입니다." class="item-img">
+            <p class="item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aperiam animi eius quos dolore ex autem, nemo minima ea aspernatur, voluptatum minus voluptatibus doloremque officiis tenetur suscipit earum illum placeat.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aperiam animi eius quos dolore ex autem, nemo minima ea aspernatur, voluptatum minus voluptatibus doloremque officiis tenetur suscipit earum illum placeat.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aperiam animi eius quos dolore ex autem, nemo minima ea aspernatur, voluptatum minus voluptatibus doloremque officiis tenetur suscipit earum illum placeat.</p>
+        </li>
+    </ul>
+</body>
+</html>

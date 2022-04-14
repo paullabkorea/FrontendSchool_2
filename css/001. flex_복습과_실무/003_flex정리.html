@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-3</title>
+    <style>
+        .container-color {
+            background-color: cornsilk;
+            border: solid 3px black;
+            border-radius: 10px;
+            height: 300px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .item-color {
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .container1 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .item {
+            flex-grow: 1;
+        }
+
+        .item:nth-child(2) {
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+    display: flex에 flex-grow 실습
+    <div class="container-color container1">
+        <div class="item-color item">1</div>
+        <div class="item-color item">3</div>
+        <div class="item-color item">1</div>
+        <div class="item-color item">1</div>
+    </div>
+</body>
+</html>

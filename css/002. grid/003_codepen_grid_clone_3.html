@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codepen-clone-1</title>
+    <style>
+        body {
+            display: flex;
+        }
+
+        header {
+            flex: 1;
+        }
+
+        .section-board {
+            transform: rotateX(60deg) rotateY(-10deg) rotateZ(50deg);
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .board-item {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            transition: all .3s;
+        }
+
+        .board-item input {
+            /* position: absolute;
+            left: -9999px; */
+
+            /* opacity: 0; */
+            
+            display: none;
+        }
+
+        .board-item label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            height: 50%;
+        }
+
+        .board-item input:checked + label {
+            color: white;
+            background-color: hotpink;
+        }
+
+        .board-item:hover {
+            cursor: pointer;
+            /* transform: translate(10px, -10px); */
+            top: -15px;
+            left: -15px;
+        }
+        
+        .board-item::after {
+            /* position: fixed; */
+            z-index: -1;
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #999;
+            width: 100px;
+            height: 100px;
+            transition: all .3s;
+        }
+
+        .board-item:hover::after {
+            top: 25px;
+            left: 25px;
+        }
+
+        .board-item:nth-child(3n) {
+            background-color: blanchedalmond;
+        }
+
+        .board-item:nth-child(3n-1) {
+            background-color: darkblue;
+        }
+
+        .board-item:nth-child(3n-2) {
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>codepen 실습</h1>
+    </header>
+    <section class="section-board">
+        <div class="board-item">
+            <input type="radio" id="radio-1" name="hello">
+            <label for="radio-1">1</label>
+        </div>
+        <div class="board-item">
+            <input type="radio" id="radio-2" name="hello">
+            <label for="radio-2">2</label>
+        </div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+        <div class="board-item"></div>
+    </section>
+</body>
+</html>

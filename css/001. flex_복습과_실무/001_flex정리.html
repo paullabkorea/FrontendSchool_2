@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-1</title>
+    <style>
+        .container-color {
+            background-color: cornsilk;
+            border: solid 3px black;
+            border-radius: 10px;
+            height: 300px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .item-color {
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .container1 {
+            display: flex;
+            /* display: block; */
+        }
+
+        .container2 {
+            display: flex;
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: center; */
+            justify-content: space-between;
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; ms에서 지원 안함 */
+        }
+
+        .container3 {
+            display: flex;
+            /* align-items: stretch; */
+            /* align-items: flex-start; */
+            align-items: flex-end;
+            /* align-items: center; */
+            /* align-items: baseline; */
+        }
+    </style>
+</head>
+<body>
+    display: flex
+    <div class="container-color container1">
+        <div class="item-color item">Lorem.</div>
+        <div class="item-color item">Lorem, ipsum.</div>
+        <div class="item-color item">Lorem, ipsum dolor.</div>
+        <div class="item-color item">Lorem ipsum dolor sit.</div>
+    </div>
+
+    justify-content: center or space-between
+    <div class="container-color container2">
+        <div class="item-color item">Lorem.</div>
+        <div class="item-color item">Lorem, ipsum.</div>
+        <div class="item-color item">Lorem, ipsum dolor.</div>
+        <div class="item-color item">Lorem ipsum dolor sit.</div>
+    </div>
+
+    align-items: center
+    <div class="container-color container3">
+        <div class="item-color item">Lorem.</div>
+        <div class="item-color item">Lorem, ipsum.</div>
+        <div class="item-color item">Lorem, ipsum dolor.</div>
+        <div class="item-color item">Lorem ipsum dolor sit.</div>
+    </div>
+</body>
+</html>

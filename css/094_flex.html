@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            /* flex-wrap: wrap; */
+        }
+
+        li {
+            flex-grow: 1;
+            flex-basis: auto;
+            /* flex-basis: 0; */
+            box-sizing: border-box;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+
+        /* li:nth-child(2) {
+            flex-grow: 2;
+        } */
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li>1 cccccccccccccccc</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

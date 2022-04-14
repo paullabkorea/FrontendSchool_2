@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, h1, p, button {
+            padding: 0;
+            margin: 0;
+        }
+
+        .뒷배경 {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: fixed;
+        }
+
+        .공지박스 {
+            width: 500px;
+            background-color: white;
+            border: 5px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 보통 모달창은 contents 맨 아래 줍니다. -->
+    <div class="뒷배경">
+        <div class="공지박스">
+            <h1>hello world</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo deleniti quidem iure qui, beatae, id maiores corporis aliquam minima animi maxime, accusamus corrupti enim a asperiores illum facilis blanditiis similique.</p>
+            <button class="btn1">닫어!</button>
+        </div>
+    </div>
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti modi corporis excepturi consequuntur saepe maiores, debitis cumque? Tempora sequi perspiciatis iste! Magnam atque mollitia libero, illo explicabo aperiam quibusdam harum?
+    Sapiente minima, perferendis, cum perspiciatis esse ut rem asperiores enim quisquam corporis molestiae sint aliquid quia! Ea officia, quam quo qui eligendi numquam deserunt non placeat aspernatur aliquam nesciunt in.
+    Excepturi distinctio sapiente non exercitationem quidem animi rem enim, aut libero et quibusdam blanditiis minima necessitatibus architecto provident? Porro dicta fuga tenetur perspiciatis sed ipsam esse adipisci dolorum ab facilis.
+    Accusamus accusantium beatae distinctio aliquid adipisci esse ut recusandae provident cupiditate nam autem cumque, voluptatibus modi sint repellendus. Quis laboriosam nam distinctio facere autem id, fuga numquam blanditiis amet illum.
+    Cupiditate molestias nemo quo cum quos consequuntur aperiam ipsum voluptas neque aliquam repudiandae, ex placeat voluptatum natus voluptate quidem qui blanditiis eveniet et ipsa, velit, voluptatem reprehenderit odio! Alias, vel?</p>
+    <button class="btn2">열어!</button>
+
+    <script>
+        let 모달 = false;
+
+        document.querySelector('.btn1').addEventListener('click', function(){
+            if (모달 == true){
+                document.querySelector('.뒷배경').style.display = 'none';
+                모달 = false;
+            }
+        });
+
+        document.querySelector('.btn2').addEventListener('click', function(){
+            if (모달 == false){
+                document.querySelector('.뒷배경').style.display = 'flex';
+                모달 = true;
+            }
+        });
+
+    </script>
+</body>
+</html>

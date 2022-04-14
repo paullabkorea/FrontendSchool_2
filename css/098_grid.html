@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            /* grid-template-rows: 300px 300px; */
+            grid-auto-rows: minmax(300px, auto);
+            gap: 10px;
+        }
+
+        .item {
+            background-color: pink;
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi consequuntur omnis blanditiis unde. Cupiditate error perferendis nemo ullam? Praesentium quas ipsam reiciendis. Asperiores autem in amet quaerat laborum incidunt aliquid!</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+    </div>
+</body>
+</html>

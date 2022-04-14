@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 정리</title>
+    <style>
+        .container-color {
+            background-color: cornsilk;
+            border: solid 3px black;
+            border-radius: 10px;
+            /* height: 500px; */
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .item-color {
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        /* IE는 안됨..... */
+        /* .(dot)은 비우는 컬럼 */
+        .container {
+            display: grid;
+            gap: 10px;
+            grid-template-areas: 'header   header   header'
+                                 /* '.        .        .     ' */
+                                 'section  section  aside '
+                                 /* '.        .        .     ' */
+                                 'footer   footer   footer';
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .section {
+            grid-area: section;
+        }
+
+        .aside {
+            grid-area: aside;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-color container">
+        <div class="item-color item header">Lorem.</div>
+        <div class="item-color item section">Lorem, ipsum.</div>
+        <div class="item-color item aside">Lorem, ipsum dolor.</div>
+        <div class="item-color item footer">Lorem ipsum dolor sit.</div>
+    </div>
+</body>
+</html>

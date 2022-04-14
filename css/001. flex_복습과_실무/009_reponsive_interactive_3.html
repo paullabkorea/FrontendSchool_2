@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 정리</title>
+    <style>
+        .container-color {
+            background-color: cornsilk;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .item-color {
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        .container1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* display: block; */
+            /* display: inline-flex; */
+        }
+
+        @media screen and (max-width: 1000px) {
+            .container1 {
+                flex-direction: row;
+            }
+
+            .item1 {
+                flex: 1;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .container1 {
+                flex-direction: column;
+            }
+
+            .item1 {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    display: flex
+    <div class="container-color container1">
+        <div class="item-color item1">1 Lorem.</div>
+        <div class="item-color item1">2 Lorem, ipsum.</div>
+        <div class="item-color item1">3 Lorem, ipsum dolor.</div>
+        <div class="item-color item1">4 Lorem ipsum dolor sit.</div>
+        <div class="item-color item1">5 Lorem.</div>
+        <div class="item-color item1">6 Lorem, ipsum.</div>
+        <div class="item-color item1">7 Lorem, ipsum dolor.</div>
+        <div class="item-color item1">8 Lorem ipsum dolor sit.</div>
+        <div class="item-color item1">9 Lorem.</div>
+        <div class="item-color item1">10 Lorem, ipsum.</div>
+        <div class="item-color item1">11 Lorem, ipsum dolor.</div>
+        <div class="item-color item1">12 Lorem ipsum dolor sit.</div>
+        <div class="item-color item1">13 Lorem.</div>
+        <div class="item-color item1">14 Lorem, ipsum.</div>
+        <div class="item-color item1">15 Lorem, ipsum dolor.</div>
+        <div class="item-color item1">16 Lorem ipsum dolor sit.</div>
+    </div>
+</body>
+</html>

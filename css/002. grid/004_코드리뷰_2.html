@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../reset.css" />
+
+    <title>holy grail 실습</title>
+    <style>
+      .wrapper {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        /* height: 100vh; */
+        background-color: #f7f7f7;
+      }
+      .header {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 1px solid black;
+        
+      }
+      .section {
+        grid-column: 1 / 5;
+        grid-row: 2 / 5;
+        border-right: 1px solid black;
+      }
+      .aside {
+        grid-column: 5 / -1;
+        grid-row: 2 / 5;
+      }
+      .footer {
+        grid-column: 1 / -1;
+        grid-row: 5 / -1;
+        border-top: 1px solid black;
+      }
+
+.header-title{
+    font-size: 80px;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+.header__nav__lists{
+    display: flex;
+
+}
+.header__nav__item{
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+
+
+.header__nav__item a{
+    color:black;
+
+}
+
+@keyframes color-change{
+    0%{color:black}
+    50%{color:white}
+    100%{color:black}
+
+}
+.header__nav__item a:hover{
+    animation: color-change 1s ease-in-out forwards;
+
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1 class="header-title">JUNG</h1>
+        <nav class="header__nav">
+          <ul class="header__nav__lists">
+            <li class="header__nav__item"><a href="#">CODE</a></li>
+            <li class="header__nav__item"><a href="#">ABOUT</a></li>
+            <li class="header__nav__item"><a href="#">SKILLS</a></li>
+            <li class="header__nav__item"><a href="#">PORTFOLIO</a></li>
+          </ul>
+        </nav>
+      </header>
+        <section class="section">
+         <article class="section__article">
+           Lorem ipsum, dolor sit amet consectetur adipisicing elit. A neque, assumenda earum harum sunt possimus repudiandae vitae dolore? Quae ipsum nulla hic consequatur consequuntur ex quos soluta reprehenderit! Non, expedita?
+           Voluptas provident quis aspernatur nostrum quaerat doloribus consequatur unde culpa eveniet magni necessitatibus, minus sed suscipit placeat in ipsam, amet quos qui quod illo dolore. Dignissimos quam ab soluta repudiandae.
+         </article>
+         <article class="section__article">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. A neque, assumenda earum harum sunt possimus repudiandae vitae dolore? Quae ipsum nulla hic consequatur consequuntur ex quos soluta reprehenderit! Non, expedita?
+          Voluptas provident quis aspernatur nostrum quaerat doloribus consequatur unde culpa eveniet magni necessitatibus, minus sed suscipit placeat in ipsam, amet quos qui quod illo dolore. Dignissimos quam ab soluta repudiandae.
+        </article>
+        </section>
+        <aside class="aside">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit quibusdam quisquam facilis repellendus necessitatibus veniam ratione, in quaerat itaque maxime architecto, natus, voluptas aut reiciendis amet esse mollitia fugiat? Molestiae.</aside>
+      </main>
+      <footer class="footer">&copy; Jung-Hee </footer>
+    </div>
+  </body>
+</html>

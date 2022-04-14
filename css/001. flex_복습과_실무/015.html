@@ -1,0 +1,192 @@
+<!-- 호진님 코드리뷰 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../fontawesome/css/all.css">
+    <link rel="stylesheet" href="../reset.css">
+    <title>layout 만들기</title>
+    <style>
+        /* header 제목 */
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        /* nav 부분 */
+        a {
+            color: white;
+        }
+
+        nav {
+            background-color: #222;
+            padding: 0 15px;
+        }
+        
+        .logo {
+            font-size: 20px;
+            padding: 10px;
+        }
+        
+        .menu-item {
+            padding: 10px;
+        }
+        
+        a:hover {
+            color: #ccc;
+        }
+        
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .menu li a {
+            display: block;
+            padding: 10px;
+        }        
+
+        .icon {
+            /* 모바일에서 보여지도록 바꿔야 함*/
+            display: none;
+        }
+
+        /* main section 부분*/
+        .main-section {
+            overflow: auto;
+            display: flex;
+            height: 600px;
+        }
+
+        
+        .article-section {
+            display: flex;
+            border: 2px solid black;
+            flex: 4;
+            flex-wrap: wrap;
+            justify-content: center;
+            overflow: auto;
+        }
+        
+        .article-content {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            background-color: darkcyan;
+            border: solid 3px black;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px;
+        }
+        
+        .aside {
+            margin-left: auto;
+            border: 1px solid red;
+            flex: 1;
+            overflow: auto;
+        }
+
+        @media screen and (max-width: 800px) {
+            .icon {
+                /*
+                    order를 준 이유는 아이콘 위치가 하단에 있는 것을 위로 끌어올리기 위해
+                */
+                display: block;
+                order: 1;
+                line-height: 35px;
+                font-size: 25px;
+            }
+
+            .menu-item {
+                order: 2;
+                width: 100%;
+                text-align: center;
+            }
+
+            .main-section {
+                overflow: auto;
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">header</h1>
+        <nav>
+            <ul class="menu">
+                <li class="logo">
+                    <a href="#">LOGO</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">ABOUT ME</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">SKILLS</a>
+                </li>
+                <li class="menu-item has-submenu">
+                    <a href="#">BLOG</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#">CONTACT</a>
+                </li>
+                 <li class="icon">
+                    <a href="#"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-section">
+        <section class="article-section">
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+            <article class="article-content">
+                <img src="../img/a.jpg" alt="섭지코지 이미지입니다.">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur fugit culpa voluptates possimus praesentium magnam. Veniam unde necessitatibus et rerum velit, ducimus itaque, earum magni id harum dolores nihil?
+            </article>
+        </section>
+        <aside class="aside">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique necessitatibus officia sint fugit voluptatem accusantium. Amet voluptas explicabo fugiat quisquam dicta quis illum? Unde odio, nesciunt tempore adipisci magnam ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis est nobis corrupti iure facilis eaque voluptatem quidem quo, suscipit quod incidunt beatae officiis consequuntur eligendi aspernatur minus fuga facere aliquam? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos quia temporibus, nostrum inventore ab possimus praesentium porro vero iste nulla, illum magni, qui sapiente veritatis similique dicta nisi ex aut.
+        </aside>
+    </main>
+    <footer>
+        footer
+    </footer>
+</body>
+</html>

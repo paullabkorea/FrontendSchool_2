@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        .container {
+            display: flex;
+            height: 100vh;
+            /* flex-wrap: wrap; */
+        }
+
+        li {
+            flex-basis: 100px;
+            /* 줄어들지 않는다. */
+            /* flex-shrink: 0; */
+            flex-shrink: 1;
+            box-sizing: border-box;
+            height: 50px;
+            background-color: pink;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul class="container">
+        <li>1 aaa</li>
+        <li>2 bb</li>
+        <li>3 cccccccccccccccccc</li>
+        <li>4 dd</li>
+        <li>5 e</li>
+        <li>6 f</li>
+        <li>1 aaa</li>
+        <li>2 bb</li>
+        <li>3 cccccccccccccccccc</li>
+        <li>4 dd</li>
+        <li>5 e</li>
+        <li>6 f</li>
+    </ul>
+</body>
+</html>

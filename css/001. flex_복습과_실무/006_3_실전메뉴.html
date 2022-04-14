@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 실전 예제</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="../reset.css">
+    <style>
+        /* reset */
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* style */
+        nav {
+            background-color: #222;
+            padding: 0 15px;
+        }
+
+        .logo {
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .item {
+            padding: 10px;
+        }
+
+        a:hover {
+            color: #ccc;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 10px;
+        }
+
+        .menu li.subitem a {
+            padding-left: 20px;
+        }
+
+        .subitem {
+            /* 개발하실 때에는 block */
+            display: block;
+            /* display: none; */
+        }
+
+        .icon {
+            /* 모바일에서 보여지게 바꿔야 합니다. */
+            display: none;
+        }
+
+        @media screen and (max-width: 800px) {
+            .icon {
+                /* 
+                    oder를 준 이유는 아이콘 위치가 하단에 있는 것을 
+                    위로 끌어올리기 위해 
+                */
+                display: block;
+                order: 1;
+                line-height: 35px;
+                font-size: 25px;
+            }
+
+            .item {
+                order: 2;
+                width: 100%;
+                text-align: center;
+            }
+
+            .subitem {
+                /* 서브 메뉴 보이게, 안보이게 */
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li class="logo">
+                <a href="#">LOGO</a>
+            </li>
+            <li class="item">
+                <a href="#">ABOUT ME</a>
+            </li>
+            <li class="item">
+                <a href="#">SKILLS</a>
+            </li>
+            <li class="item has-submenu">
+                <a href="#">BLOG</a>
+                <ul class="submenu">
+                    <li class="subitem">
+                        <a href="#">HTML</a>
+                    </li>
+                    <li class="subitem">
+                        <a href="#">CSS</a>
+                    </li>
+                    <li class="subitem">
+                        <a href="#">JAVASCRIPT</a>
+                    </li>
+                    <li class="subitem">
+                        <a href="#">INFRA</a>
+                    </li>
+                    <li class="subitem">
+                        <a href="#">NODE</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item">
+                <a href="#">CONTACT</a>
+            </li>
+            <li class="icon">
+                <a href="#"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
