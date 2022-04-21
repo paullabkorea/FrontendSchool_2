@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perspective</title>
+    <style>
+        .원본 {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            flex-wrap: wrap;
+            border: 1px solid black;
+            margin: 200px auto;
+        }
+
+        .원본:nth-child(1) {    
+            perspective: 400px;
+            perspective-origin: 0px 0px;
+        }
+
+        .원본:nth-child(2) {
+            perspective: 400px;
+            perspective-origin: 100px 100px;
+        }
+
+        .원본:nth-child(3) {
+            perspective: 400px;
+            perspective-origin: 200px 200px;
+        }
+
+        .원본:nth-child(4) {
+            perspective: 400px;
+            perspective-origin: bottom right;
+        }
+
+        .회전패널 {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background: aqua;
+            perspective: 400px;
+            transform: rotateY(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="원본">
+        <div class="회전패널"></div>
+    </div>
+    <div class="원본">
+        <div class="회전패널"></div>
+    </div>
+    <div class="원본">
+        <div class="회전패널"></div>
+    </div>
+    <div class="원본">
+        <div class="회전패널"></div>
+    </div>
+</body>
+</html>

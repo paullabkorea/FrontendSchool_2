@@ -1,0 +1,140 @@
+/* reset */
+body,
+h1,
+p {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* font */
+@font-face {
+	font-family: "SpoqaHanSansNeo-Regular";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "SpoqaHanSansNeo-Bold";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Bold.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* rem 단위 기준 */
+html {
+	font-size: 10px;
+}
+
+body {
+	font-family: "SpoqaHanSansNeo-Regular";
+	font-size: 1.6rem;
+	color: #121314;
+}
+
+strong {
+	font-family: "SpoqaHanSansNeo-Bold";
+}
+
+.blind {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+}
+
+.wrap {
+	display: flex;
+	gap: 8%;
+	width: 120rem;
+	max-width: calc(100% - 6rem);
+	margin: 24rem auto;
+}
+
+.section-text h1 {
+	font-size: 7rem;
+	font-weight: normal;
+}
+
+.section-text p {
+	margin-top: 2rem;
+	font-size: 2rem;
+	color: #47494d;
+	line-height: 1.5;
+}
+
+.section-field {
+	flex-basis: 40%;
+	flex-shrink: 0;
+}
+
+.section-field ul {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 2rem;
+}
+
+.section-field ul li {
+	position: relative;
+	flex-grow: 1;
+}
+
+.section-field ul li a {
+	display: block;
+	width: 100%;
+
+	/* 비율유지 */
+	height: 0;
+	padding-top: 58.335%;
+
+	border-radius: 2rem;
+	font-size: 3rem;
+	color: #fff;
+}
+
+/* 배경 */
+.field-video a {
+	background: url(./img/background1.jpg) no-repeat 50% 50% / cover;
+}
+
+.field-book a {
+	background: url(./img/background2.jpg) no-repeat 50% 50% / cover;
+}
+
+.section-field .field-title {
+	width: calc(100% - 8rem);
+	position: absolute;
+	top: 4rem;
+	left: 4rem;
+}
+
+.section-field .field-go {
+	position: absolute;
+	bottom: 4rem;
+	right: 4rem;
+	padding-right: 1.2em;
+	background: url(./img/arrow.svg) no-repeat right 50% / 1.2em;
+	font-size: 1.6rem;
+}
+
+/* 태블릿 */
+@media (max-width: 768px) {
+	
+}
+
+/* 모바일 */
+@media (max-width: 500px) {
+	
+}

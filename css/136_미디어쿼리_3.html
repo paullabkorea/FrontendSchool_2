@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        .item {
+            width: 33.3333%;
+            padding: 1rem;
+            border: solid 1px black;
+            box-sizing: border-box;
+            background-color: burlywood;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .item-lg {
+                width: 50%;
+                background-color: dodgerblue;
+            }
+        }
+
+        @media screen and (max-width: 500px){
+            .item-sm {
+                width: 100%;
+                background-color: tomato;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-lg item-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem natus suscipit perspiciatis numquam cum maxime libero, unde doloribus at illum vitae minus molestias ipsa dolorem placeat, error animi ullam dolores!</div>
+        <div class="item item-lg item-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestiae molestias corporis mollitia quibusdam esse odio cum eaque placeat. Fuga tempora quae in earum natus cum incidunt ut debitis eum.</div>
+        <div class="item item-lg item-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestiae molestias corporis mollitia quibusdam esse odio cum eaque placeat. Fuga tempora quae in earum natus cum incidunt ut debitis eum.</div>
+        <div class="item item-lg item-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestiae molestias corporis mollitia quibusdam esse odio cum eaque placeat. Fuga tempora quae in earum natus cum incidunt ut debitis eum.</div>
+        <div class="item item-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestiae molestias corporis mollitia quibusdam esse odio cum eaque placeat. Fuga tempora quae in earum natus cum incidunt ut debitis eum.</div>
+        <div class="item item-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas molestiae molestias corporis mollitia quibusdam esse odio cum eaque placeat. Fuga tempora quae in earum natus cum incidunt ut debitis eum.</div>
+    </div>
+</body>
+</html>

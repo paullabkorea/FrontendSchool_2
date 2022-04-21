@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* video {
+            width: 100%;
+            max-width: 100%;
+        } */
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+
+        }
+
+        .cont-video {
+            position: relative;
+            /* padding-top: 56.25%; */
+            height: 56.25vw;
+        }
+
+        .video-next-level {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .parent {
+            background-color: pink;
+        }
+
+        .child {
+            height: 40%;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <video autoplay controls loop muted src="nextlevel.mp4"></video> -->
+    <article class="cont-video">
+        <iframe class="video-next-level"
+            src="https://www.youtube.com/embed/4TWR90KJl84?autoplay=1&mute=1&loop=1&playlist=4TWR90KJl84&controls=1"
+            title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+    </article>
+
+
+    <div class="parent">
+        <div class="child">
+            hello
+        </div>
+    </div>
+</body>
+
+</html>
