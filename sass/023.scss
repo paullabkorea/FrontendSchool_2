@@ -1,0 +1,21 @@
+// if문 예시 작성
+// Sass 공식문서
+// circle이 false면 사각형을, true이면 원형으로 스타일함
+@mixin avatar($size, $circle: false) {
+    width: $size;
+    height: $size;
+
+    @if $circle {
+        border-radius: $size / 2;
+    }
+}
+
+.square-av {
+    @include avatar(100px, $circle: false);
+}
+.circle-av {
+    @include avatar(100px, $circle: true);
+}
+.test-av {
+    @include avatar(100px);
+}

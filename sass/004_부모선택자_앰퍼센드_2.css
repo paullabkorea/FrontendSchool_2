@@ -1,0 +1,21 @@
+ul li:hover {
+  background: white;
+  cursor: pointer;
+}
+
+ul li:last-child {
+  border-bottom: 2px solid black;
+}
+
+ol li:nth-child(1) {
+  color: red;
+}
+
+ol li:nth-child(2) {
+  color: green;
+}
+
+ol li:nth-child(3) {
+  color: blue;
+}
+/*# sourceMappingURL=004_부모선택자_앰퍼센드_2.css.map */

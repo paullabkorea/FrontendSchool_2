@@ -1,0 +1,23 @@
+@mixin one{
+    width: 100px;
+    height: 100px;
+    color: white;
+    @content;
+}
+
+a {
+    @include one{
+        background-color: black;
+    }
+}
+
+@mixin two{
+    width: 100px;
+    height: 100px;
+    color: white;
+}
+
+button {
+	@include two;
+    background-color: black;
+}

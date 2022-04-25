@@ -1,0 +1,33 @@
+// Scss - if, else if, else문
+// Sass 공식문서
+// 조건에 해당하는 방향에 맞춰서 border-bottom 컬러를 스타일함
+@mixin triangle($size, $color, $direction) {
+    height: 0;
+    width: 0;
+
+    //여기 부분만 수정했습니다.
+    border-color: black;
+    border-style: solid;
+    border-width: ($size/2);
+
+
+    @if $direction == up {
+        border-bottom-color: $color;
+        border-color: red;
+    } @else if $direction == right {
+        border-left-color: $color;
+        border-color: green;
+    } @else if $direction == down {
+        border-top-color: $color;
+        border-color: blue;
+    } @else if $direction == left {
+        border-right-color: $color;
+        border-color: hotpink
+    } @else {
+        @error "Unknown direction #{$direction}.";
+    }
+}
+
+.next {
+    @include triangle(5px, black, left);
+}

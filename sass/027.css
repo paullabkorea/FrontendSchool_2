@@ -1,0 +1,30 @@
+.box-color:nth-child(1) {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+.box-color:nth-child(2) {
+  background-color: green;
+  width: 100px;
+  height: 100px;
+}
+
+.box-color:nth-child(3) {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+
+.box-color:nth-child(4) {
+  background-color: pink;
+  width: 100px;
+  height: 100px;
+}
+
+.box-color:nth-child(5) {
+  background-color: dodgerblue;
+  width: 100px;
+  height: 100px;
+}
+/*# sourceMappingURL=027.css.map */

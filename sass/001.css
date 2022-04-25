@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* 두 줄 주석입니다. */
+ul li {
+  color: red;
+  font-size: 10px;
+}
+
+.one {
+  color: red;
+}
+
+.one .two {
+  color: green;
+}
+
+.one .two .three {
+  color: blue;
+}
+
+.one .two .four {
+  color: black;
+}
+
+.two_ {
+  color: green;
+}
+
+.two_ .three_ {
+  color: blue;
+}
+
+.two_ .four_ {
+  color: black;
+}
+/*# sourceMappingURL=001.css.map */

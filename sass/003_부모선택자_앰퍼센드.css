@@ -1,0 +1,12 @@
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.box:hover {
+  background-color: green;
+}
+/*# sourceMappingURL=003_부모선택자_앰퍼센드.css.map */

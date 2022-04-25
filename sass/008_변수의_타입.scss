@@ -1,0 +1,28 @@
+//색상
+$red: #ee4444;
+$black: #222;
+$bg-color: #3e5e9e;
+$link-color: red;
+$p-color: #282A36;
+
+//폰트사이즈
+$font-p: 13px;
+$font-h1: 28px;
+
+//폰트
+$base-font: 'Noto Sans KR', sans-serif;
+
+// lists
+$sizes: 40px, 50px, 80px;
+$valid-sides: top, bottom, left, right;
+
+//maps
+$font-sizes: ("h1": 45px, "h2": 19px, "p": 16px);
+
+.title {
+	font-size : nth($sizes, 1);
+}
+
+.title2 {
+    font-size: map-get($font-sizes, "h2");
+}

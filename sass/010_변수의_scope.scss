@@ -1,0 +1,15 @@
+.one {
+    $value: red;
+    color: $value;
+    .two {
+        color: $value;
+    }
+}
+
+.one_ {
+    $value: red;
+    color: $value;
+    @at-root .two_ {
+        color: $value;
+    }
+}

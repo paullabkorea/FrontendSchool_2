@@ -1,0 +1,13 @@
+@mixin box($color) {
+    width: 100px;
+    height: 100px;
+    background-color: $color;
+}
+
+.card-red {
+    @include box(red);
+}
+
+.card-blue {
+    @include box(blue);
+}

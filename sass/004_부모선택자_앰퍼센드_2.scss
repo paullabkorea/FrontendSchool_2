@@ -1,0 +1,27 @@
+ul {
+    li {
+        &:hover {
+        background: white;
+        cursor: pointer;
+                // 가상요소 
+        }
+        &:last-child {
+        border-bottom: 2px solid black;
+                // 가상클래스 
+        }
+    }
+}
+
+ol {
+    li {
+        &:nth-child(1) {
+            color:red;
+        }
+        &:nth-child(2) {
+            color:green;
+        }
+        &:nth-child(3) {
+            color:blue;
+        }
+    }
+}

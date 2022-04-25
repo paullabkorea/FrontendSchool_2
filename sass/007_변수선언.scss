@@ -1,0 +1,17 @@
+$hojun1 : #000;
+$hojun2 : #F00;
+$호준 : #00F;
+$큰글자 : 34px;
+
+.one {
+    font-size: $큰글자;
+    color: $hojun1;
+}
+
+.two {
+    color: $hojun2;
+}
+
+.three {
+    color: $호준;
+}

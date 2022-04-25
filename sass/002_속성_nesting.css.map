@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC;EAEF,gBAAK,EAAE,qCAAqC;EAC5C,mBAAQ,EAAE,aAAa;EACvB,iBAAM,EAAE,SAAS;EACjB,eAAI,EAAE,SAAS;CAEtB",
+    "sources": [
+        "002_속성_nesting.scss"
+    ],
+    "names": [],
+    "file": "002_속성_nesting.css"
+}

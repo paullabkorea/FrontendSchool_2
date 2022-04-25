@@ -1,0 +1,20 @@
+// $size: 1920px;
+$size: 1080px;
+
+.responsive {
+    @if $size >= 1920px {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+    }
+    @else if $size >= 1080px {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+    }
+    // @if $size < 1920px and $size >= 1080px {
+    //     width: 150px;
+    //     height: 150px;
+    //     background-color: green;
+    // }
+}

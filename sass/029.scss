@@ -1,0 +1,8 @@
+@for $hojun from 1 through 10 {
+    .content-#{$hojun} {
+        font-size: #{$hojun * 10}px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+}

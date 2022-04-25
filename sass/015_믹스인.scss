@@ -1,0 +1,14 @@
+.card {
+    @mixin box {
+        width: 100px;
+        height: 100px;
+    }
+
+    @include box;
+    background-color: red;
+}
+
+.card_ {
+    @include box;
+    background-color: blue;
+}

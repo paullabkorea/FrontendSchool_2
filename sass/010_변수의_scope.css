@@ -1,0 +1,16 @@
+.one {
+  color: red;
+}
+
+.one .two {
+  color: red;
+}
+
+.one_ {
+  color: red;
+}
+
+.two_ {
+  color: red;
+}
+/*# sourceMappingURL=010_변수의_scope.css.map */
