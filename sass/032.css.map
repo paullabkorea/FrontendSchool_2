@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAQA,AAAA,EAAE,CAAC;EACC,SAAS,EARK,IAAI;EASlB,WAAW,EAR2B,GAAG;CAS5C",
+    "sources": [
+        "032.scss"
+    ],
+    "names": [],
+    "file": "032.css"
+}

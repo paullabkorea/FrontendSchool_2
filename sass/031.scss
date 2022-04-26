@@ -1,0 +1,33 @@
+// .box {
+//     &:focus{} // 가상선택자
+//     &:hover{}
+//     &:active{}
+//     &:first-child{} 
+//     &:nth-child(2){}
+//     &::after{} // 가상요소
+//     &::before{} 
+// }
+
+.one {
+    color: red;
+    .two {
+        color: blue;
+        @at-root .three {
+            color: green;
+            &:hover {
+                background: white;
+                cursor: pointer;
+            }
+            &-yellow {
+                background: #ff6347;
+            }
+        }
+    }
+}
+
+.two {
+    color: blue;
+    .three {
+        color: green;
+    }
+}

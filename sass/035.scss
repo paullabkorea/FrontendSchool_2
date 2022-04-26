@@ -1,0 +1,37 @@
+// extend
+.profile-user {
+    background-image: url("../assets/user.jpg");
+    background-size: cover;
+    background-position : 50% 50%;
+    border-radius: 50%;
+    width : 50px;
+    height : 50px;
+}
+
+.comment-user {
+    @extend .profile-user;
+}
+
+//placeholder
+%base-button {
+    width: 133px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.follow-button {
+    @extend %base-button;
+    background-color: #ffffff;
+    color: #ff375f;
+    border: 3px solid #ff375f;
+}
+
+.message-button {
+    @extend %base-button;
+    background-color: #ff375f;
+    color: white;
+}

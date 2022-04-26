@@ -1,0 +1,5 @@
+@for $hojun from 1 through 7 {
+    .photo-box:nth-child(#{$hojun}) {
+        background-image: url("../assets/phoster#{$hojun}.png");
+    }
+}

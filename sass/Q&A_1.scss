@@ -1,0 +1,10 @@
+$number: 20px 30px 35px 15px 10px;
+$number2: 20px, 30px, 35px, 15px, 10px;
+
+.box {
+    font-size: min($number...);
+}
+
+.box2 {
+    font-size: min($number2...);
+}

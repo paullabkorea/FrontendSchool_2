@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,IAAI,CAAC;EACD,SAAS,EAJgB,IAAI;CAKhC;;AAED,AAAA,KAAK,CAAC;EACF,SAAS,EAPqB,IAAI;CAQrC",
+    "sources": [
+        "Q&A_1.scss"
+    ],
+    "names": [],
+    "file": "Q&A_1.css"
+}

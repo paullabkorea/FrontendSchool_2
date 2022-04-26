@@ -1,0 +1,9 @@
+$color-palette: red green blue black;
+
+@each $color in $color-palette {
+    .color-circle-#{$color} {
+        background: $color;
+        width: 20px;
+        height: 20px;
+    }
+}

@@ -1,0 +1,34 @@
+.card {
+  width: 100px;
+  height: 200px;
+}
+
+@media screen and (min-width: 390px) {
+  .card {
+    background-color: red;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .card {
+    background-color: green;
+  }
+}
+
+.card:hover {
+  width: 200px;
+  height: 300px;
+}
+
+@media screen and (min-width: 390px) {
+  .font {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .font {
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=043.css.map */

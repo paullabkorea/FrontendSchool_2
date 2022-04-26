@@ -1,0 +1,9 @@
+@for $hojun from 1 through 100 {
+    .photo-box-#{$hojun} {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        font-size: $hojun+px;
+        // font-size: ($hojun)px; // 1칸 건너 뜀
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <style>
+        .col-md-2 ,.col-md-3{
+            background-color: red;
+            box-sizing: border-box;
+            border: solid 1px black;
+            /* 아래 값 때문에 UI 깨짐 */
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">hello</div>
+            <div class="col-md-2">
+                <img src="./img.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-2">hello</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">hello</div>
+            <div class="col-md-3">
+                <img src="./img.png" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div> 
+</body>
+</html>
