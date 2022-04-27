@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- 마크다운 -->
+    <!-- https://tailwindcss.com/docs/typography-plugin -->
+    <article class="prose lg:prose-xl">
+        {{ markdown }}
+    </article>
+
+    <!-- 폼 -->
+    <!-- https://github.com/tailwindlabs/tailwindcss-forms -->
+    <input type="email" class="form-input px-4 py-3 rounded-full">
+    <select class="form-select px-4 py-3 rounded-full">
+        <!-- ... -->
+    </select>
+    <input type="checkbox" class="form-checkbox rounded text-pink-500" />
+</body>
+</html>
