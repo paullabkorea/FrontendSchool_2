@@ -1,0 +1,33 @@
+$i: 1;
+
+/* Default */
+@function unitCheck($x) {
+    // 단위체크
+    @if(type-of($x)==number) {
+        @if(unitless($x)) {
+            @return $x+px;
+        }
+        @return "hi";
+    } 
+    @return $x;
+}
+
+.px {
+    width: unitCheck(100px);
+};
+
+.no-px {
+    width: unitCheck(100);
+}
+
+.one {
+    font-size: #{$i * 10} * 10px;
+}
+
+.two {
+    font-size: $i * 10 * 10 + px;
+}
+
+.three {
+    font-size: #{$i * 10 * 10}px;
+}

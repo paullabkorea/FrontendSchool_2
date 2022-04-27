@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom_utility_class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- https://tailwindcss.com/docs/grid-template-columns -->
+    <div class="grid grid-cols-3 gap-2">
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+        <div class="border-solid border-4 border-blue-500">hello world</div>
+    </div>
+
+    <!-- 
+        https://tailwindcss.com/docs/functions-and-directives#apply
+        아래처럼 사용하기 위해서는
+        .grid-item-cutom{
+            @apply border-solid border-4 border-blue-500;
+        }
+        를 styles.scss에 @apply를 통해 적용해야 한다.
+    -->
+    <div class="grid grid-cols-3 gap-2">
+        <div class="grid-item-cutom">hello world</div>
+        <div class="grid-item-cutom">hello world</div>
+        <div class="grid-item-cutom">hello world</div>
+        <div class="grid-item-cutom">hello world</div>
+        <div class="grid-item-cutom">hello world</div>
+        <div class="grid-item-cutom">hello world</div>
+        <div class="grid-item-cutom">hello world</div>
+        <div class="grid-item-cutom">hello world</div>
+        <div class="grid-item-cutom">hello world</div>
+    </div>
+</body>
+</html>
