@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        document.write(`1. ${'0' == 0}<br>`);
+        document.write(`2. ${'0' === 0}<br>`);
+        document.write(`3. ${false == 0}<br>`);
+        document.write(`4. ${false === 0}<br>`);
+        document.write(`5. ${true == 1}<br>`);
+        document.write(`6. ${false == '0'}<br>`);
+        document.write(`7. ${false == 'false'}<br>`);
+        document.write(`8. ${0 == ''}<br>`); // 주의
+        document.write(`9. ${false == ''}<br>`); // 주의
+        document.write(`10. ${false == null}<br>`); // 주의
+        document.write(`11. ${false == undefined}<br>`); // 주의
+        document.write(`12. ${NaN == NaN}<br>`); // false 주의
+        document.write(`13. ${NaN === NaN}<br>`); // false 주의
+        document.write(`14. ${isNaN(undefined)}<br>`); // true 주의
+        document.write(`15. ${isNaN(null)}<br>`); // false 주의
+        document.write(`16. ${isNaN(NaN)}<br>`); // true 주의
+        document.write(`17. ${Number.isNaN(undefined)}<br>`); // true 주의
+        document.write(`18. ${Number.isNaN(null)}<br>`); // true 주의
+        document.write(`19. ${Number.isNaN(NaN)}<br>`); // true 주의
+        document.write(`20. ${![]}<br>`); // false 주의
+        document.write(`21. ${!{}}<br>`); // false 주의
+
+        if ([]) {
+            document.write('hello world 1');
+        }
+        if ({}) {
+            document.write('hello world 2');
+        }
+        if ('') {
+            document.write('hello world 3');
+        }
+        if (undefined) {
+            document.write('hello world 4');
+        }
+
+        console.log('----------------');
+        console.log(`1 ${!!undefined}`);
+        console.log(`2 ${!!null}`);
+        console.log(`3 ${!!NaN}`);
+        console.log(`4 ${!!Infinity}`);
+        console.log(`5 ${!![]}`); // 주의
+        console.log(`6 ${!!{}}`); // 주의
+        console.log(`7 ${!!''}`); // 주의
+        console.log(`8 ${!!0}`);
+        console.log(`9 ${!!'hello world'}`);
+        console.log(`10 ${!!-100}`);
+
+        console.log('----------------');
+        console.log('드모르간 법칙');
+        // or : ||
+        // and : &&
+        const x = 0;
+        const y = 1;
+        console.log(!(x || y) === (!x && !y));
+        console.log(!(x && y) === (!x || !y));
+
+        console.log(+false);
+        console.log(+true);
+        console.log(false*1);
+        console.log(true*1);
+    </script>
+</body>
+
+</html>

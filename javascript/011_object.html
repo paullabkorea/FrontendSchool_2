@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="alert(sum(10, 20))">눌럿!</button> -->
+    <script>
+        // 객체(object)
+        // 함수는 후에 자세히 다룹니다.
+        function sum(x, y) {
+            return x + y
+        }
+        // TMI입니다. 뒤에서 다룰 내용이에요.
+        // console.log(typeof sum);
+        // sum.value = 'hojun';
+        // console.log(console.dir(sum));
+        // console.log(sum.value);
+        // console.log(typeof sum);
+        let person = {
+            //key: value
+            name: '이호준',
+            age: 10,
+            height : 30,
+            weight : 40,
+            이력 : {'첫번째직장' : '하나', '두번째직장' : '둘'},
+            기능 : sum,
+            출력 : console.log,
+        }
+        person.소속 = '바울랩';
+
+        document.write(`제 이름은 ${person.name} 입니다.<br>`);
+        document.write(`제 이름은 ${person['name']} 입니다.<br>`);
+
+        document.write(`제 나이는 ${person.age} 입니다.<br>`);
+        document.write(`제 키는 ${person.height} 입니다.<br>`);
+
+        document.write(`제 두번째 직장은 ${person['이력']['두번째직장']} 입니다.<br>`);
+        document.write(`제 두번째 직장은 ${person.이력.두번째직장} 입니다.<br>`);
+
+        document.write(`제 기능은 ${person['기능'](100, 200)} 입니다.<br>`);
+
+        // 문제
+        // 1번 : 저에게 3번째 직장이 생겼습니다. 직장이름은 위니브입니다. 데이터를 넣어주시고 아래와 같이 출력되게 해주세요.
+        // 출력결과 : 제 세번째 직장은 위니브 입니다.
+        person.이력.세번째직장 = '위니브';
+        document.write(`제 세번째 직장은 ${person.이력.세번째직장} 입니다.<br>`);
+        document.write(`제 세번째 직장은 ${person.이력.두번째직장} 입니다.<br>`);
+        person.이력 = {'세번째직장' : '위니브'};
+        document.write(`제 세번째 직장은 ${person.이력.세번째직장} 입니다.<br>`);
+        document.write(`제 세번째 직장은 ${person.이력.두번째직장} 입니다.<br>`);
+
+
+        // 문제2
+        // 이호준의 세번째 직장에 두번째 직책을 출력해주세요.
+        let 이호준상세정보 = {
+            이력 : {
+                '첫번째 직장': {
+                    '회사이름': '바울랩',
+                    '부서': '경영지원',
+                    '직책': '대표',
+                },
+                '두번째 직장': {
+                    '회사이름': 'SEMSANG',
+                    '부서': '경영지원',
+                    '직책': '대표',
+                },
+                '세번째 직장': {
+                    '회사이름': 'SINHUN',
+                    '부서': '경영지원',
+                    '직책': {
+                        '첫번째직책':'사원',
+                        '두번째직책':'대표',
+                    },
+                },
+            },
+        }
+        console.log(이호준상세정보.이력['세번째 직장'].직책.두번째직책);
+        // 따옴표를 써야 하는 이유?
+        // 데이터 저장하는 경우 띄어쓰기가 있을 수도 있기 때문(회사의 컨벤션 따라가시면 됩니다.)
+
+        let txt = 'hello'
+        let txt2 = {
+            0: 'h',
+            1: 'e',
+            2: 'l',
+            3: 'l',
+            4: 'o',
+        }
+        console.log(txt[1]);
+        // console.log(txt.1);
+        console.log(txt2[1]);
+        // 이거 2개를 해줄 수 있는게 map
+        // console.log(txt2.1);
+        // console.log(txt2.{'one':'1'});
+
+        console.log(String(10));
+        console.log('1234'.replace('23', '99'));
+
+        console.log(Object.keys(person));
+        console.log(Object.values(person));
+        console.log(Object.entries(person));
+        
+        // why? 이걸 해결하기 위해 나온 것이 map!
+        // console.log(person.values);
+        // console.log(person.keys);
+        // console.log(person.entries);
+
+        </script>
+</body>
+</html>
