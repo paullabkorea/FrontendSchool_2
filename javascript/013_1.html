@@ -1,0 +1,620 @@
+<script>
+let cafe = ['coffe', 'tea']
+console.dir(cafe)
+//VM453:1 Array(2)0: "coffe"1: "tea"length: 2[[Prototype]]: Array(0)....
+cafe = ['coffee', 'cake', 'tea', 'cookie']
+count = cafe.unshift('bread');
+//['bread', 'coffee', 'cake', 'tea', 'cookie']
+let first = cafe.shift()
+cafe
+//['coffee', 'cake', 'tea', 'cookie']
+first
+//'bread'
+cafe.unshift(first)
+cafe
+//['bread', 'coffee', 'cake', 'tea', 'cookie']
+cafe.push('toast')
+cafe
+//['bread', 'coffee', 'cake', 'tea', 'cookie', 'toast']
+let last = cafe.pop()
+last
+//'toast'
+cafe
+//['bread', 'coffee', 'cake', 'tea', 'cookie']
+cafe.indexOf('cookie')
+//4
+cafe.indexOf('cook')
+//-1
+Array.isArray(cafe);
+//true
+cafe.join()
+//'bread,coffee,cake,tea,cookie'
+cafe.join('!!!')
+//'bread!!!coffee!!!cake!!!tea!!!cookie'
+let number = ['010', '5044', '2903']
+number.join('-')
+//'010-5044-2903'
+cafe.fill('bread')
+//['bread', 'bread', 'bread', 'bread', 'bread']
+cafe
+//['bread', 'bread', 'bread', 'bread', 'bread']
+cafe = ['coffee', 'cake', 'tea', 'cookie']
+//['coffee', 'cake', 'tea', 'cookie']
+cafe.fill('bread', -1)
+//['coffee', 'cake', 'tea', 'bread']
+Array(10).fill(10)
+//[10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+Array(10).fill(0)
+//[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+'.'.repeat(10)
+//'..........'
+'.'.repeat(10).split('.')
+//['', '', '', '', '', '', '', '', '', '', '']
+'.'.repeat(99).split('.')
+//['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+'010-5044-2903'.split('-')
+//(3) ['010', '5044', '2903']
+Array.from('abc')
+//(3) ['a', 'b', 'c']
+Array.from('a'.repeat(99))
+//(99) ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+Array.from('a'.repeat(100))
+//(100) ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a']
+Array.from('hello'.repeat(100))
+//(500) ['h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'e', 'l', 'l', 'o', …][0 … 99][100 … 199][200 … 299][300 … 399][400 … 499]length: 500[[Prototype]]: Array(0)
+let a = Array.from({length: 10}, () => {
+    return 0
+})
+a
+//(10) [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+let test = Array(10).fill(0)
+test
+//(10) [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+test.fill('hello', -1)
+//(10) [0, 0, 0, 0, 0, 0, 0, 0, 0, 'hello']
+test.fill('hello', -2)
+//(10) [0, 0, 0, 0, 0, 0, 0, 0, 'hello', 'hello']
+test.fill('hello', -3)
+//(10) [0, 0, 0, 0, 0, 0, 0, 'hello', 'hello', 'hello']
+test = Array(10).fill(0)
+//(10) [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+cafe.fill('bread', -3, -1)
+//(4) ['coffee', 'bread', 'bread', 'bread']
+test.fill('bread', -3, -1)
+//(10) [0, 0, 0, 0, 0, 0, 0, 'bread', 'bread', 0]
+test = Array(10).fill(0)
+//(10) [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+test.fill('bread', 2, 5)
+//(10) [0, 0, 'bread', 'bread', 'bread', 0, 0, 0, 0, 0]
+arr = [[1, 2, 3], [4, 5, 6], [7, 8, [9, [10, 11]]]]
+arr.flat();
+//(9) [1, 2, 3, 4, 5, 6, 7, 8, Array(2)]
+arr.flat(2);
+//(10) [1, 2, 3, 4, 5, 6, 7, 8, 9, Array(2)]
+arr.flat(3);
+//(11) [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+cafe = ['coffee', 'cake', 'tea', 'cookie']
+//(4) ['coffee', 'cake', 'tea', 'cookie']
+cafe.includes('bread');
+false
+cafe.includes('cake');
+true
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+arr.find(i => i > 5);
+6
+arr = [{
+    'name' : 'title1',
+    'contents' : 'contents1',
+    'dataNum' : 1
+}, {
+    'name' : 'title2',
+    'contents' : 'contents2',
+    'dataNum' : 2
+}, {
+    'name' : 'title3',
+    'contents' : 'contents3',
+    'dataNum' : 3
+}, {
+    'name' : 'title4',
+    'contents' : 'contents4',
+    'dataNum' : 4
+}, {
+    'name' : 'title5',
+    'contents' : 'contents5',
+    'dataNum' : 5
+}];
+//(5) [{…}, {…}, {…}, {…}, {…}]
+arr.filter(i => i.contents == 'contents3')
+//[{…}]
+arr.filter(i => i.dataNum > 3)
+//(2) [{…}, {…}]
+arr.filter(i => i.name.includes('tit'))
+//(5) [{…}, {…}, {…}, {…}, {…}]
+arr = [{
+    'name' : '안녕1',
+    'contents' : 'contents1',
+    'dataNum' : 1
+}, {
+    'name' : '안녕2',
+    'contents' : 'contents2',
+    'dataNum' : 2
+}, {
+    'name' : 'title3',
+    'contents' : 'contents3',
+    'dataNum' : 3
+}, {
+    'name' : 'title4',
+    'contents' : 'contents4',
+    'dataNum' : 4
+}, {
+    'name' : 'title5',
+    'contents' : 'contents5',
+    'dataNum' : 5
+}];
+//(5) [{…}, {…}, {…}, {…}, {…}]
+arr.filter(i => i.name.includes('tit'))
+//(3) [{…}, {…}, {…}]
+arr.filter(i => i.name.includes('안녕'))
+//(2) [{…}, {…}]
+arr = [{
+    'name' : '안녕1',
+    'contents' : '프론트엔드1',
+    'dataNum' : 1
+}, {
+    'name' : '안녕2',
+    'contents' : '프론트엔드2',
+    'dataNum' : 2
+}, {
+    'name' : 'title3',
+    'contents' : '프론트엔드3',
+    'dataNum' : 3
+}, {
+    'name' : 'title4',
+    'contents' : 'contents4',
+    'dataNum' : 4
+}, {
+    'name' : 'title5',
+    'contents' : 'contents5',
+    'dataNum' : 5
+}];
+//(5) [{…}, {…}, {…}, {…}, {…}]
+arr = [{
+    'name' : '안녕1',
+    'contents' : '프론트엔드1',
+    'dataNum' : 1
+}, {
+    'name' : '프론트엔드2',
+    'contents' : 'content2',
+    'dataNum' : 2
+}, {
+    'name' : 'title3',
+    'contents' : '프론트엔드3',
+    'dataNum' : 3
+}, {
+    'name' : '안녕4',
+    'contents' : 'contents4',
+    'dataNum' : 4
+}, {
+    'name' : 'title5',
+    'contents' : 'contents5',
+    'dataNum' : 5
+}];
+//(5) [{…}, {…}, {…}, {…}, {…}]
+arr.filter(i => i.name.includes('프론트'))
+//[{…}]
+arr.filter(i => i.contents.includes('프론트'))
+//(2) [{…}, {…}]
+cafe = ['coffee', 'cake', 'tea', 'cookie']
+cafe = [{
+	'item' : 'coffee',
+	'amount' : 5
+},{
+	'item' : 'cake',
+	'amount' : 4
+},{
+	'item' : 'tea',
+	'amount' : 7
+},{
+	'item' : 'cookie',
+	'amount' : 3
+}];
+
+index = cafe.findIndex(obj => obj.item.length <= 3)
+cafe = ['coffee', 'cake', 'tea', 'cookie']
+
+cafe = [{
+	'item' : 'coffee',
+	'amount' : 5
+}, {
+	'item' : 'cake',
+	'amount' : 4
+}, {
+	'item' : 'tea',
+	'amount' : 7
+}, {
+	'item' : 'cookie',
+	'amount' : 3
+}];
+
+index = cafe.findIndex(obj => obj.item.length <= 3)
+cafe2 = [{
+	'item' : 'coffee',
+	'amount' : 5
+}, {
+	'item' : 'cake',
+	'amount' : 4
+}, {
+	'item' : 'tea',
+	'amount' : 7
+}, {
+	'item' : 'cookie',
+	'amount' : 3
+}];
+
+index = cafe2.findIndex(obj => obj.item.length <= 3)
+index
+2
+
+cafe3 = [{
+	'item' : 'coffee',
+	'amount' : 5
+}, {
+	'item' : 'cake',
+	'amount' : 4
+}, {
+	'item' : 'tea',
+	'amount' : 7
+}, {
+	'item' : 'cookie',
+	'amount' : 3
+}, {
+	'item' : 'x',
+	'amount' : 300
+}];
+
+cafe2.findIndex(obj => obj.item.length <= 3)
+2
+arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+arr.find(i => i > 50);
+60
+cafe3 = [{
+	'item' : 'coffee',
+	'amount' : 5
+}, {
+	'item' : 'cake',
+	'amount' : 4
+}, {
+	'item' : 'tea',
+	'amount' : 7
+}, {
+	'item' : 'cookie',
+	'amount' : 3
+}, {
+	'item' : 'x',
+	'amount' : 300
+}];
+
+cafe3.findIndex(obj => obj.item.length <= 3)
+cafe4 = [{
+	'item' : 'coffee',
+	'amount' : 5
+}, {
+	'item' : 'cake',
+	'amount' : 4
+}, {
+	'item' : 'tea',
+	'amount' : 7
+}, {
+	'item' : 'cookie',
+	'amount' : 3
+}, {
+	'item' : 'x',
+	'amount' : 300
+}];
+
+cafe4.findIndex(obj => obj.item.length <= 3)
+2
+arr = [{
+    'name' : 'title1',
+    'contents' : 'contents1',
+    'dataNum' : 1,
+    'data' : [1, 2, 3]
+}, {
+    'name' : 'title2',
+    'contents' : 'contents2',
+    'dataNum' : 2,
+    'data' : [1, 2, 3]
+}, {
+    'name' : 'title3',
+    'contents' : 'contents3',
+    'dataNum' : 3,
+    'data' : [1, 2, 100]
+}, {
+    'name' : 'title4',
+    'contents' : 'contents4',
+    'dataNum' : 4,
+    'data' : [1, 2, 3]
+}, {
+    'name' : 'title5',
+    'contents' : 'contents5',
+    'dataNum' : 5,
+    'data' : [1, 2, 100]
+}];
+//(5) [{…}, {…}, {…}, {…}, {…}]
+arr.map(i => i.name)
+//(5) ['title1', 'title2', 'title3', 'title4', 'title5']
+arr.map(i => i.contents)
+//(5) ['contents1', 'contents2', 'contents3', 'contents4', 'contents5']
+arr.map(i => i.dataNum)
+//(5) [1, 2, 3, 4, 5]
+arr.map(i => i.data)
+//(5) [Array(3), Array(3), Array(3), Array(3), Array(3)]
+arr.map(i => i.data[2])
+//(5) [3, 3, 100, 3, 100]
+arr = [{
+    'name' : 'title1',
+    'contents' : 'contents1',
+    'dataNum' : 1,
+    '지역과날짜' : [
+        '한국',
+        [22, 5, 4]
+    ]
+}, {
+    'name' : 'title2',
+    'contents' : 'contents2',
+    'dataNum' : 2,
+    '지역과날짜' : [
+        '한국',
+        [22, 5, 4]
+    ]
+}, {
+    'name' : 'title3',
+    'contents' : 'contents3',
+    'dataNum' : 3,
+    '지역과날짜' : [
+        '한국',
+        [23, 5, 4]
+    ]
+}, {
+    'name' : 'title4',
+    'contents' : 'contents4',
+    'dataNum' : 4,
+    '지역과날짜' : [
+        '한국',
+        [23, 5, 4]
+    ]
+}, {
+    'name' : 'title5',
+    'contents' : 'contents5',
+    'dataNum' : 5,
+    '지역과날짜' : [
+        '한국',
+        [22, 5, 4]
+    ]
+}];
+//(5) [{…}, {…}, {…}, {…}, {…}]
+arr.map(i => i['지역과날짜'][1][0])
+//(5) [22, 22, 23, 23, 22]
+function 호준(값){
+    return 값.name
+}
+arr.map(호준)
+//(5) ['title1', 'title2', 'title3', 'title4', 'title5']
+arr = [1, 2, 4, 8, 16]
+//(5) [1, 2, 4, 8, 16]
+
+
+
+
+////   복구   ////
+arr.map(i => i + 10)
+
+function weniv(x){
+    return x + 100
+}
+
+arr.map((value, index, array) => ([index, value.contents, array]))
+
+let one = 10;
+let two = 20;
+let hello = {one, two}
+
+//구조분해할당
+[i, k, [호준, 영웅]] = [10, 20, [100, 100]]
+호준 = [10, 20, 30]
+//전개구문
+영웅 = [100, ...호준, 200]
+
+arr.map(i => i+10)
+
+arr.forEach(i => console.log(i+1))
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+let 준준 = [];
+arr.forEach(i => 준준.push(i + 100))
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+arr.reduce((누적값, 현재값, index, array) => {
+    console.log(누적값);
+    console.log(현재값);
+    console.log(index);
+    console.table(array);
+    return 누적값+현재값;
+})
+
+Array.from('hello world');
+Array.from([1, 2, 3], x => x ** 2);
+Array.from('hello world', x => x + '!');
+Array.from([{'value':100}, {'value':200}, {'value':300}], x => x.value);
+
+Array.from([
+    {
+        "_id": "6271fd40fe5c58d4cbd3a72f",
+        "index": 0,
+        "guid": "60f843d2-1b6b-4536-b421-e5df1c4ab735",
+        "isActive": true,
+        "balance": "$2,534.11",
+        "picture": "http://placehold.it/32x32",
+        "age": 27,
+        "eyeColor": "brown",
+        "name": "Miranda Nguyen",
+        "gender": "male",
+        "company": "ZENTIA",
+        "email": "mirandanguyen@zentia.com",
+        "phone": "+1 (833) 466-3207",
+        "address": "198 Dank Court, Hartsville/Hartley, Indiana, 8416",
+        "about": "Consectetur proident anim do commodo ipsum. Elit consectetur irure dolore voluptate. Enim aute voluptate et qui do. Eu pariatur laboris labore esse enim reprehenderit mollit ullamco fugiat. Laborum sunt veniam consectetur laboris cupidatat. Lorem tempor occaecat labore ut et eiusmod amet.\r\n",
+        "registered": "2021-06-16T11:50:54 -09:00"
+    },
+    {
+        "_id": "6271fd40e30856d15651c60c",
+        "index": 1,
+        "guid": "ee647592-0647-4ad5-96b1-eb6c06a32dbd",
+        "isActive": true,
+        "balance": "$2,636.22",
+        "picture": "http://placehold.it/32x32",
+        "age": 35,
+        "eyeColor": "blue",
+        "name": "Florence Flynn",
+        "gender": "female",
+        "company": "ELENTRIX",
+        "email": "florenceflynn@elentrix.com",
+        "phone": "+1 (901) 525-3731",
+        "address": "246 Billings Place, Brandermill, Guam, 5037",
+        "about": "Sint non dolore cupidatat voluptate laboris adipisicing eu quis. Laboris nostrud qui dolor cillum dolor nulla sint culpa est reprehenderit sint ipsum nisi excepteur. Qui cupidatat sint do aliquip ut. Officia est aliquip fugiat ex enim do sunt consequat.\r\n",
+        "registered": "2014-12-10T08:44:47 -09:00"
+    },
+    {
+        "_id": "6271fd404394e16d79143873",
+        "index": 2,
+        "guid": "3d3890ff-8241-4a2b-a361-789e0298817a",
+        "isActive": false,
+        "balance": "$1,047.32",
+        "picture": "http://placehold.it/32x32",
+        "age": 25,
+        "eyeColor": "green",
+        "name": "Debbie Pratt",
+        "gender": "female",
+        "company": "OPTIQUE",
+        "email": "debbiepratt@optique.com",
+        "phone": "+1 (831) 537-3188",
+        "address": "737 Quentin Street, Calpine, Louisiana, 9102",
+        "about": "Officia nisi labore mollit cupidatat exercitation commodo duis adipisicing officia amet laborum. Nulla qui commodo aliqua reprehenderit dolore cupidatat esse ea pariatur sint ad dolore. Exercitation duis veniam velit occaecat est irure quis labore occaecat.\r\n",
+        "registered": "2016-09-19T10:00:38 -09:00"
+    }
+], x => [x.name, x.gender, x.email])
+
+
+let concat_cafe = cafe.concat(['cake']);
+cafe.concat(['tea'], 'cookie');
+
+x += 2
+x -= 2
+x *= 2
+x /= 2
+++x
+x++
+// 논리연산
+// and, or, not
+// and = 곱
+// or = 합
+// true = 1
+// false = 0
+true || true
+true || false
+
+for (let i = 0; i < 100; i++) {
+    if(i % 3 == 0 && i % 5 == 0){
+        console.log(i)
+    }
+}
+Array(100).fill(0).map((_, index)=>index)
+Array(100).fill(0).map((_, index)=>index).filter(i => i % 3 ==0)
+Array(100).fill(0).map((_, index)=>index).filter(i => i % 3 ==0 || i % 5 == 0)
+let s = 0
+Array(100).fill(0).map((_, index)=>index).filter(i => i % 3 ==0 || i % 5 == 0).forEach(x => s += x)
+/////////////////
+
+let date = new Date()
+undefined
+date.getDay()
+3
+
+switch(date.getDay()){
+    case 1:
+        console.log('월');
+        break;
+    case 2:
+        console.log('화');
+        break;
+    case 3:
+        console.log('수');
+        break;
+}
+//VM408:9 수
+undefined
+if(''){
+    console.log(true)
+} else {
+    console.log(false)
+}
+//VM630:4 false
+undefined
+if([]){
+    console.log(true)
+} else {
+    console.log(false)
+}
+//VM647:2 true
+undefined
+if({}){
+    console.log(true)
+} else {
+    console.log(false)
+}
+//VM663:2 true
+undefined
+if(0){
+    console.log(true)
+} else {
+    console.log(false)
+}
+//VM679:4 false
+undefined
+if(NaN){
+    console.log(true)
+} else {
+    console.log(false)
+}
+//VM708:4 false
+undefined
+if('안녕'-'하세요'){
+    console.log(true)
+} else {
+    console.log(false)
+}
+//VM775:4 false
+undefined
+'안녕'-'하세요'
+NaN
+if(undefined){
+    console.log(true)
+} else {
+    console.log(false)
+}
+//VM832:4 false
+undefined
+let 호호준
+undefined
+호호준
+undefined
+if(null){
+    console.log(true)
+} else {
+    console.log(false)
+}
+//VM943:4 false
+undefined
+</script>
