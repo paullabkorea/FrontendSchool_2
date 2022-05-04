@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div id="one"></div>
+    <!-- 외부 : <script src=""></script> -->
+    <!-- inline :
+        <button onclick="alert('hello world')">hello world</button>
+     -->
+    <script>
+        // 1 출력할 수 있는 방법 4가지
+        document.getElementById("one").innerHTML = "hello world";
+        console.log("hello world");
+        window.alert("hello world");
+        document.write("hello!!");
+
+        // 2 내부 JS, 외부 JS, inline JS
+        // 3 주석
+            // 한 줄 주석
+            /*
+            여
+            러
+            줄
+            주
+            석
+            입
+            니
+            다
+            */
+        // 4 변수(var-가변, let-가변, const-불변)
+        let x = 3;
+        let y = 7;
+        // 5 연산
+        // 5.1 산술연산 
+        console.log(x + y);
+        console.log(x - y);
+        console.log(x / y);
+        console.log(x * y);
+        console.log(x ** y);
+        console.log(x % y);
+        // 5.2 비교연산
+        console.log(x > y);
+        console.log(x >= y);
+        console.log(x < y);
+        console.log(x <= y);
+        console.log(x == y);
+        console.log(x === y);
+        console.log(x != y);
+        console.log(x !== y);
+        // 5.3 논리연산
+        x = true;
+        y = false;
+        console.log(x && y);
+        console.log(x || y);
+        console.log(!y);
+        console.log(!!y);
+
+        // 6 숫자형(Number)
+        // 형변환 : 기존 자료형에서 필요한 자료형으로 형 변환
+        x = 10;
+        x = 10.1;
+        y = '10';
+        console.log(typeof x);
+        console.log(y + y); // 1010
+        console.log(Number(y) + Number(y)); // 20
+        console.log(parseInt(y) + parseInt(y)); // 20 (자주 사용!)
+        console.log(10/0); // Infinity
+        console.log(Math.random());
+        console.log(Math.max(1, 2, 3));
+
+        // 7 문자열(String)
+        let txt = 'ABCDEFGHIJKLMNABC';
+        console.log(typeof txt);
+        console.log(String(x) + String(x)); // 1010
+        console.log(x.toString() + x.toString()); // 1010 (자주 사용!)
+        console.log(txt[1]);
+        console.log(txt.length);
+        console.log(txt.slice(0, 3)); // ABC
+        console.log(txt.replace('BC', 'leehojun')); // AleehojunDEFGHIJKLMNABC
+        console.log(txt.toLowerCase());
+        console.log(txt.includes('BC'));
+
+        // 8 논리형(Boolean)
+        x = true;
+        y = false;
+        let z = 100;
+        console.log(typeof x);
+        console.log(Boolean(z));
+        console.log(!!z);
+
+        // 9 객체(Object)
+        // key : value의 쌍으로 이뤄집니다.
+        x = {one:1, two:2, three:3}
+        console.log(typeof x);
+        console.log(x.one);
+        console.log(x['one']);
+
+        console.log(Object.keys(x));
+        console.log(Object.values(x));
+        console.log(Object.entries(x));
+
+        // 10 배열(Array -> typeof는 object다!)
+        let cafe = ['coffee', 'cake', 'tea', 'cookie']
+        cafe.push('toast'); // 원본 수정
+        console.log(cafe); // 'coffee', 'cake', 'tea', 'cookie', 'toast'
+        let last = cafe.pop(); // 원본 수정
+        console.log(last);
+        console.log(cafe);
+        console.log(cafe.join('!!!')); // 원본 수정 아님
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        arr.filter(i => i > 3); // 원본 수정 아님
+        arr.map(x => x**2);
+        arr.forEach(i => console.log(i+1));
+    </script>
+</body>
+</html>
