@@ -23,7 +23,7 @@ for (let i = 0; i < sample.length; i++) {
 // VM593:2 DD
 // VM593:2 EE
 
-let i = 0;
+i = 0;
 for (;;){
     i++;
     console.log(i);
@@ -163,7 +163,8 @@ Math.abs(-3)
 3
 Math.min(10, 20, 30, 40, 5, 4, 100)
 4
-...arr
+
+// ...arr
 // VM2016:1 Uncaught SyntaxError: Unexpected token '...'
 Math.min(...arr)
 6
@@ -387,7 +388,7 @@ for (let i = 0; i < arr.length; i++) {
     }
 }
 console.log(arr[index], arr[index+1])
-VM5311:10 3 4
+// VM5311:10 3 4
 undefined
 /*
 arr = [1, 3, 4, 8, 13, 17, 20]
@@ -423,7 +424,7 @@ for (let i = 1; i < arr.length; i++) {
 }
 console.log(arr[index], arr[index+1]);
 
-                     i    arr[i+1] - arr[i]        result          index
+                i    arr[i+1] - arr[i]        result          index
 0번째 순회       0          2                    2               0
 1번째 순회       1          1                    1               1
 2번째 순회       2          4                    1               1
@@ -513,7 +514,8 @@ for (let 단 = 2; 단 < 10; 단++) {
 //while(true){
 //    
 //}
-let i = 1;
+
+i = 1;
 while(i < 10){
     console.log(`2 X ${i} = ${2*i}`);
     i++;
@@ -541,8 +543,9 @@ while((i+=2)<101){
     sum += i
 }
 
-let sum = 0;
-let i = 100;
+
+sum = 0;
+i = 100;
 
 do {
     console.log('hello world')
@@ -572,8 +575,8 @@ while(i<100){
 }
 console.log('end')
 
-let i = 2;
-let j = 1;
+i = 2;
+j = 1;
 while(i < 10){
     i++;
     while(j < 10) {
@@ -582,8 +585,8 @@ while(i < 10){
     }
 }
 
-let i = 2;
-let j = 1;
+i = 2;
+j = 1;
 while(i < 10){
     while(j < 10) {
         console.log(`${i} X ${j} = ${i*j}`)
@@ -602,7 +605,7 @@ for (let x = 2; x < 10; x++) {
 }
 
 for (let x = 2; x < 10; x++) {
-  test:
+    test:
 	for (let y = 1; y < 10; y++) {
 		if (x === 4) break test;
 		console.log(`${x} X ${y} = ${x * y}`);
