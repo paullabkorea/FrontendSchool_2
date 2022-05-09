@@ -49,9 +49,9 @@
         console.log(x < y);
         console.log(x <= y);
         console.log(x == y);
-        console.log(x === y);
+        console.log(x === y); //type까지 확인
         console.log(x != y);
-        console.log(x !== y);
+        console.log(x !== y); //type까지 확인
         // 5.3 논리연산
         x = true;
         y = false;
@@ -114,8 +114,8 @@
         console.log(cafe.join('!!!')); // 원본 수정 아님
         let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         arr.filter(i => i > 3); // 원본 수정 아님
-        arr.map(x => x**2);
-        arr.forEach(i => console.log(i+1));
+        arr.map(x => x**2); // 원본 수정 아님, 새로운 array를 만듬
+        arr.forEach(i => console.log(i+1)); // 원본 수정 아님
     </script>
 </body>
 </html>
