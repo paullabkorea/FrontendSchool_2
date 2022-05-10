@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!-- 2개가 영향을 끼칩니다. -->
+    <script src="a.js"></script>
+    <script src="b.js"></script>
+    <script>
+        // 1번 script
+        console.log(함수(10, 20));
+        console.log(변수);
+        b()
+        function a(){
+            console.log()
+        }
+    </script>
+    <script>
+        // 2번 script
+        a()
+        function b(){
+            console.log('b')
+        }
+    </script>
+</body>
+</html>
