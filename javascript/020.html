@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+// 함수 사용 이유
+// 1. 재사용성
+// 2. 아키텍처 파악
+// 3. 유지보수
+
+// 모던자바스크립트 167page '화살표 함수는 항상 익명 함수로 정의한다'
+// 함수의 이름이 있는 함수를 기명 함수
+// 함수의 이름이 없는 함수를 익명 함수(anonymous function) 또는 무명함수
+
+function test1(){
+    return 'hello 1'
+}
+
+test1.name
+'test1'
+let test2 = function(){
+    return 'hello 2'
+}
+
+test2.name
+'test2'
+let test3 = ()=>'hello3'
+
+test3.name
+'test3'
+console.dir(function (a, b){ return a + b })
+x = 10
+function test(){
+    console.log(x);
+}
+10
+var x = 10;
+function test(){
+    var x = 100;
+    console.log(x);
+}
+
+var x = 10;
+function test(){
+    var x = 100;
+    console.log(x);
+}
+test()
+VM614:4 100
+
+var x = 10;
+function test(){
+    var x = 100;
+    console.log(x);
+    function test2(){
+        var x = 1000;
+        console.log(x)
+    }
+    test2()
+}
+
+var x = 10;
+function test(){
+    var x = 100;
+    console.log(x);
+    function test2(){
+        var x = 1000;
+        console.log(x)
+    }
+    test2()
+}
+test()
+VM865:4 100
+VM865:7 1000
+
+var x = 10;
+function test(){
+    var x = 100;
+    console.log(x);
+    function test2(){
+        console.log(x)
+    }
+    test2()
+}
+test()
+VM889:4 100
+VM889:6 100
+
+function 제곱(x){
+    function 승수(y){
+        return y ** x;
+    }
+    return 승수
+}
+
+let 제곱2 = 제곱(2);
+let 제곱3 = 제곱(3);
+
+//function 승수(y){
+//        return y ** 2;
+//}
+
+
+제곱2(2)
+4
+제곱2(3)
+9
+제곱2(4)
+16
+제곱2(5)
+25
+제곱3(2)
+8
+제곱3(3)
+27
+제곱3(4)
+64
+let 호준 = console.log
+
+호준('hello world')
+VM1548:1 hello world
+
+let x = 100;
+
+function a(){
+    let x = 1;
+    b();
+}
+
+function b() {
+    console.log(x)
+}
+
+a()
+b()
+VM1780:7 100
+VM1780:7 100
+
+let xx = 100;
+
+function a() {
+    let xx = 1;
+    function b(){
+        console.log(xx)
+    }
+}
+
+a()
+
+let xx = 100;
+
+function a() {
+    let xx = 1;
+    function b(){
+        console.log(xx)
+    }
+    b()
+}
+
+a()
+VM2136:6 1
+
+let x = 10;
+function test4(){
+    x = 100;
+}
+test4()
+
+x
+100
+let x = 10
+function test5(){
+    let x = 100;
+}
+test5()
+
+x
+10
+function test6(){
+    let x2 = 100;
+}
+test6()
+console.log(x2)
+
+function test7(){
+    let x2 = 100;
+}
+test7()
+function test8(){
+    let x2 = 100;
+}
+test8()
+console.log(x2)
+function 승수제조기(){
+    let value = 0;
+    function 승수(){
+        return ++value**2
+    }
+    return 승수
+}
+
+let 승 = 승수제조기();
+
+승()
+1
+승()
+4
+승()
+9
+승()
+16
+승()
+25
+승()
+36
+승()
+49
+승()
+64
+const xxxxx = 100;
+
+let xxxxx = 100;
+let x = 10;
+function test5() {
+    let x = 100;
+}
+test5()
+let x = 200;
+let x = 10;
+function test5() {
+    let x = 100;
+}
+test5()
+x = 200;
+200
+let xyz = 1000;
+let xyz = 10;
+var xyz = 1000;
+var xyz = 10;
+
+const xyz2 = 1000;
+const xyz2 = 10;
+// 모던 자바스크립트 예제
+function User(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+let user = new User("호준")
+
+console.log(user.name)
+VM3546:1 호준
+
+console.log(user.isAdmin)
+VM3583:1 false
+
+function User2(name){
+    this.name = name;
+    console.log(this.name);
+}
+
+let user2 = User2("호준");
+VM3846:3 호준
+
+console.log(user.name)
+VM3958:1 호준
+
+console.log(user2.name)
+let user3 = new User("민정")
+
+user3.name
+'민정'
+uesr.name
+user.name
+'호준'
+user === user3
+false
+user === user2
+false
+user2
+
+user
+User {name: '호준', isAdmin: false}
+user3
+User {name: '민정', isAdmin: false}
+function 회원(name) {
+  this.이름 = 이름;
+  this.isAdmin = false;
+}
+
+function 회원(name) {
+  this.이름 = 이름;
+  this.isAdmin = false;
+}
+
+
+function 회원(입력이름, 입력나이, 입력성) {
+    this.이름 = 입력이름;
+    this.나이 = 입력나이;
+    this.성 = 입력성;
+}
+
+let 유저1 = 회원('호준', 10, '남성');
+
+let 유저2 = 회원('호상', 20, '남성');
+
+let 유저3 = 회원('홍길동', 30, '여성');
+
+let 유저4 = 회원('호준', 10, '남성');
+
+let 유저11 = new 회원('호준', 10, '남성');
+
+let 유저12 = 회원('호상', 20, '남성');
+
+let 유저13 = new 회원('홍길동', 30, '여성');
+
+let 유저12 = new 회원('호상', 20, '남성');
+
+let 유저4 = new 회원('호준', 10, '남성');
+
+유저1
+
+유저11
+회원 {이름: '호준', 나이: 10, 성: '남성'}나이: 10성: "남성"이름: "호준"[[Prototype]]: Object
+유저2
+
+유저12
+회원 {이름: '호상', 나이: 20, 성: '남성'}
+let test = {one:1, two:2}
+VM5818:1 Uncaught SyntaxError: Identifier 'test' has already been declared
+let test2 = {one:1, two:2}
+
+test2['one'] = 1000
+1000
+test2
+{one: 1000, two: 2}
+Object.values(test2)
+(2) [1000, 2]
+test.values()
+VM6111:1 Uncaught TypeError: test.values is not a function
+    at <anonymous>:1:6
+(익명) @ VM6111:1
+let m = new Map();
+
+m.set('하나', 1)
+Map(1) {'하나' => 1}
+m.set('둘', 2)
+Map(2) {'하나' => 1, '둘' => 2}
+m.set('셋', 3)
+Map(3) {'하나' => 1, '둘' => 2, '셋' => 3}
+m.get('하나')
+1
+m.get('둘')
+2
+m.get('셋')
+3
+let object = {'하나':1, '둘':2, '셋':3}
+
+object['하나']
+1
+let mm = new Map(object)
+VM6811:1 Uncaught TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
+    at new Map (<anonymous>)
+    at <anonymous>:1:10
+let mm = new Map('hello world')
+let mm = new Map(Object.entries(object))
+
+mm
+Map(3) {'하나' => 1, '둘' => 2, '셋' => 3}
+Object.entries(object)
+(3) [Array(2), Array(2), Array(2)]0: (2) ['하나', 1]1: (2) ['둘', 2]2: (2) ['셋', 3]length: 3[[Prototype]]: Array(0)
+let object2 = {true:10, false:100}
+
+object2['true']
+10
+object2[true]
+10
+object2.true
+10
+let object3 = {[1, 2, 3]:10, [4, 5, 6]:100}
+VM7361:1 Uncaught SyntaxError: Unexpected token ','
+m.set([1, 2, 3], 10);
+Map(4) {'하나' => 1, '둘' => 2, '셋' => 3, Array(3) => 10}
+m.set([1, 2, 3, 4], 100);
+Map(5) {'하나' => 1, '둘' => 2, '셋' => 3, Array(3) => 10, Array(4) => 100}
+console.log(m.has('하나'));
+VM7520:1 true
+
+console.log(m.has('다섯'));
+VM7569:1 false
+
+m.delete('하나')
+true
+m
+Map(4) {'둘' => 2, '셋' => 3, Array(3) => 10, Array(4) => 100}
+m.has('하나')
+false
+for (let i of object) {
+    console.log(i);
+}
+VM7859:1 Uncaught TypeError: object is not iterable
+    at <anonymous>:1:15
+(익명) @ VM7859:1
+for (let i in object) {
+    console.log(i);
+}
+VM7887:2 하나
+VM7887:2 둘
+VM7887:2 셋
+
+for (let i of m) {
+    console.log(i);
+}
+VM7914:2 (2) ['둘', 2]0: "둘"1: 2length: 2[[Prototype]]: Array(0)
+VM7914:2 (2) ['셋', 3]
+VM7914:2 (2) [Array(3), 10]
+VM7914:2 (2) [Array(4), 100]
+
+m.keys()
+MapIterator {'둘', '셋', Array(3), Array(4)}
+m.values()
+MapIterator {2, 3, 10, 100}
+m.entries()
+MapIterator {'둘' => 2, '셋' => 3, Array(3) => 10, Array(4) => 100}
+let temp = new Map([['이름':'호준'],['나이':10],['재산':'-10억']])
+VM8468:1 Uncaught SyntaxError: Unexpected token ':'
+let temp = new Map([['이름','호준'],['나이',10],['재산','-10억']])
+
+temp
+Map(3) {'이름' => '호준', '나이' => 10, '재산' => '-10억'}
+temp.get('이름')
+'호준'
+temp.size
+3
+object.length
+
+object.size
+
+let s = new Set('aaaaaaabbbccd')
+
+s
+Set(4) {'a', 'b', 'c', 'd'}
+s.size
+4
+s.add('f')
+Set(5) {'a', 'b', 'c', 'd', 'f'}
+s
+Set(5) {'a', 'b', 'c', 'd', 'f'}
+for (let i of s) {
+    console.log(i);
+}
+VM9083:2 a
+VM9083:2 b
+VM9083:2 c
+VM9083:2 d
+VM9083:2 f
+
+let ss = 'aaaaaaaaabbbcc'.split('')
+
+ss
+(14) ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'c', 'c']
+let newS = new Set(ss)
+
+newS
+Set(3) {'a', 'b', 'c'}
+newS.delete('b')
+true
+newS
+Set(2) {'a', 'c'}[[Entries]]0: "a"1: "c"size: 2[[Prototype]]: Set
+newS.has('a')
+true
+ss
+(14) ['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'c', 'c']
+result = []
+for (let i of ss) {
+    console.log(i);
+}
+VM9623:3 a
+VM9623:3 a
+VM9623:3 a
+VM9623:3 a
+VM9623:3 a
+VM9623:3 a
+VM9623:3 a
+VM9623:3 a
+VM9623:3 a
+VM9623:3 b
+VM9623:3 b
+VM9623:3 b
+VM9623:3 c
+VM9623:3 c
+
+result = []
+for (let i of ss) {
+    if (!result.includes(i)){
+        result.push(i);
+    }
+}
+
+result
+(3) ['a', 'b', 'c']
+let a = new Set('abc');
+let b = new Set('cde');
+VM9840:1 Uncaught SyntaxError: Identifier 'a' has already been declared
+let aa = new Set('abc');
+let bb = new Set('cde');
+
+aa
+Set(3) {'a', 'b', 'c'}
+bb
+Set(3) {'c', 'd', 'e'}
+[...a]
+VM9917:1 Uncaught TypeError: a is not iterable
+    at <anonymous>:1:5
+(익명) @ VM9917:1
+[...aa]
+(3) ['a', 'b', 'c']
+[...aa].filter(v => b.has(v))
+VM10046:1 Uncaught TypeError: b.has is not a function
+    at <anonymous>:1:23
+    at Array.filter (<anonymous>)
+    at <anonymous>:1:9
+(익명) @ VM10046:1
+(익명) @ VM10046:1
+[...aa].filter(v => bb.has(v))
+['c']
+[...aa].filter(v => !bb.has(v))
+(2) ['a', 'b']
+[10, 20, 30].concat([10, 20])
+(5) [10, 20, 30, 10, 20]
+[...aa].concat([...bb])
+(6) ['a', 'b', 'c', 'c', 'd', 'e']
+new Set([...aa].concat([...bb]))
+Set(5) {'a', 'b', 'c', 'd', 'e'}
+function a(){ console.log(this) }
+a();
+
+
+let myObj = {
+    val1: 100,
+    func1: function () {
+        console.log(this);
+    }
+}
+
+myObj.func1();
+VM10363:4 {val1: 100, func1: ƒ}
+
+window.a()
+
+console.log('hello')
+VM10452:1 hello
+
+window.console.log('hello')
+VM10522:1 hello
+
+function sayName(){
+    console.log(this.name);
+}
+
+sayName()
+VM10653:2 호준
+
+name = 'hero'
+'hero'
+sayName()
+VM10653:2 hero
+
+var name = 'hero'
+
+sayName()
+VM10653:2 hero
+
+window
+
+console.error('aaaa')
+console.info('aaaa')
+console.warn('aaaa')
+
+console.table({'one':1, 'two':2})
+
+Number.MAX_SAFE_INTEGER
+9007199254740991
+Number.MIN_SAFE_INTEGER
+-9007199254740991
+Number.MAX_SAFE_INTEGER + 1
+9007199254740992
+Number.MAX_SAFE_INTEGER + 2
+9007199254740992
+Number.MAX_SAFE_INTEGER + 3
+9007199254740994
+Number.MAX_SAFE_INTEGER + 4
+9007199254740996
+Number.MAX_SAFE_INTEGER + 5
+9007199254740996
+9007199254740992n + 1n
+9007199254740993n
+9007199254740992n + 2n
+9007199254740994n
+9007199254740992n + 3n
+9007199254740995n
+9007199254740992n + 4n
+9007199254740996n
+
+var console.log = 100
+var console = 100
+
+console
+100
+console.log()
+let Set = 10
+
+Set('1234')
+
+
+function a(){ console.log(this) }
+a();
+
+let myObj = {
+    val1: 100,
+    func1: function () {
+        console.log(this);
+    }
+}
+
+myObj.func1();
+
+
+let 호준 = { name: "호준" };
+let 재현 = { name: "재현" };
+
+function sayHi() {
+  console.log( this.name );
+}
+
+호준.f = sayHi
+재현.f = sayHi
+
+호준.f()
+재현.f()
+
+let 호텔 = [{
+  '이름' : '하나호텔',
+  '위치' : '제주도 제주시 001',
+  '가격' : {'A':50000, 'B':30000, 'C':15000},
+  '방의개수' : 50,
+  '예약자수' : 25,
+  '남은방의개수' : function(){return this.방의개수 - this.예약자수}
+},{
+  '이름' : '둘호텔',
+  '위치' : '제주도 제주시 002',
+  '가격' : {'A':100000, 'B':60000, 'C':30000},
+  '방의개수' : 100,
+  '예약자수' : 30,
+  '남은방의개수' : function(){return this.방의개수 - this.예약자수}
+},{
+  '이름' : '셋호텔',
+  '위치' : '제주도 제주시 003',
+  '가격' : {'A':80000, 'B':50000, 'C':30000},
+  '방의개수' : 120,
+  '예약자수' : 80,
+  '남은방의개수' : function(){return this.방의개수 - this.예약자수}
+}];
+console.log(호텔[0].남은방의개수());
+console.log(호텔[1].남은방의개수());
+console.log(호텔[2].남은방의개수());
+
+
+function 남은방의개수(){
+    return this.방의개수 - this.예약자수
+}
+
+let 호텔2 = [{
+  '이름' : '하나호텔',
+  '위치' : '제주도 제주시 001',
+  '가격' : {'A':50000, 'B':30000, 'C':15000},
+  '방의개수' : 50,
+  '예약자수' : 25,
+  '남은방의개수' : 남은방의개수
+},{
+  '이름' : '둘호텔',
+  '위치' : '제주도 제주시 002',
+  '가격' : {'A':100000, 'B':60000, 'C':30000},
+  '방의개수' : 100,
+  '예약자수' : 30,
+  '남은방의개수' : 남은방의개수
+},{
+  '이름' : '셋호텔',
+  '위치' : '제주도 제주시 003',
+  '가격' : {'A':80000, 'B':50000, 'C':30000},
+  '방의개수' : 120,
+  '예약자수' : 80,
+  '남은방의개수' : 남은방의개수
+}];
+console.log(호텔2[0].남은방의개수());
+
+function 식별자() {
+    console.log('hello world')
+}
+
+function sayName(){
+    console.log(this.name);
+}
+
+var bruce = {
+    name: 'bruce',
+    sayName: sayName
+}
+
+var peter = {
+    name: 'peter',
+    sayName: sayName.bind(bruce)
+}
+
+peter.sayName()
+bruce.sayName()
+
+function sayName(){
+    console.log(this.name);
+}
+
+let 호준 = {
+    name: "호준",
+    f:sayName
+};
+let 재현 = {
+    name: "재현",
+    f:sayName.bind(호준)
+};
+
+호준.f()
+재현.f()
+
+var peter = {
+  name : 'Peter Parker',
+  sayName : function(){    
+		console.log(this.name);
+	}
+}
+
+peter.sayName()
+
+var bruce = {
+  name : 'Bruce Wayne',
+}
+
+peter.sayName.call(bruce);
+
+function sayName(){
+  console.log(this.name);
+}
+
+var bruce = {
+  name: 'bruce',
+  sayName : sayName
+}
+
+var peter = {
+  name : 'peter',
+  sayName : sayName.call(bruce)
+}
+
+peter.sayName();
+bruce.sayName();
+
+
+
+function sayName(){
+  console.log(this.name);
+}
+
+var bruce = {
+  name: 'bruce',
+  sayName : sayName
+}
+
+var peter = {
+  name : 'peter',
+  sayName : sayName.bind(bruce)
+}
+
+peter.sayName();
+bruce.sayName();
+
+sayName.call(bruce)
+
+var peter = {
+  name : 'peter',
+  sayName : sayName
+}
+
+sayName.call(peter)
+sayName.bind(peter)
+
+sayName.bind(peter)()
+sayName.bind(bruce)()
+
+function sayName(){
+  console.log(this.name);
+}
+
+var bruce = {
+  name: 'bruce',
+  sayName : sayName
+}
+
+var peter = {
+  name : 'peter',
+  sayName : sayName.bind(bruce)
+}
+
+peter.sayName();
+bruce.sayName();
+
+/*
+sayName.call(bruce)
+bruce
+
+sayName.call(peter)
+peter
+
+sayName.bind(peter)
+ƒ sayName(){
+  console.log(this.name);
+}
+
+sayName.bind(bruce)
+ƒ sayName(){
+  console.log(this.name);
+}
+*/
+
+var 휴먼 = {
+    이름: '이호준',
+    말해이름: function (정체하나, 정체둘){
+        console.log(this.이름, 정체하나, 정체둘)
+    }
+}
+
+var 휴먼2 = {
+    이름: '위니브 CEO'
+}
+
+휴먼.말해이름.apply(휴먼2, ['하나', '둘'])
+
+
+
+let l = [10, 20, 30];
+JSON.stringify(l)
+let x = JSON.stringify(l)
+x = x.slice(1)
+x = x.slice(0, -1)
+x.split(',')
+
+const person = {
+    name: 'hojun',
+    age: 25,
+    a(){
+        console.log(this);
+        console.log(this.name);
+        let b = () => {
+            console.log(this);
+            console.log(this.name);
+            let c = () => {
+                console.log(this);
+                console.log(this.name);
+            }
+            c()
+        }
+        b()
+    }
+}
+person.a()
+
+const person = {
+    name: 'hojun',
+    age: 25,
+    a(){
+        console.log(this);
+        console.log(this.name);
+        function b() {
+            console.log(this);
+            console.log(this.name);
+            function c() {
+                console.log(this);
+                console.log(this.name);
+            }
+            c()
+        }
+        b()
+    }
+}
+    </script>
+</body>
+</html>
