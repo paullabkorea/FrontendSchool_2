@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button onclick="renderTable(jsonData)">데이터 호출!</button>
+    <table id="renderingDataTable">
+    <thead>
+        <tr>
+        <th onclick="sort('_id')">_id</th>
+        <th onclick="sort('age')">age</th>
+        <th onclick="sort('eyeColor')">eyeColor</th>
+        <th onclick="sort('name')">name</th>
+        <th onclick="sort('gender')">gender</th>
+        <th onclick="sort('email')">email</th>
+        <th onclick="sort('phone')">phone</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+    </table>
+    <script>
+    var jsonData = [
+        {
+            "_id": "5e80777f673acf89c007ff91",
+            "age": 27,
+            "eyeColor": "green",
+            "name": "Angelina Chang",
+            "gender": "female",
+            "email": "angelinachang@kangle.com",
+            "phone": "+1 (938) 477-2821"
+        },
+        {
+            "_id": "5e80777feee717674b817fd2",
+            "age": 25,
+            "eyeColor": "green",
+            "name": "Deidre Cobb",
+            "gender": "female",
+            "email": "deidrecobb@kangle.com",
+            "phone": "+1 (938) 477-2824"
+        },
+        {
+            "_id": "5e80777fac368a4578dda85d",
+            "age": 25,
+            "eyeColor": "blue",
+            "name": "Jolene Franks",
+            "gender": "female",
+            "email": "jolenefranks@kangle.com",
+            "phone": "+1 (985) 536-3981"
+        },
+        {
+            "_id": "5e80777ff3717874cbc78e44",
+            "age": 31,
+            "eyeColor": "brown",
+            "name": "Waters Hardin",
+            "gender": "male",
+            "email": "watershardin@kangle.com",
+            "phone": "+1 (938) 559-2224"
+        },
+        {
+            "_id": "5e80777fe36842ea9e024fcd",
+            "age": 34,
+            "eyeColor": "green",
+            "name": "Jody Chaney",
+            "gender": "female",
+            "email": "jodychaney@kangle.com",
+            "phone": "+1 (878) 587-2602"
+        },
+        {
+            "_id": "5e80777fafd591f57344eb33",
+            "age": 31,
+            "eyeColor": "green",
+            "name": "Ortiz Maldonado",
+            "gender": "male",
+            "email": "ortizmaldonado@kangle.com",
+            "phone": "+1 (986) 509-2753"
+        },
+        {
+            "_id": "5e80777f20e48e9ada226862",
+            "age": 25,
+            "eyeColor": "brown",
+            "name": "Stacy Burris",
+            "gender": "female",
+            "email": "stacyburris@kangle.com",
+            "phone": "+1 (864) 577-3500"
+        },
+        {
+            "_id": "5e80777faf334f84a2c90595",
+            "age": 33,
+            "eyeColor": "brown",
+            "name": "Davenport Levy",
+            "gender": "male",
+            "email": "davenportlevy@kangle.com",
+            "phone": "+1 (990) 600-2700"
+        },
+        {
+            "_id": "5e80777fe9d516f0da793b7e",
+            "age": 32,
+            "eyeColor": "brown",
+            "name": "Lenora Rivas",
+            "gender": "female",
+            "email": "lenorarivas@kangle.com",
+            "phone": "+1 (835) 549-3209"
+        },
+        {
+            "_id": "5e80777fba91e9aeeb5ce989",
+            "age": 35,
+            "eyeColor": "brown",
+            "name": "John Fischer",
+            "gender": "female",
+            "email": "johnfischer@kangle.com",
+            "phone": "+1 (969) 493-3495"
+        },
+        {
+            "_id": "5e80777f63b89c8cb73127b8",
+            "age": 23,
+            "eyeColor": "brown",
+            "name": "Aurora Robles",
+            "gender": "female",
+            "email": "aurorarobles@kangle.com",
+            "phone": "+1 (900) 579-2424"
+        },
+        {
+            "_id": "5e80777faac1a3f50eacfbd1",
+            "age": 20,
+            "eyeColor": "brown",
+            "name": "Solis Hays",
+            "gender": "male",
+            "email": "solishays@kangle.com",
+            "phone": "+1 (930) 450-2123"
+        },
+        {
+            "_id": "5e80777ffd19fbf487e3957c",
+            "age": 26,
+            "eyeColor": "blue",
+            "name": "Graves Jackson",
+            "gender": "male",
+            "email": "gravesjackson@kangle.com",
+            "phone": "+1 (810) 556-3478"
+        },
+        {
+            "_id": "5e80777ff3bd76dd30824028",
+            "age": 22,
+            "eyeColor": "brown",
+            "name": "Sharron Joyner",
+            "gender": "female",
+            "email": "sharronjoyner@kangle.com",
+            "phone": "+1 (991) 418-2210"
+        },
+        {
+            "_id": "5e80777fd0f579261a830c2f",
+            "age": 37,
+            "eyeColor": "brown",
+            "name": "Patty Bernard",
+            "gender": "female",
+            "email": "pattybernard@kangle.com",
+            "phone": "+1 (940) 558-3881"
+        },
+        {
+            "_id": "5e80777fba4fc442f7353d84",
+            "age": 23,
+            "eyeColor": "brown",
+            "name": "Sandra Foreman",
+            "gender": "female",
+            "email": "sandraforeman@kangle.com",
+            "phone": "+1 (864) 500-3123"
+        },
+        {
+            "_id": "5e80777fa0897694765e4040",
+            "age": 35,
+            "eyeColor": "blue",
+            "name": "Hyde Melendez",
+            "gender": "male",
+            "email": "hydemelendez@kangle.com",
+            "phone": "+1 (964) 487-2694"
+        },
+        {
+            "_id": "5e80777fcf1f69b3350b06c1",
+            "age": 40,
+            "eyeColor": "green",
+            "name": "Evans Wagner",
+            "gender": "male",
+            "email": "evanswagner@kangle.com",
+            "phone": "+1 (944) 448-3591"
+        },
+        {
+            "_id": "5e80777fd311822be4597959",
+            "age": 40,
+            "eyeColor": "brown",
+            "name": "Robinson Lynn",
+            "gender": "male",
+            "email": "robinsonlynn@kangle.com",
+            "phone": "+1 (983) 564-3761"
+        },
+        {
+            "_id": "5e80777f481e9934e9fabdce",
+            "age": 27,
+            "eyeColor": "brown",
+            "name": "Best Ewing",
+            "gender": "male",
+            "email": "bestewing@kangle.com",
+            "phone": "+1 (950) 477-3573"
+        },
+        {
+            "_id": "5e80777fbf35be0eb2c2360a",
+            "age": 22,
+            "eyeColor": "green",
+            "name": "Bird Long",
+            "gender": "male",
+            "email": "birdlong@kangle.com",
+            "phone": "+1 (843) 497-2151"
+        },
+        {
+            "_id": "5e80777f37564dd622dfac58",
+            "age": 35,
+            "eyeColor": "green",
+            "name": "Flynn Albert",
+            "gender": "male",
+            "email": "flynnalbert@kangle.com",
+            "phone": "+1 (835) 422-2151"
+        },
+        {
+            "_id": "5e80777fa4080ca9c9a2a8f7",
+            "age": 39,
+            "eyeColor": "brown",
+            "name": "Avila Chen",
+            "gender": "male",
+            "email": "avilachen@kangle.com",
+            "phone": "+1 (985) 515-2235"
+        },
+        {
+            "_id": "5e80777fbf2492c1f4f6c7d2",
+            "age": 38,
+            "eyeColor": "green",
+            "name": "Colette Sweet",
+            "gender": "female",
+            "email": "colettesweet@kangle.com",
+            "phone": "+1 (971) 578-3870"
+        },
+        {
+            "_id": "5e80777f9dc7e14e19c042a7",
+            "age": 39,
+            "eyeColor": "brown",
+            "name": "Deirdre Reilly",
+            "gender": "female",
+            "email": "deirdrereilly@kangle.com",
+            "phone": "+1 (832) 546-2673"
+        },
+        {
+            "_id": "5e80777f28590be173115fdf",
+            "age": 38,
+            "eyeColor": "blue",
+            "name": "Carpenter Kaufman",
+            "gender": "male",
+            "email": "carpenterkaufman@kangle.com",
+            "phone": "+1 (963) 452-3989"
+        },
+        {
+            "_id": "5e80777fa4062298ee3772aa",
+            "age": 30,
+            "eyeColor": "green",
+            "name": "Angela Cote",
+            "gender": "female",
+            "email": "angelacote@kangle.com",
+            "phone": "+1 (868) 471-3444"
+        },
+        {
+            "_id": "5e80777fe70152016f07e965",
+            "age": 24,
+            "eyeColor": "blue",
+            "name": "Carter Mueller",
+            "gender": "male",
+            "email": "cartermueller@kangle.com",
+            "phone": "+1 (943) 492-2942"
+        },
+        {
+            "_id": "5e80777f162e512bf3be2b7e",
+            "age": 35,
+            "eyeColor": "blue",
+            "name": "Nola Hancock",
+            "gender": "female",
+            "email": "nolahancock@kangle.com",
+            "phone": "+1 (851) 523-2333"
+        },
+        {
+            "_id": "5e80777f178b7460aeb79784",
+            "age": 35,
+            "eyeColor": "green",
+            "name": "Mcconnell Mosley",
+            "gender": "male",
+            "email": "mcconnellmosley@kangle.com",
+            "phone": "+1 (807) 460-2627"
+        }
+    ];
+
+    var click = true;
+
+    function sort(key){
+        if (click) {
+            click = false;
+            let sortedData = jsonData.sort((a, b) => (a[key] < b[key] ? -1 : (a[key] > b[key] ? 1 : 0)));
+            renderTable(sortedData);
+        } else {
+            click = true;
+            let sortedData = jsonData.sort((a, b) => (a[key] > b[key] ? -1 : (a[key] < b[key] ? 1 : 0)));
+            renderTable(sortedData);
+        }
+    }
+
+    function renderTable(data){
+        let tableBodyData = [];
+        console.log('table gen');
+        for (var variable of data) {
+            tableBodyData.push(`
+            <tr>
+                <td>${variable._id}</td>
+                <td>${variable.age}</td>
+                <td>${variable.eyeColor}</td>
+                <td>${variable.name}</td>
+                <td>${variable.gender}</td>
+                <td>${variable.email}</td>
+                <td>${variable.phone}</td>
+            </tr>
+            `)
+        }
+        console.log(tableBodyData);
+        document.querySelector('#renderingDataTable > tbody').innerHTML = tableBodyData.join('');
+    }
+    </script>
+</body>
+</html>

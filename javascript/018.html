@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <button id="hello">클릭하거라!</button>
+    <script>
+        let 주인공 = {
+            name: '홍길동',
+            hp: 1000000000,
+            mp: 2000000000
+        }
+        function 함수(){
+            console.log(this);
+            document.write('hello world');
+        }
+        document.getElementById('hello').addEventListener('click', 함수.bind(주인공));
+    </script>
+</body>
+</html>
