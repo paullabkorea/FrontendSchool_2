@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            font-size: 30px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 2px 3px #222222;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="changeBtn">컬러 컬러 체인지</button>
+    <script>
+        const colors = ["#ff9a9e", "#fad0c4", "#a18cd1", "#fbc2eb", "#fad0c4", "#ffd1ff"];
+        const changeBtn = document.querySelector(".changeBtn");
+
+        function handleBtn() {
+            const colorLeft = colors[Math.floor(Math.random() * colors.length)];
+            const colorRight = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.background = `linear-gradient(0.25turn, ${colorLeft}, ${colorRight})`;
+
+            console.log(colorLeft);
+            console.log(colorRight);
+        }
+
+        changeBtn.addEventListener("click", handleBtn);
+    </script>
+</body>
+
+</html>

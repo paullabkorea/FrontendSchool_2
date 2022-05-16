@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+
+        .cont-btn {
+            display: flex;
+            justify-content: space-between;
+            width: 500px;
+            margin: 30px auto;
+        }
+
+        button {
+            padding: 10px 20px;
+        }
+
+        .bgRed {
+            background-color: lightcoral;
+        }
+
+        .bgBlue {
+            background-color: lightblue;
+        }
+
+        .bgGreen {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="cont-btn">
+        <button class="red">red</button>
+        <button class="green">green</button>
+        <button class="blue">blue</button>
+    </div>
+    <script>
+        const box = document.querySelector(".box");
+        const redBtn = document.querySelector(".red");
+        const blueBtn = document.querySelector(".blue");
+        const greenBtn = document.querySelector(".green");
+        redBtn.addEventListener('click', function () {
+            box.classList.toggle("bgRed");
+            box.classList.contains("bgBlue").remove("bgBlue");
+            box.classList.contains("bgGreen").remove("bgGreen");
+        })
+        blueBtn.addEventListener('click', function () {
+            box.classList.toggle("bgBlue");
+            box.classList.contains("bgRed").remove("bgRed");
+            box.classList.contains("bgGreen").remove("bgGreen");
+        })
+        greenBtn.addEventListener('click', function () {
+            box.classList.toggle("bgGreen");
+            box.classList.contains("bgRed").remove("bgRed");
+            box.classList.contains("bgBlue").remove("bgBlue");
+        })
+    </script>
+</body>
+
+</html>

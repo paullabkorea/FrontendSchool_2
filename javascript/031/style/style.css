@@ -1,0 +1,72 @@
+@charset 'utf-8';
+/* 
+:root {
+    --item-number: 7;
+    --translateZ: calc(340px * var(--item-number) /2 / 3.14);
+} */
+
+#app {
+    height: 100vh;
+    width: 100vw;
+    perspective: 1600px;
+}
+
+.list-item {
+    position: fixed;
+    width: 340px;
+    height: 400px;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    transition: 0.3s;
+}
+
+.list-item li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+/* 원의 둘레를 구하는 공식 : 반지름 * 2 * 3.14 */
+/* 원의 반지름을 구하는 공식 :  반지름 == 둘레 / 2 / 3.14 */
+/* .list-item li:nth-child(1) {
+    transform: rotateY(0) translateZ(calc(340px * var(--item-number) /2 / 3.14));
+}
+
+.list-item li:nth-child(2) {
+    transform: rotateY(calc(360deg / var(--item-number))) translateZ(var(--translateZ));
+}
+
+.list-item li:nth-child(3) {
+    transform: rotateY(calc(360deg / var(--item-number) * 2)) translateZ(var(--translateZ));
+}
+
+.list-item li:nth-child(4) {
+    transform: rotateY(calc(360deg / var(--item-number) * 3)) translateZ(var(--translateZ));
+}
+
+.list-item li:nth-child(5) {
+    transform: rotateY(calc(360deg / var(--item-number) * 4)) translateZ(var(--translateZ));
+}
+
+.list-item li:nth-child(6) {
+    transform: rotateY(calc(360deg / var(--item-number) * 5)) translateZ(var(--translateZ));
+}
+
+.list-item li:nth-child(7) {
+    transform: rotateY(calc(360deg / var(--item-number) * 6)) translateZ(var(--translateZ));
+} */
+
+.list-item li img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
