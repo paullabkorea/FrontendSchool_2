@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function NewFactory2(name) {
+        //     this.name = name
+        // }
+
+        // NewFactory2.prototype.sayYourName = function () {
+        //     console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        // }
+
+        // const foods = ['짜장면', '뽁음밥', '해장국', '치킨'];
+
+        // function FoodBot(foodNames) {
+        //     this.menu = foodNames;
+        // }
+
+        // FoodBot.prototype.sayMenu = function () {
+        //     console.log(this.menu[Math.floor(Math.random() * this.menu.length)]);
+        // };
+
+        // const foodBotMark1 = new FoodBot(foods);
+
+        // const me = {
+        //     name: '한재현',
+        //     address: '제주도 제주시 인다 1길',
+        //     phoneNum: '010-8001-6536',
+        //     canWalk: function () {
+        //         console.log('재현이가 걷는다.');
+        //     },
+        //     teaching: function (student) {
+        //         student.levelUp();
+        //     }
+        // }
+
+        // const student = {
+        //     level: 1,
+        //     levelUp: function () {
+        //         this.level++;
+        //     }
+        // }
+
+        function Me(name, address, phoneNum) {
+            this.name = name;
+            this.address = address;
+            this.phoneNum = phoneNum;
+        }
+
+        Me.prototype.canWalk = function () {
+            console.log('재현이가 걷는다.');
+        }
+
+        Me.prototype.teaching = function (student) {
+            student.levelUp();
+        }
+
+        function Student(level) {
+            this.level = level;
+        }
+
+        Student.prototype.levelUp = function () {
+            this.level++;
+        }
+
+    </script>
+</body>
+
+</html>
