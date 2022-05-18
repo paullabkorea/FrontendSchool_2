@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <button type="button">추가하기</button>
+    <script>
+        class Todo {
+
+            constructor(item, finished) {
+                this.item = item;
+                this.finished = finished;
+            }
+
+            changeState() {
+                this.finished = !this.finished
+            }
+        }
+
+        class TodoManager {
+            constructor() {
+                this.todoList = [];
+            }
+
+            addItem(item, finished = false) {
+                // const todo = new Todo(item, finished);
+                this.todoList.push(new Todo(item, finished))
+            }
+
+            getItems() {
+                return this.todoList;
+            }
+
+            getLeftTodoCount() {
+                return this.todoList.reduce((total, current) => {
+                    if (current.finished === false) {
+                        return ++total;
+                    } else {
+                        return total;
+                    }
+                }, 0
+                );
+            }
+        }
+
+
+        const todoManager = new TodoManager();
+    </script>
+</body>
+
+</html>

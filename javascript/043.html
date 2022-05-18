@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Me(name, address, phoneNum) {
+        //     this.name = name;
+        //     this.address = address;
+        //     this.phoneNum = phoneNum;
+        // }
+
+        // Me.prototype.canWalk = function () {
+        //     console.log('재현이가 걷는다.');
+        // }
+
+        // Me.prototype.teaching = function (student) {
+        //     student.levelUp();
+        // }
+
+        // function Student(level) {
+        //     this.level = level;
+        // }
+
+        // Student.prototype.levelUp = function () {
+        //     this.level++;
+        // }
+
+
+        class Me {
+            constructor(name, address, phoneNum) {
+                this.name = name;
+                this.address = address;
+                this.phoneNum = phoneNum;
+            }
+
+            canWalk = function () {
+                console.log('재현이가 걷는다.');
+            }
+
+            teaching = function (student) {
+                student.levelUp();
+            }
+        }
+
+        class Student {
+            constructor(level) {
+                this.level = level;
+            }
+            levelUp = function () {
+                this.level++;
+            }
+        }
+
+        const me = new Me('재현', '010-0101-0101', '제주도');
+        const student = new Student(1);
+    </script>
+</body>
+
+</html>
