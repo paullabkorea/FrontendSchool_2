@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 200px;
+        }
+
+        .target {
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            /* transition: 0.3s; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="target"></div>
+    <script>
+        const el = document.querySelector('.target');
+        let pos = 0;
+        let keys = {};
+
+        function move(event) {
+            keys[event.key] = true;
+            console.log(keys);
+        }
+
+        function stop(event) {
+            keys[event.key] = false;
+            console.log(keys);
+        }
+
+        document.addEventListener('keydown', move);
+        document.addEventListener('keyup', stop);
+
+
+        function play() {
+            if (keys.ArrowRight) {
+                pos += 5;
+                el.style.transform = `translateX(${pos}px)`
+            }
+            if (keys.ArrowLeft) {
+                pos -= 5;
+                el.style.transform = `translateX(${pos}px)`
+            }
+
+            window.requestAnimationFrame(play);
+        }
+
+        window.requestAnimationFrame(play);
+
+
+
+        // document.addEventListener('keydown', move);
+
+        // function move(event) {
+        //     const keyName = event.key;
+
+        //     if (keyName === 'ArrowRight') {
+        //         pos += 5;
+        //         el.style.transform = `translateX(${pos}px)`
+        //     }
+        //     if (keyName === 'ArrowLeft') {
+        //         pos -= 5;
+        //         el.style.transform = `translateX(${pos}px)`
+        //     }
+        // }
+    </script>
+</body>
+
+</html>
