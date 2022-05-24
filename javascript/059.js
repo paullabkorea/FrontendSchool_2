@@ -230,18 +230,17 @@ const myCookie = async () => {
 };
 
 async function promiseProcess() {
-   const results = await Promise.all([myCake(), myCoffee(), myCookie()]);
- console.log(results);
+    const results = await Promise.all([myCake(), myCoffee(), myCookie()]);
+    console.log(results);
 }
 
 promiseProcess();
 
 // 질의응답
-
 async function a() {
     console.log(1);
     setTimeout(()=> {
-         console.log(2)   
+        console.log(2)   
     }, 0);
     console.log(3)
 }

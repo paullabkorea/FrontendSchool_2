@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        // https://developer.mozilla.org/ko/docs/Web/API/Canvas_API
+        // const canvas = document.getElementById('canvas');
+
+        // const ctx = canvas.getContext('2d');
+
+        // function drawRect(ctx) {
+        //     let x=10, y=50, w=50, h=80;
+        //     ctx.fillStyle = 'green'
+        //     ctx.fillRect(x, y, w, h);
+        // }
+
+        // drawRect(ctx)
+
+        ////////////////////////////////
+
+        // 태그 선택
+        const canvas = document.getElementById('canvas');
+        // 캔버스에서 어떻게 그릴지(랜더링) 컨텍스트를 받아옵니다.
+        const ctx = canvas.getContext('2d');
+
+        // 그림을 그려줍니다.
+        function drawRect(ctx){
+            // x, y 좌측 상단 기준 x, y 좌표
+            // w는 너비, h는 높이
+            let x = 10,
+            y = 50,
+            w = 100,
+            h = 100;
+            ctx.fillStyle = 'green';
+            ctx.fillRect(x, y, w, h);
+        }
+        
+        // drawRect(ctx);
+
+        function 삼각형(ctx){
+            //점을 하나씩 찍는 방식입니다. moveTo, lineTo를 바꾸면 삼각형 모양이 바뀝니다
+            ctx.beginPath()
+            ctx.moveTo(75, 50);
+            ctx.lineTo(100, 75);
+            ctx.lineTo(100, 25);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+        }
+
+        삼각형(ctx);
+    </script>
+</body>
+</html>

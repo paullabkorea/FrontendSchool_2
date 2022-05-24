@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        :root {
+            --main-font: 'Pacifico', cursive;
+        }
+        svg {
+            width: 500px;
+            height: 500px;
+            border: 1px gray solid;
+        }
+        text {
+            font-family: var(--main-font);
+        }
+    </style>
+</head>
+<body>
+    <svg width="500px" height="500px">
+        <g>
+            <circle cy="50" cx="50" r="30"></circle>
+            <circle cy="10" cx="10" r="5"></circle>
+            <circle cy="150" cx="150" r="30"></circle>
+            <circle cy="250" cx="250" r="30"></circle>
+            <rect x="200" y="50" width="100" height="100" style="fill:chocolate;stroke:black;stroke-width:50px;"></rect>
+            <rect x="300" y="50" width="100" height="100" style="fill:chocolate;stroke:black;"></rect>
+            <path d="M 100,300 100,350 200,300 200,350" style="fill:blank"></path>
+            <path d="M 300,300 300,350 350,350 350,300" style="fill:blank"></path>
+        </g>
+        <text x="400" y="400">hello world</text>
+    </svg>
+    <div class="canvas"></div>
+    <script>
+        const canvas = d3.select('.canvas');
+
+        const svg = canvas.append('svg') //추가
+            .attr('height', 1000) // 속성 지정
+            .attr('width', 1000);
+
+        svg.append('text') // 추가, text 형태로 추가
+            .attr('x', 200)
+            .attr('y', 200) // 좌측 하단 기준 좌표
+            .text('hello world')
+            .style('font-weight', 'bold')
+            .style('font-size', '34px')
+            .style('font-family', 'Pacifico'); 
+
+        svg.append('rect') // 추가, 사각형 형태로 추가
+            // .attr('x', 200)
+            // .attr('y', 200)
+            .attr('width', 200)
+            .attr('height', 200)
+            .attr('fill', 'hotpink');
+
+        svg.append('circle') // 추가, 원 형태로 추가
+            .attr('cx', 200) // x 축
+            .attr('cy', 200) // y 축
+            .attr('r', 50)
+            .attr('fill', 'blue');
+
+        svg.append('line')
+            .attr('x1', 200) // x축 시작
+            .attr('y1', 200) // y축 시작
+            .attr('x2', 300) // x축 끝
+            .attr('y2', 300) // y축 끝
+            .attr('stroke', 'red');
+    </script>
+</body>
+</html>

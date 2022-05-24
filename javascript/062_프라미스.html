@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+</head>
+<body>
+    <script>
+        const userdb = [
+                {
+                    "_id": "61b05e53210fb3490155afb2",
+                    "id": "Lisa",
+                    "pw": "b4cfaa5b-4040-4d57-adda-75a2cdb6e7f6",
+                    "index": 0,
+                    "picture": "http://placehold.it/32x32",
+                    "age": 28,
+                    "eyeColor": "brown",
+                    "name": "Salazar Shaw",
+                    "gender": "male",
+                    "company": "ISOLOGICA",
+                    "email": "salazarshaw@isologica.com",
+                    "phone": "+1 (837) 518-3132",
+                    "address": "983 Campus Place, Soudan, Idaho, 5633",
+                    "grade": "관리자"
+                },
+                {
+                    "_id": "61b05e5325386480dc41a388",
+                    "id": "Mabel",
+                    "pw": "46e6b380-367b-4780-b102-902030d2357b",
+                    "index": 1,
+                    "picture": "http://placehold.it/32x32",
+                    "age": 26,
+                    "eyeColor": "brown",
+                    "name": "Hoover Tyler",
+                    "gender": "male",
+                    "company": "DOGNOSIS",
+                    "email": "hoovertyler@dognosis.com",
+                    "phone": "+1 (988) 586-2470",
+                    "address": "305 Imlay Street, Ypsilanti, Connecticut, 125",
+                    "grade": "실버"
+                },
+                {
+                    "_id": "61b05e534a1657233781138a",
+                    "id": "Bauer",
+                    "pw": "6372e899-2d2c-4cd4-a9ca-a1d056894b21",
+                    "index": 2,
+                    "picture": "http://placehold.it/32x32",
+                    "age": 21,
+                    "eyeColor": "blue",
+                    "name": "Maritza Hanson",
+                    "gender": "female",
+                    "company": "ISOPOP",
+                    "email": "maritzahanson@isopop.com",
+                    "phone": "+1 (875) 573-2894",
+                    "address": "425 Dare Court, Advance, Missouri, 1322",
+                    "grade": "골드"
+                },
+                {
+                    "_id": "61b05e538b3ca85b0b294432",
+                    "id": "Cheryl",
+                    "pw": "37685cae-8716-47f6-b6f1-3c88c3edaa42",
+                    "index": 3,
+                    "picture": "http://placehold.it/32x32",
+                    "age": 22,
+                    "eyeColor": "brown",
+                    "name": "Cabrera Ruiz",
+                    "gender": "male",
+                    "company": "GOLISTIC",
+                    "email": "cabreraruiz@golistic.com",
+                    "phone": "+1 (811) 409-3405",
+                    "address": "464 Grant Avenue, Broadlands, Rhode Island, 8951",
+                    "grade": "실버"
+                },
+                {
+                    "_id": "61b05e53dabfe56a97e083b1",
+                    "id": "Lauren",
+                    "pw": "7812d059-f1a8-419d-956d-153cff1522ee",
+                    "index": 4,
+                    "picture": "http://placehold.it/32x32",
+                    "age": 33,
+                    "eyeColor": "green",
+                    "name": "Rivera Munoz",
+                    "gender": "male",
+                    "company": "MEGALL",
+                    "email": "riveramunoz@megall.com",
+                    "phone": "+1 (812) 598-2369",
+                    "address": "860 George Street, Brownlee, Oklahoma, 5164",
+                    "grade": "실버"
+                },
+                {
+                    "_id": "61b05e53cc219b458f42e0e5",
+                    "id": "Emerson",
+                    "pw": "22626beb-46f2-43b9-be64-2fbaf4874b6d",
+                    "index": 5,
+                    "picture": "http://placehold.it/32x32",
+                    "age": 39,
+                    "eyeColor": "brown",
+                    "name": "Diana Simpson",
+                    "gender": "female",
+                    "company": "AQUOAVO",
+                    "email": "dianasimpson@aquoavo.com",
+                    "phone": "+1 (805) 509-3533",
+                    "address": "289 Wolf Place, Jessie, Nevada, 4775",
+                    "grade": "다이아몬드"
+                },
+                {
+                    "_id": "61b05e53b19b300b847a81f7",
+                    "id": "hojun",
+                    "pw": "1234",
+                    "index": 6,
+                    "picture": "http://placehold.it/32x32",
+                    "age": 25,
+                    "eyeColor": "green",
+                    "name": "Cobb Mcfadden",
+                    "gender": "male",
+                    "company": "JUMPSTACK",
+                    "email": "cobbmcfadden@jumpstack.com",
+                    "phone": "+1 (965) 517-2000",
+                    "address": "155 Ryder Street, Ruffin, Louisiana, 6528",
+                    "grade": "관리자"
+                },
+                {
+                    "_id": "61b05e53c9deb83252fc7f75",
+                    "id": "Baker",
+                    "pw": "dd20c5f8-b5ce-444c-9bcd-9a6c5c481ad0",
+                    "index": 7,
+                    "picture": "http://placehold.it/32x32",
+                    "age": 38,
+                    "eyeColor": "blue",
+                    "name": "Richardson Ferguson",
+                    "gender": "male",
+                    "company": "TERASCAPE",
+                    "email": "richardsonferguson@terascape.com",
+                    "phone": "+1 (990) 516-2175",
+                    "address": "123 Hale Avenue, Eggertsville, North Carolina, 115",
+                    "grade": "골드"
+                }
+            ]
+
+
+        class GetUserData {
+            login(아이디, 비밀번호) {
+                return new Promise((resolve, reject) => {
+                    const data = userdb.find(user => user.id === 아이디 && user.pw === 비밀번호);
+                    if (data){
+                        resolve(아이디);
+                    } else {
+                        reject(new Error('로그인 실패!'));
+                    }
+                });
+            }
+            getUserDataSet(이용자) {
+                return new Promise((resolve, reject) => {
+                    const data = userdb.find(user => user.id === 이용자);
+                    if (data) {
+                        resolve({
+                            id : data.id,
+                            picture : data.picture,
+                            name : data.name,
+                            company : data.company,
+                            email : data.email,
+                            grade : data.grade
+                        });
+                    } else {
+                        reject(new Error('데이터 베이스 로드 실패!'));
+                    }
+                });
+            }
+        }
+
+        const userData = new GetUserData();
+        const id = 'hojun';
+        const pw = '1234';
+        userData
+            .login(id, pw)
+            .then(user => userData.getUserDataSet(user)) 
+            .then(user => console.log(user))
+            // .then(비밀번호 변경 안했어?) // 비밀번호 변경
+            // .then(프로모션 받은 적 없어?) // 프로모션
+            // .then(쿠폰 발급받을 시간이야.) // 쿠폰
+            // .then( ..... ) // .... 뭔가 더 ...
+            .catch(console.log);
+    </script>
+</body>
+</html>

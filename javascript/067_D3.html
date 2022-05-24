@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <svg width="500" height="500"></svg>
+    <script>
+        const sampleData = [100,10,30,50,10,70,200,90];
+        const sampleData2 = [110,50,20,30,50,90,120,70];
+        const svg = d3.select('svg');
+
+        sampleData.forEach((data, index) =>{
+            svg.append('rect')
+            .attr('id', `bar${index}`)
+            .attr('height', data)
+            .attr('width', 30)
+            .attr('x', 40 * index + 100)//막대 생성좌표 x 막대의 좌측
+            .attr('y', 300 - data + 100)//막대 생성 좌표 y 막대의 윗부분
+            .transition()
+            .duration(3000)
+            .ease(d3.easeLinear)
+            .style('fill', 'red')
+            .attr('height', sampleData2[index])
+            .attr('y', 300 - sampleData2[index] + 100)//막대 생성 좌표 y 막대의 윗부분
+        })
+
+        d3.select('#bar0')
+            .transition()
+            .duration(3000)
+            .ease(d3.easeLinear)
+            .style('fill', 'blue')
+            .delay(3000)
+    </script>
+</body>
+</html>

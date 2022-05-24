@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+    // setItem(key, value) – 키-값 쌍 저장
+    // getItem(key) – 키에 해당하는 값 호출
+    // removeItem(key) – 해당 값 삭제
+    // clear() – 모든 데이터 삭제
+    // key(index) – 인덱스(index)에 해당하는 키 호출
+    // length – 저장된 항목의 개수
+
+    memo = []
+    memo.push('메모1')
+    memo.push('메모2')
+
+    localStorage.setItem('메모', memo);
+
+    console.log(localStorage.getItem('메모'));
+    console.log(localStorage.getItem('메모').split(','));
+
+
+    localStorage.setItem('one', '하나');
+    localStorage.setItem('two', '둘');
+    console.log(localStorage.getItem('one'));
+    console.log(localStorage.getItem('two'));
+    </script>
+</body>
+</html>
