@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <p>hello</p>
+    <h1 class="test">hello world</h1>
+    <div id="test">hello world</div>
+    <script>
+        $("p").hide();
+        $(".test").click(function () {
+            alert("클릭!");
+        });
+        $('#test').html('<b>hello</b> world');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // let 함수표현식 = function(){} // 호이스팅 X
+        // function 함수선언식(){} // 호이스팅 O
+
+        // console.log(제곱1(10)) // ReferenceError: Cannot access '제곱1' before initialization
+        console.log(제곱2(20))
+
+        // console.log(제곱1) // ReferenceError: Cannot access '제곱1' before initialization
+
+        console.log(제곱2)
+
+        // console.log(제곱3) // ReferenceError: Cannot access '제곱1' before initialization
+
+
+        let 제곱1 = function (x) {
+            return x ** 2
+        }
+
+        function 제곱2(x) {
+            return x ** 2
+        }
+
+        let 제곱3 = 100;
+
+    </script>
+</body>
+
+</html>
