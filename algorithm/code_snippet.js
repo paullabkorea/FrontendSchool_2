@@ -185,17 +185,22 @@ console.log(result)
 class Stack {
     constructor(){
         this.arr = []
+        this.length = 0
     }
+
 
     push(data) {
         this.arr.push(data)
+        this.length += 1
     }
 
     pop(index) {
         if (index > this.arr.length - 1){
+            this.length -= 1
             return this.arr.pop()
         }
         let result = this.arr.splice(index, 1)
+        this.length -= 1
         return result
     }
     top (){
@@ -221,3 +226,4 @@ s.push(60)
 s.push(70)
 s.pop(2)
 console.log(s)
+console.log(s.length)
