@@ -1,0 +1,53 @@
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위니브 스토어</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        const $root = $('#root')
+        $root.append(`<main class='product'></main>`)
+        const $main = $('main')
+        // $('main').addClass('hello')
+        $main.append(`
+            <h1 class="ir">상품목록 페이지</h1>
+            <ul class="product-list"></ul>
+        `)
+        const $product_list = $('.product-list')
+
+        let product;
+        $.ajax({
+            url: 'http://test.api.weniv.co.kr/mall',
+            async: false, // true 로 바꾸면 아래 코드를 실행하지 않음
+            dataType: 'JSON',
+            success: function (result) {
+                // $("#data").text(result);
+                console.log(1)
+                product = result;
+                // console.log(product)
+            }
+        });
+        console.log(2)
+        console.log(product)
+
+        product.forEach(data => {
+            // console.log(data['productName'])
+            $product_list.append(`
+                    <li>
+                        <img src='http://test.api.weniv.co.kr/${data['thumbnailImg']}'>
+                        <p>${data['productName']}</p>
+                        <p>${data['price']}</p>
+                    </li>
+                `)
+        });
+
+    </script>
+</body>
+
+</html>

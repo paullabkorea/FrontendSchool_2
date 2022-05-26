@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>has demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+
+    <!-- 
+    1. items 부모를 찾아 background-color를 파란색으로 바꿔주세요.
+    2. items 2번째 color를 빨간색으로 바꿔주세요
+    3. ul2의 자식인 li요소를 선택하여 1번부터 3번까지 color를 녹색으로 바꿔주세요.
+    4. ul2의 자식인 li요소를 선택하여 7번부터 10번까지 color를 파란색, background-color를 빨간색으로 바꿔주세요.
+    -->
+    <div class="wrapper">
+        <h1 class="title">TITLE</h1>
+        <ul>
+            <li class="items">item 1</li>
+            <li class="items">item 2</li>
+            <li class="items">item 3</li>
+        </ul>
+    </div>
+    <ul class="ul2">
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+        <li>hello</li>
+    </ul>
+
+    <script>
+        $('.items').parent().css('backgroundColor', 'blue');
+        $('.items').eq(1).css('color', 'red');
+        $('.ul2').children('li:lt(3)').css('color', 'red');
+        $('.ul2').children('li:lt(3)').css('color', 'green'); // $('.ul2 li:lt(3)').css('color', 'green');
+        $('.ul2').children('li:gt(5)').css('color', 'red'); // $('.ul2 :nth-child(n+3)').css('color','green');
+
+
+        // $('.ul2 > li').slice(6,).css('color', 'red').css('backgroundColor', 'blue');
+
+        // $('.ul2 > li').slice(6,).css({ color: "blue", background: "red" })
+    </script>
+
+</body>
+
+</html>

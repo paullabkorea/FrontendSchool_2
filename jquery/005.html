@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <input id="one" type="text">
+    <input id="two" type="text">
+    <p id="three">hello</p>
+    <button id="four">클릭해!</button>
+    <script>
+        // 버튼을 클릭하면
+        $("#four").click(function () {
+            //#one에 입력된 값을 가져와 value에 넣고
+            let value = $("#one").val();
+            //#one에 아무것도 없는 값으로 바꾸고(주석처리하고 버튼눌러보면 원래 입력한 값이 그대로 남아있습니다.)
+            $("#one").val('');
+            //#one에 입력했던 값을 two와 three에 넣는데 input창이 아닌 곳에는 val이 아니라 text로 써야 합니다.
+            $("#two").val(value);
+            $("#three").text(value);
+        });
+    </script>
+</body>
+
+</html>

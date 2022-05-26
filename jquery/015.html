@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>has demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+    <button type="button" id="btn_data">클릭해주세요!</button>
+    <div id="data">data</div>
+    <script>
+        $('#btn_data').click(function () {
+            //$.ajax({경로, 동기화 여부, 성공하면 할 일})
+            //$.ajax({url:'경로', async: true, success:function(result){}})
+            $.ajax({
+                url: 'https://raw.githubusercontent.com/paullabkorea/10000hour/main/index.html',
+                async: true,
+                success: function (result) {
+                    $("#data").html(result);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

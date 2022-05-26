@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>hello world</h1>
+    <h1 class="blue">hello world</h1>
+    <p>hello</p>
+    <p>hello</p>
+    <p id="one">hello</p>
+    <script>
+        // $("p").append("!!");
+        $("p").prepend("!!");
+        $("#one").remove();
+        $("h1,h2,p").toggleClass("blue");
+    </script>
+</body>
+
+</html>

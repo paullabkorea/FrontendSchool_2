@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>has demo</title>
+    <style>
+        .full {
+            border: 1px solid red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+
+<body>
+
+    <div id="1">value-1</div>
+    <div id="2">value-2</div>
+    <div id="3">value-3</div>
+    <div id="4">value-4</div>
+    <div id="5">value-5</div>
+    <div id="6">value-6</div>
+    <div id="7">value-7</div>
+    <div id="8">value-8</div>
+    <div id="9">value-9</div>
+    <div id="10">value-10</div>
+
+    <script>
+        // $('div').slice(2, 5).css('color', 'red');
+        // $('div').filter(':even').css("color", "red");
+        $('div').filter((index, selector) => {
+            if (index % 3 == 0) {
+                console.log(selector)
+                $(selector).css('color', 'red')
+            }
+        });
+    </script>
+
+</body>
+
+</html>
