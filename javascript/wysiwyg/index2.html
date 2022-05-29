@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>간단한 텍스트 에디터 만들기 예제</title>
+    <script src="https://kit.fontawesome.com/9e1a07a81c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <article id="app">
+        <ul class="options">
+            <li>
+                <button type="button" data-command='h1'>H1</button>
+            </li>
+            <li>
+                <button type="button" data-command='h2'>H2</button>
+            </li>
+            <li>
+                <button type="button" data-command='h3'>H3</button>
+            </li>
+            <li>
+                <button type="button" data-command='p'>P</button>
+            </li>
+            <li>
+                <button type="button" data-command='strong'>
+                    <i class="fa-solid fa-bold"></i>
+                </button>
+            </li>
+            <li>
+                <button type="button" data-command='em'>
+                    <i class="fa-solid fa-italic"></i>
+                </button>
+            </li>
+            <li>
+                <button type="button" data-command='u'>
+                    <i class="fa-solid fa-underline"></i>
+                </button>
+            </li>
+            <li>
+                <!-- del tag : 삭제된 텍스트를 나타냅니다 -->
+                <button type="button" data-command='del'>
+                    <i class="fa-solid fa-strikethrough"></i>
+                </button>
+            </li>
+            <li>
+                <button type="button" data-command='style_left'>
+                    <i class="fa-solid fa-align-left"></i>
+                </button>
+            </li>
+            <li>
+                <button type="button" data-command='style_center'>
+                    <i class="fa-solid fa-align-center"></i>
+                </button>
+            </li>
+            <li>
+                <button type="button" data-command='style_right'>
+                    <i class="fa-solid fa-align-right"></i>
+                </button>
+            </li>
+            <li>
+                <button type="button" data-command='style_justify'>
+                    <i class="fa-solid fa-align-justify"></i>
+                </button>
+            </li>
+        </ul>
+        <!-- contenteditable 속성은 요소의 편집 가능 여부를 나타냅니다. -->
+        <div class='editor' contenteditable="true">
+            <h1>나만의 wysiwyg 에디터 입니다!</h1>
+            <p>Hello World!</p>
+        </div>
+    </article>
+
+    <script>
+        const editor = document.querySelector(".editor");
+
+        document.querySelectorAll('.options button')
+            .forEach(item => item.addEventListener('click', () => {
+                const command = item.dataset.command;
+                const selectedTxt = window.getSelection();
+                //anchorNode : 선택이 시작되는 노드입니다.
+                const parentEl = selectedTxt.anchorNode.parentElement;
+
+
+                // css style로 바꾸는 경우
+                if (command.includes('style')) {
+                    // slice() 메소드는 문자열의 일부를 추출하면서 새로운 문자열을 반환합니다. 6번째 인덱스 이후로 추출합니다.
+                    parentEl.style.textAlign = command.slice(6);
+
+                    // html 요소를 이용해 바꾸는 경우
+                } else {
+                    const createdEl = document.createElement(command);
+                    // getSelection : 유저가 선택한 텍스트의 범위를 나타내는 selection 객체를 반환합니다.
+                    // selection.rangeCount : 선택한 범위의 갯수. 이때 선택한 글씨의 갯수가 아닌점에 주의. 보통 사용자는 1개의 범위만 선택할 수 있습니다.
+
+                    // h1, h2, h3, p 처럼 스타일을 라인 통으로 바꿔야 할 경우
+                    if (command === 'h1' || command === 'h2' || command === 'h3' || command === 'p') {
+                        createdEl.textContent = parentEl.textContent;
+                        // 특정 부모 노드의 한 자식 노드를  다른 노드로 교체합니다.
+                        editor.replaceChild(createdEl, parentEl);
+                        // 스타일을 라인 중의 일부만 바꿔야 할 경우
+                    } else {
+                        // getRangeAt() : 현재 선택된 범위를 나태내는 range 객체를 반환합니다.
+                        // range : node 를 포함한 document 객체의 일부분을 나태내는 객체입니다.
+                        const selectedTxtRange = selectedTxt.getRangeAt(0);
+                        // range 객체를 매개변수로 전달된 노드로 이동합니다.
+                        selectedTxtRange.surroundContents(createdEl);
+                    }
+                }
+            }));    
+    </script>
+</body>
+
+</html>
