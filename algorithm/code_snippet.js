@@ -188,7 +188,6 @@ class Stack {
         this.length = 0
     }
 
-
     push(data) {
         this.arr.push(data)
         this.length += 1
@@ -227,3 +226,799 @@ s.push(70)
 s.pop(2)
 console.log(s)
 console.log(s.length)
+
+// 2. 연결리스트(linked list)
+// 2.1 첫번째 시간
+// 연결리스트, 메모리 효율을 위해 사용되는 경우가 많음
+// js에서는 그다지 메모리 효율이 좋지 못함
+// 개념 : https://en.wikipedia.org/wiki/Linked_list
+// 알고리즘 시각화 : https://visualgo.net/ko
+
+// 연결리스트의 기본 형태
+const list = {
+    head: {
+        value : 12, 
+        next : {
+            value : 99,
+            next : {
+                value : 37,
+                next : null
+            }
+        }
+    }
+}
+
+const list = {
+    head: null
+}
+
+let list1 = {value:12, next:null}
+let list2 = {value:99, next:null}
+let list3 = {value:37, next:null}
+let list4 = {value:2, next:null}
+list1.next = list2
+list2.next = list3
+list3.next = list4
+list.head = list1
+
+// 문제)
+// head -> [90, next] -> [2, next] -> [77, next] -> [35, next] -> [21, next] -> null
+// 35를 출력해주세요.
+
+const list = {
+    head: {
+        value: 90,
+        next: {
+            value: 2,
+            next: {
+                value: 77,
+                next: {
+                    value: 35,
+                    next: {
+                        value: 21,
+                        next: null
+                    }
+                }
+            }
+        }
+    }
+}
+list.head.next.next.next.value
+
+
+// step 1 노드 생성
+class Node {
+    constructor(data){
+        this.data = data
+        this.next = null
+    }
+}
+
+노드1 = new Node(10)
+노드2 = new Node(20)
+노드3 = new Node(30)
+
+노드1.data
+노드1.next = 노드2
+노드2.next = 노드3
+노드1.next.next.data
+//30
+
+
+// step 2 자동으로 다음 노드가 연결되는 linked list 구현
+
+class Node {
+    constructor(data){
+        this.data = data
+        this.next = null
+    }
+}
+
+// head -> ['init', next]
+//               ↑ 
+//              tail
+
+// head -> ['init', next] -> [90, next]
+//                               ↑ 
+//                              tail
+class LinkedList {
+    constructor(){
+        let init = new Node('init')
+        this.head = init
+        this.tail = init
+    }
+    
+    append(data){
+        let 새로운노드 = new Node(data)
+        // 마지막 값(null)은 새로운 노드가 됨
+        this.tail.next = 새로운노드
+        // 마지막 노드는 새로운 노드가 됨
+        this.tail = 새로운노드
+    }
+}
+
+l = new LinkedList()
+l.append(1)
+l.append(2)
+l.append(3)
+l.append(10)
+l.append(20)
+l.append(30)
+
+// l.head
+// l.head.next.data
+// l.head.next.next.data
+// l.head.next.next.next.data
+
+/*
+// 1번 단계
+head -> [init, null]
+            ↑ 
+            tail
+
+
+// 2번 단계
+head -> [init, next] -> [1, null]
+                            ↑ 
+                            tail
+*/
+
+
+
+// step 3 length 구현
+
+class Node {
+    constructor(data){
+        this.data = data
+        this.next = null
+    }
+}
+
+class LinkedList {
+    constructor(){
+        let init = new Node('init')
+        this.head = init
+        this.tail = init
+
+        this.데이터수 = 0
+    }
+
+    length(){
+        return this.데이터수
+    }
+    
+    append(data){
+        let 새로운노드 = new Node(data)
+        this.tail.next = 새로운노드
+        this.tail = 새로운노드
+
+        this.데이터수 += 1
+    }
+}
+
+l = new LinkedList()
+l.append(1)
+l.append(2)
+l.append(3)
+l.append(10)
+l.append(20)
+l.append(30)
+l.length()
+
+
+
+// step 4 toString 구현
+
+class Node {
+    constructor(data){
+        this.data = data
+        this.next = null
+    }
+}
+
+class LinkedList {
+    constructor(){
+        let init = new Node('init')
+        this.head = init
+        this.tail = init
+
+        this.데이터수 = 0
+        this.데이터들 = ''
+    }
+
+    length(){
+        return this.데이터수
+    }
+
+    toString(){
+        // return 'hello world'
+        // return '[1, 2, 3, 10, 20, 30]'
+        
+        // 아래와 같이 구현했을 때 삭제가 문제가 됩니다.
+        return '[' + this.데이터들.slice(0, -2) + ']'
+
+    }
+    
+    append(data){
+        let 새로운노드 = new Node(data)
+        this.tail.next = 새로운노드
+        this.tail = 새로운노드
+
+        this.데이터수 += 1
+        this.데이터들 += `${data}, `
+    }
+}
+
+l = new LinkedList()
+l.append(1)
+l.append(2)
+l.append(3)
+l.append(10)
+l.append(20)
+l.append(30)
+l.length()
+
+
+
+// step 4 toString을 arr로 구현
+
+class Node {
+    constructor(data){
+        this.data = data
+        this.next = null
+    }
+}
+
+class LinkedList {
+    constructor(){
+        let init = new Node('init')
+        this.head = init
+        this.tail = init
+
+        this.데이터수 = 0
+        this.데이터들 = []
+    }
+
+    length(){
+        return this.데이터수
+    }
+
+    toString(){
+        // return 'hello world'
+        // return '[1, 2, 3, 10, 20, 30]'
+        
+        // 아래와 같이 구현했을 때 삭제가 문제가 됩니다.
+        return '[' + this.데이터들.toString() + ']'
+
+    }
+    
+    append(data){
+        let 새로운노드 = new Node(data)
+        this.tail.next = 새로운노드
+        this.tail = 새로운노드
+
+        this.데이터수 += 1
+        this.데이터들.push(data)
+    }
+}
+
+l = new LinkedList()
+l.append(1)
+l.append(2)
+l.append(3)
+l.append(10)
+l.append(20)
+l.append(30)
+l.length()
+l.toString()
+
+
+
+
+// step 5 (중요) toString을 순회하면서 추가!!
+
+class Node {
+    constructor(data){
+        this.data = data
+        this.next = null
+    }
+}
+
+class LinkedList {
+    constructor(){
+        let init = new Node('init')
+        this.head = init
+        this.tail = init
+
+        this.데이터수 = 0
+    }
+
+    length(){
+        return this.데이터수
+    }
+
+    toString(){
+        let 순회용현재노드 = this.head
+        순회용현재노드 = 순회용현재노드.next
+
+        let 데이터들 = ''
+        for (let i = 0; i < this.데이터수; i++) {
+            데이터들 += `${순회용현재노드.data}, `
+            순회용현재노드 = 순회용현재노드.next
+        }
+
+        return '[' + 데이터들.slice(0, -2) + ']'
+    }
+    
+    append(data){
+        let 새로운노드 = new Node(data)
+        this.tail.next = 새로운노드
+        this.tail = 새로운노드
+
+        this.데이터수 += 1
+    }
+}
+
+l = new LinkedList()
+l.append(1)
+l.append(2)
+l.append(3)
+l.append(10)
+l.append(20)
+l.append(30)
+l.length()
+l.toString()
+
+
+
+
+// step 6 data를 arr로 만들기
+
+class Node {
+    constructor(data){
+        this.data = data
+        this.next = null
+    }
+}
+
+class LinkedList {
+    constructor(){
+        let init = new Node('init')
+        this.head = init
+        this.tail = init
+
+        this.데이터수 = 0
+    }
+
+    length(){
+        return this.데이터수
+    }
+
+    toString(){
+        let 순회용현재노드 = this.head
+        순회용현재노드 = 순회용현재노드.next
+
+        let 데이터들 = ''
+        for (let i = 0; i < this.데이터수; i++) {
+            데이터들 += `${순회용현재노드.data}, `
+            순회용현재노드 = 순회용현재노드.next
+        }
+
+        return '[' + 데이터들.slice(0, -2) + ']'
+    }
+
+    // data를 얻기 위한 메서드, data를 넣기 위한 메서드는 getter와 setter를 사용을 권고합니다.
+    fullData(){
+        return JSON.parse(this.toString())
+    }
+    
+    append(data){
+        let 새로운노드 = new Node(data)
+        this.tail.next = 새로운노드
+        this.tail = 새로운노드
+
+        this.데이터수 += 1
+    }
+}
+
+l = new LinkedList()
+l.append(1)
+l.append(2)
+l.append(3)
+l.append(10)
+l.append(20)
+l.append(30)
+l.length()
+l.toString()
+l.fullData()
+
+
+
+// step 7 node 삽입하기
+
+class Node {
+    constructor(data){
+        this.data = data
+        this.next = null
+    }
+}
+
+class LinkedList {
+    constructor(){
+        let init = new Node('init')
+        this.head = init
+        this.tail = init
+
+        this.데이터수 = 0
+    }
+
+    length(){
+        return this.데이터수
+    }
+
+    toString(){
+        let 순회용현재노드 = this.head
+        순회용현재노드 = 순회용현재노드.next
+
+        let 데이터들 = ''
+        for (let i = 0; i < this.데이터수; i++) {
+            데이터들 += `${순회용현재노드.data}, `
+            순회용현재노드 = 순회용현재노드.next
+        }
+
+        return '[' + 데이터들.slice(0, -2) + ']'
+    }
+
+    // data를 얻기 위한 메서드, data를 넣기 위한 메서드는 getter와 setter를 사용을 권고합니다.
+    fullData(){
+        return JSON.parse(this.toString())
+    }
+    
+    append(data){
+        let 새로운노드 = new Node(data)
+        this.tail.next = 새로운노드
+        this.tail = 새로운노드
+
+        this.데이터수 += 1
+    }
+
+    insert(index, data){
+        let 순회용현재노드 = this.head
+        순회용현재노드 = 순회용현재노드.next
+
+        for (let i = 0; i < index - 1; i++) {
+            순회용현재노드 = 순회용현재노드.next
+        }
+
+        let 새로운노드 = new Node(data)
+        새로운노드.next = 순회용현재노드.next
+        순회용현재노드.next = 새로운노드
+
+        this.데이터수 += 1
+    }
+}
+
+l = new LinkedList()
+l.append(1)
+l.append(2)
+l.append(3)
+l.append(10)
+l.append(20)
+l.append(30)
+l.length()
+l.toString()
+console.log(l.fullData())
+l.insert(3, 1000)
+console.log(l.fullData())
+
+
+
+
+
+// 더블 링크드 리스트의 기본 형태
+
+
+const list = {
+    head: null
+}
+
+let list1 = {value:12, next:null, pre:null}
+let list2 = {value:99, next:null, pre:null}
+let list3 = {value:37, next:null, pre:null}
+let list4 = {value:2, next:null, pre:null}
+list1.next = list2
+list2.next = list3
+list3.next = list4
+list1.pre = list.head
+list2.pre = list1
+list3.pre = list2
+list4.pre = list3
+list.head = list1
+
+// list4.pre.pre.value
+
+class Node {
+    constructor(data){
+        this.data = data
+        this.pre = null
+        this.next = null
+    }
+}
+
+class DoubleLinkedList {
+    // ... 중략 ...
+    append(data){
+        let 새로운노드 = new Node(data)
+        this.tail.next = 새로운노드
+        새로운노드.pre = this.tail
+        this.tail = 새로운노드
+    }
+    // ... 중략 ...
+}
+
+l = new DoubleLinkedList()
+l.append(1)
+
+
+// class Arr extends Array {
+//     attack(){
+//         console.log('공격!')
+//     }
+// }
+
+
+// 3. 정렬
+// 3.1 선택정렬
+// step 1
+let 전 = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+let 후 = []
+
+// step 2
+let 전 = [199, 22, 33, 32, 64, 72, 222, 233];
+let 후 = [12]
+
+// step 3
+let 전 = [199, 33, 32, 64, 72, 222, 233];
+let 후 = [12, 22]
+
+// step 4
+let 전 = [199, 33, 64, 72, 222, 233];
+let 후 = [12, 22, 32]
+
+
+let 입력값 = [199, 22, 33, 12, 32, 64, 72, 222, 233]
+let 정렬된배열 = []
+let 길이 = 입력값.length
+
+// 주의해야 할 사항 : pop을 하면 length가 줄어듭니다!
+// for (let i = 0; i < 입력값.length; i++) {
+//     console.log(입력값.pop())
+//     console.log(i)   
+// }
+
+for (let i = 0; i < 길이; i++) {
+    let 최솟값 = Math.min(...입력값);
+    정렬된배열.push(최솟값)
+    입력값.splice(입력값.indexOf(최솟값), 1)
+}
+
+
+/////////
+
+
+let 입력값 = [199, 22, 33, 12, 32, 64, 72, 222, 233]
+let 정렬된배열 = []
+// let 길이 = 입력값.length -> 생략해도 됨
+
+while (!!입력값.toString()) {
+    let 최솟값 = Math.min(...입력값);
+    정렬된배열.push(최솟값)
+    입력값.splice(입력값.indexOf(최솟값), 1)
+}
+
+// 3.1 선택정렬(메서드 최소화) - 다른 풀이
+// 제대로 하려면(자리 바꾸는 것까지)
+
+let 입력값 = [199, 22, 33, 12, 32, 64, 72, 222, 233]
+let 정렬된배열 = []
+
+function selectionSort(arr){
+    for (let i = 0; i < arr.length; i++) {
+        let min_index = i
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[min_index] > arr[j]) {
+                min_index = j
+            }
+        }
+
+        let temp = arr[min_index]
+        arr[min_index] = arr[i]
+        arr[i] = temp
+    }
+    return arr
+}
+
+
+// 3.2 삽입정렬(자기가 들어갈 위치를 찾아감!, O(n**2))
+let 전 = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+let 후 = [];
+
+let 전 = [22, 33, 12, 32, 64, 72, 222, 233];
+let 후 = [199];
+
+let 전 = [33, 12, 32, 64, 72, 222, 233];
+let 후 = [22, 199];
+
+let 전 = [12, 32, 64, 72, 222, 233];
+let 후 = [22, 33, 199];
+
+let 전 = [32, 64, 72, 222, 233];
+let 후 = [12, 22, 33, 199];
+
+let 전 = [64, 72, 222, 233];
+let 후 = [12, 22, 32, 33, 199];
+
+let 전 = [72, 222, 233];
+let 후 = [12, 22, 32, 33, 64, 199];
+
+
+let 입력값 = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+let 정렬된배열 = [];
+let 배열의길이 = 입력값.length;
+
+function 삽입값이_들어갈_인덱스(정렬된배열, 삽입값){
+    for (const i in 정렬된배열) {
+        if (삽입값 < 정렬된배열[i]){
+            return i
+        }
+    }
+    return 정렬된배열.length
+}
+
+for (let i = 0; i < 배열의길이; i++) {
+    let 삽입값 = 입력값.shift()
+    let 인덱스 = 삽입값이_들어갈_인덱스(정렬된배열, 삽입값)
+    정렬된배열.splice(인덱스, 0, 삽입값)
+}
+
+console.log(정렬된배열)
+
+
+// 설명만 하고 가도록 하겠습니다.
+function insertIndex(sorted_arr, value) {
+    //삽입될 위치를 찾는 함수
+    for(let i in sorted_arr){
+        if(value < sorted_arr[i]){
+            return i;
+        }
+    }
+    return sorted_arr.length;
+}
+
+function insertSort(arr) {
+    let sorted_arr = [];
+
+    while (arr.length != 0){
+        let value = arr.shift();
+        //삽입될 위치를 반환함
+        let index = insertIndex(sorted_arr, value);
+        //삽입될 위치에 값을 반환
+        sorted_arr.splice(index, 0, value);
+    }
+    return sorted_arr;
+}
+const arr = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+console.log(insertSort(arr));
+
+
+
+
+let 입력값 = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+let 정렬된배열 = [];
+let 배열의길이 = 입력값.length;
+
+function insertIndex(sorted_arr, value) {
+    //삽입될 위치를 찾는 함수
+    for(let i in sorted_arr){
+        if(value < sorted_arr[i]){
+            return i;
+        }
+    }
+    return sorted_arr.length;
+}
+
+function insertSort(arr) {
+    let sorted_arr = [];
+
+    while (arr.length != 0){
+        let [value, ...arr2] = arr;
+        arr = arr2
+        //삽입될 위치를 반환함
+        let index = insertIndex(sorted_arr, value);
+        //삽입될 위치에 값을 반환
+        sorted_arr.splice(index, 0, value);
+    }
+    return sorted_arr;
+}
+const arr = [199, 22, 33, 12, 32, 64, 72, 222, 233];
+console.log(insertSort(arr));
+
+
+
+// 3.3 병합정렬(Worst와 Best 모두 O(nlogn), 어떤 정렬보다 빠름, 동일 할 수 있음)
+// let 입력값 = [5, 10, 66, 77, 54, 32, 11, 15];
+// let 정렬된배열 = [];
+// 분할 정복(Divide and Conquer)
+
+
+let 입력값 = [5, 10, 66, 77, 54, 32, 11, 15];
+let 정렬된배열 = [];
+
+
+// 분할(이해를 돕기 위해 8개로 조정)
+[5, 10, 66, 77, 54, 32, 11, 15]
+[5, 10, 66, 77], [54, 32, 11, 15]
+[5, 10], [66, 77], [54, 32], [11, 15]
+[5], [10], [66], [77], [54], [32], [11], [15]
+
+// 정복(0번째끼리 비교!)
+[5, 10], [66, 77], [32, 54], [11, 15]
+[5, 10], [66, 77], [32, 54], [11, 15]
+[5, 10, 66, 77], [11, 15, 32, 54]
+[5, 10, 11, 15, 32, 54, 66, 77]
+
+
+// step 1
+let 입력값 = [5, 10, 66, 77, 54, 32, 11, 15];
+
+function 병합정렬(입력배열){
+    let 입력배열의길이 = 입력배열.length
+    if (입력배열의길이 <= 1) {
+        return 입력배열
+    }
+    let 중간값 = parseInt(입력배열의길이 / 2)
+    let 그룹하나 = 병합정렬(입력배열.slice(0, 중간값))
+    let 그룹둘 = 병합정렬(입력배열.slice(중간값))
+    
+    return `그룹하나 : ${그룹하나}\n그룹둘 : ${그룹둘}\n\n`
+}
+
+console.log(병합정렬(입력값))
+
+
+// step 2
+let 입력값 = [5, 10, 66, 77, 54, 32, 11, 15];
+
+function 병합정렬(입력배열){
+    let 입력배열의길이 = 입력배열.length
+    let 결과값 = []
+
+    if (입력배열의길이 <= 1) {
+        return 입력배열
+    }
+
+    let 중간값 = parseInt(입력배열의길이 / 2)
+    let 그룹하나 = 병합정렬(입력배열.slice(0, 중간값))
+    let 그룹둘 = 병합정렬(입력배열.slice(중간값))
+    
+    while (그룹하나.length != 0 && 그룹둘.length != 0){
+        if (그룹하나[0] < 그룹둘[0]){
+            결과값.push(그룹하나.shift())
+        } else {
+            결과값.push(그룹둘.shift())
+        }
+    }
+
+    while (그룹하나.length != 0){
+        결과값.push(그룹하나.shift())
+    }
+
+    while (그룹둘.length != 0){
+        결과값.push(그룹둘.shift())
+    }
+
+    return 결과값
+
+}
+
+console.log(병합정렬(입력값))
