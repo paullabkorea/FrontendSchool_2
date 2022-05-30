@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+    </style>
+</head>
+
+<!-- <ul>
+        <li id="first-item">one</li>
+        <li>two</li>
+        <li class="item-last">three</li>
+    </ul>
+    <script>
+        let item = document.getElementById('first-item');
+        let item2 = document.getElementsByClassName('item-last');
+        console.log(item2);
+    </script> -->
+
+<body>
+    점심 식단
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면</li>
+        </ul>
+    </article>
+    저녁 식단
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치찌게</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+
+    <script>
+        // const container = document.getElementById('container');
+        // const item1 = container.getElementsByTagName('li');
+        // const item2 = container.getElementsByClassName('item-second');
+        // console.log(item2[0]);
+        const item1 = document.querySelector('.item-second');
+        console.log(item1);
+    </script>
+</body>
+
+
+</html>

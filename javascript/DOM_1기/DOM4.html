@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- <ul></ul>
+    <button>Make me MORE!</button> -->
+
+
+    <div id="parentElement">
+        <span id="childElement">hello guys~</span>
+    </div>
+
+
+    <script>
+        // parentElement.insertBefore(target, location); target요소를 element의 자식인 location 위치로 이동합니다.
+
+        var span = document.createElement("span");
+        var sibling = document.getElementById("childElement");
+        var parentDiv = document.getElementById("parentElement");
+        parentDiv.insertBefore(span, sibling);
+
+        // const myBtn = document.querySelector('button');
+        // const myUl = document.querySelector('ul');
+
+        // myBtn.addEventListener('click', function () {
+        //     for (let i = 0; i < 5; i++) {
+        //         const myLi = document.createElement('li');
+        //         myUl.appendChild(myLi);
+        //     }
+        // })
+    </script>
+</body>
+
+</html>
