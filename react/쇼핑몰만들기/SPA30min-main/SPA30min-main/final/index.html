@@ -1,0 +1,123 @@
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위니브 스토어</title>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="src/style/style.css">
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script>
+        const root = document.getElementById('root')
+
+        async function getProductData() {
+            const response = await fetch('http://test.api.weniv.co.kr/mall')
+            const product = await response.json()
+            return product
+        }
+        // console.log(getProductData())
+        getProductData().then(product => {
+            // console.log(product)
+            const mainElement = document.createElement('main')
+            // console.log(mainElement)
+            mainElement.classList.add('product')
+            // console.log(mainElement)
+
+            // 1
+            mainElement.innerHTML = `
+                <h1 class="ir">상품목록 페이지</h1>
+                <ul class="product-list"></ul>
+            `
+            // console.log(mainElement)
+
+            // 2 아래 코드로 작성하면 더 좋지만, 여러분이 html이 익숙하기 때문에 innerHTML로 작성하였습니다. 맨 아래 있는 스크립트도 참고해주세요.
+            // const prodctPageHeader = document.createElement("h1");
+            // prodctPageHeader.setAttribute("class", "ir");
+            // prodctPageHeader.innerText = "상품목록 페이지";
+            // mainElement.appendChild(prodctPageHeader);
+
+            // const productList = document.createElement("ul");
+            // productList.setAttribute("class", "product-list");
+            // mainElement.appendChild(productList);
+            // console.log(mainElement)
+
+            const productList = mainElement.querySelector('.product-list');
+
+            product.forEach((item) => {
+                // console.log(item)
+                const productDetailLink = document.createElement('a')
+                productDetailLink.href = `/detail/${item.id}`
+                productDetailLink.innerHTML = `
+                    <li class="product-item">
+                        <div class="product-img">
+                            <img src="http://test.api.weniv.co.kr/${item.thumbnailImg}">
+                        </div>
+                        <strong class="product-name sl-ellipsis">${item.productName}</strong>
+                        <button class="like-btn"></button>
+                        <div class="product-price">
+                            <strong class="price m-price">${item.price}<span>원</span></strong>
+                        </div>
+                    </li>
+                `
+                productList.append(productDetailLink)
+            });
+
+            const cart = document.createElement('a')
+            cart.setAttribute('class', 'link-btn cart-link')
+            mainElement.append(cart)
+
+            // console.log(productList)
+            // console.log(mainElement)
+            root.append(mainElement)
+
+        })
+    </script>
+    <script>
+        // 아래 코드로 작성하면 더 좋지만, 여러분이 html이 익숙하기 때문에 innerHTML로 작성하였습니다.
+        // 묶어서 모듈화 해야 합니다!
+        // const productItem = document.createElement("li");
+
+        // const productCard = document.createElement("a");
+        // productCard.setAttribute("href", `/detail/${item.id}`);
+        // productCard.setAttribute("class", "product-item");
+
+        // const productImageContainer = document.createElement("div");
+        // productImageContainer.setAttribute("class", "product-img");
+
+        // const productImage = document.createElement("img");
+        // productImage.setAttribute("src", `http://test.api.weniv.co.kr/${this.item.thumbnailImg}`);
+        // productImage.setAttribute("alt", `상품이미지`);
+        // productImageContainer.appendChild(productImage);
+
+        // const productName = document.createElement("strong");
+        // productName.setAttribute("class", "product-name");
+        // productName.innerText = this.item.productName;
+
+        // const productPriceContainer = document.createElement("div");
+        // productPriceContainer.setAttribute("class", "product-price");
+
+        // const productPrice = document.createElement("strong");
+        // productPrice.setAttribute("class", "price m-price");
+        // productPrice.innerText = this.item.price;
+
+        // const priceType = document.createElement("span");
+        // priceType.innerText = "원";
+
+        // productPrice.appendChild(priceType);
+
+        // productPriceContainer.appendChild(productPrice);
+
+        // productCard.appendChild(productImageContainer);
+        // productCard.appendChild(productName);
+        // productCard.appendChild(productPriceContainer);
+
+        // productItem.appendChild(productCard);
+    </script>
+</body>
+
+</html>

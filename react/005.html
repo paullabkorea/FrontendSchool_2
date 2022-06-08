@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쇼핑몰 웹 페이지</title>
+</head>
+
+<body>
+    <!-- 
+    <div>header
+        <h1>000 웹 페이지</h1>
+        <div>menu</div>
+    </div>
+
+    <div>main
+        <h2>hello world</h2>
+        <p>hello world</p>
+    </div>
+
+    <div>
+        product
+        div{잘팔리는 옷}*20
+    </div>
+
+    <div>
+        footer
+    </div> 
+    -->
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+        integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/babel">
+        const header = function (name) {
+            return (
+                <div>header
+                    <h1>{name} 웹 페이지</h1>
+                    <div>menu</div>
+                </div>
+            )
+        }
+
+        const main = (
+            <div>main
+                <h2>hello world</h2>
+                <p>hello world</p>
+            </div>
+        )
+
+        const clothes = <div>잘팔리는 옷</div>
+
+        const product = (
+            <div>
+                product
+                {clothes}
+                {clothes}
+                {clothes}
+                {clothes}
+                {clothes}
+                {clothes}
+            </div>
+        )
+
+
+        const footer = (
+            <div>
+                footer
+            </div>
+        )
+
+        const body = (
+            <div>
+                <p>컴포넌트화 실습</p>
+                {header('이호준')}
+                {main}
+                {product}
+                {footer}
+                {10 + 10}
+            </div>
+        )
+
+        const domContainer = document.querySelector('#root')
+        ReactDOM.render(body, domContainer)
+        console.log(ReactDOM)
+
+        // console.dir(domContainer)
+        // console.log(domContainer)
+        // console.table(domContainer)
+        // console.error(domContainer)
+    </script>
+</body>
+
+</html>
