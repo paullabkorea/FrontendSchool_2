@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쇼핑몰 웹 페이지</title>
+    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="src/style/style.css">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+        integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./data/data.js"></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./components/Main.js"></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./components/Card.js"></script>
+    <script data-plugins="transform-es2015-modules-umd" type="text/babel">
+        import { data } from "./data/data.js"
+        import { Main } from "./components/Main.js"
+        import { Card } from "./components/Card.js"
+        // console.log(data)
+
+        const Cart = () => <a class='link-btn cart-link' href='#'></a>
+
+        const Product = ({ item }) => {
+            //이런 식으로도 가능
+            const result = []
+            item.forEach(item => {
+                result.push(<Card goods={item} key={item.id} />)
+            });
+            return (
+                <main class="product">
+                    <ul class="product-list">
+                        {result}
+                    </ul>
+                    <Cart />
+                </main>
+            )
+        }
+
+
+        const body = (
+            <div>
+                <Main />
+                <Product item={data} />
+            </div>
+        )
+
+        const domContainer = document.querySelector('#root')
+        ReactDOM.render(body, domContainer)
+    </script>
+</body>
+
+</html>

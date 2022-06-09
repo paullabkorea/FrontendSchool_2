@@ -204,6 +204,24 @@
 
         const Cart = () => <a class='link-btn cart-link' href='#'></a>
 
+        // 아래처럼 array로 표현 가능
+        // https://reactjs.org/docs/lists-and-keys.html
+        // <main class="product">
+        //     <ul class="product-list">
+        //         {
+        //             [
+        //                 <Card goods={item[0]} />,
+        //                 <Card goods={item[1]} />,
+        //                 <Card goods={item[2]} />,
+        //                 <Card goods={item[3]} />,
+        //                 <Card goods={item[4]} />,
+        //                 <Card goods={item[5]} />,
+        //                 <Card goods={item[6]} />
+        //             ]
+        //         }
+        //     </ul>
+        //     <Cart />
+        // </main>
         const Product = ({ item }) => {
             return (
                 <main class="product">
