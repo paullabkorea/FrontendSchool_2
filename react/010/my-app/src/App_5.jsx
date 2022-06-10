@@ -7,6 +7,12 @@ const Login = () => {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     console.log("submit");
+    // if(id=='') {
+    //   alert('아이디를 입력해!')
+    // }
+    // if(pw=='') {
+    //   alert('패스워드를 입력해!')
+    // }
     alert(`id : ${id}, pw : ${pw}`);
   };
 

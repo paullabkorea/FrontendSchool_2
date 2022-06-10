@@ -4,7 +4,7 @@ function Resume(props) {
   const [like, setLike] = useState(0);
 
   function handleClickLike() {
-      setLike(like + 1)
+      setLike(like + 1) // like = like + 1
       console.log(like);
   }
 
