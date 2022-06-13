@@ -40,7 +40,7 @@ function NavBar() {
         console.log(e)
         console.log(e.target)
         console.log(e.target.id)
-        setListName(e.target.id);
+        setListName(e.target.id)
     };
 
     return (

@@ -15,8 +15,9 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
         function HelloButton(props) {
+            console.log(props)
             return (
-                <button onClick={() => console.log('실행')}>
+                <button onClick={() => console.log('실행', props)}>
                     Hello
                 </button>
             );
@@ -24,9 +25,9 @@
 
         const app = (
             <div>
-                <HelloButton />
-                <HelloButton />
-                <HelloButton />
+                <HelloButton message='one' />
+                <HelloButton message='two' />
+                <HelloButton message='three' />
                 <HelloButton />
                 <HelloButton />
             </div>

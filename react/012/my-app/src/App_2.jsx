@@ -20,6 +20,7 @@ function App() {
         <AA>
             <BB>hello world</BB>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam perferendis laudantium facere hic praesentium odio tempora debitis sint reprehenderit, facilis optio reiciendis sed explicabo voluptatem consequuntur quis fugiat animi. Corporis!</p>
+            <UnicornAfter>hello</UnicornAfter>
         </AA>
     );
 }

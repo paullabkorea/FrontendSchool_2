@@ -4,6 +4,14 @@ const ContentSection = styled.div`
     margin: 40px;
 `;
 
+function colorCheck(value){
+    if (valule === 'hello'){
+        return 'red'
+    }
+    return 'black'
+}
+//color :${colorCheck(props)};
+
 const ContentTitle = styled.h2`
     color :${(props) => (props.name === 'hello' ? 'red' : 'black')};
     width: 200px;

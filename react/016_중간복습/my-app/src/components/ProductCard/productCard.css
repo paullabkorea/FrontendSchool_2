@@ -1,0 +1,66 @@
+/* 상품 리스트 */
+/* 상품 이미지 스타일 */
+.product-img {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* 상품 가격 스타일 */
+/* medium 사이즈 */
+.product-price {
+    display: flex;
+    align-items: center;
+}
+
+.product-price .price-discount {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.product-price .price-strikethrough {
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--sub-txt-color);
+    text-decoration-line: line-through;
+    margin-right: 10px;
+}
+
+/* 좋아요 버튼 */
+.like-btn {
+    width: 22px;
+    height: 22px;
+    border: none;
+    background: url(../../assets/icon-heart.svg) no-repeat center / contain;
+}
+
+.like-btn.on {
+    background: url(../../assets/icon-heart.svg) no-repeat center / contain;
+}
+
+/* 상품 목록 페이지 */
+.product-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    width: 1260px;
+    margin-right: 60px;
+}
+
+.product-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.product-item .like-btn {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+}
+
