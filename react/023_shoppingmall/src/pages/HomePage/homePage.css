@@ -1,0 +1,10 @@
+.product {
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    padding-bottom: 156px;
+}
+
+.product .cart-link {
+    background: var(--main-color) url(../../assets/icon-shopping-cart-white.svg) no-repeat center / 40px 40px;
+}
