@@ -3,7 +3,7 @@ import { useState, useEffect, useLayoutEffect } from 'react'
 function App() {
   const [value, setValue] = useState(100);
   
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (value >= 1000) {
       setValue(300);
     }
