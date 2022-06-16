@@ -1,38 +1,22 @@
-import { useState, useRef, useEffect, useLayoutEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 
 function App() {
-  const [modalShow, setModalShow] = useState(false)
-  const modal = useRef()
-  const button = useRef()
-  // const a = useRef()
-  // const b = useRef()
-  // const c = useRef()
-  useEffect(()=>{
-    // if (modal.current == null || button.current == null ||a || b || c) {
-    //   return
-    // }
-    if (modal.current == null || button.current == null) {
-      return
+  const [value, setValue] = useState(100);
+  
+  useEffect(() => {
+    if (value >= 1000) {
+      setValue(300);
     }
-    setTimeout(()=>{
-      modal.current.style.color = 'red';
-      modal.current.style.margin = '30px';
-    }, 100);
-
-    // const { bottom } = button.current.getBoundingClientRect()
-    // modal.current.style.margin = `${bottom}px`;
-
-  }, [modalShow])
+  }, [value]);
+  
   return (
-    <div className="App">
-      <button 
-        ref={button} 
-        onClick={()=>setModalShow(!modalShow)}>
-          show me the 모달!!
-      </button>
-      {modalShow ? (<div ref={modal}>modal</div>) : null}
+    <div>
+      {/* <div style={{ width: value, height: value, backgroundColor: 'blue', transition: '1s all' }}></div> */}
+      <div style={{ width: value, height: value, backgroundColor: 'blue' }}></div>
+      <button onClick={() => {setValue(1000)}}>커져랏!</button>
+      <button onClick={() => {setValue(200)}}>작아져랏!</button>
     </div>
-  );
+  )
 }
 
 export default App;

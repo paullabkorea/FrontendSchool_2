@@ -1,7 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 
-import ReactDOM from 'react-dom/client';
-
 function App() {
 
   const [num, setNum] = useState(0)
