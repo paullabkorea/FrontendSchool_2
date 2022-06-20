@@ -13,7 +13,7 @@ const addNumber = () => {
   store.dispatch({ type: "ADD" });
 };
 
-//Action
+// Action
 const substractNumber = () => {
   store.dispatch({ type: "SUBSTRACT" });
 };
