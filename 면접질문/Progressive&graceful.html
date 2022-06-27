@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 점진적 향상기법 예시 -->
+    <!-- html을 이용하는 방법 -->
+    <picture>
+        <source srcset="babies.webp" type="image/webp">
+        <source srcset="babies.avif" type="image/avif">
+        <img src="babies.jpeg" alt="귀여운 아기 팽귄들">
+    </picture>
+
+    <!-- 최신 HTML을 이용하는 방법은 display 속성을 block으로. 브라우저는 알 수 없는 요소를 인라인 요소로 처리합니다. -->
+
+    <!-- js를 이용하는 방법 -->
+    <script>
+        const container = document.querySelector('.container');
+        const testEl = document.createElement('div');
+        // element.style 프로퍼티 : 해당 요소가 사용할 수 있는 모든 스타일 속성 목록을 포함하는 객체를 가르킵니다.
+        if (testEl.style.grid !== undefined) {
+            container.classList.add('.layout-grid');
+        } else {
+            container.classList.add('.layout-flex');
+        }
+    </script>
+
+
+
+    <!-- 우아한 성능저하 예시 -->
+    <!-- html을 이용하는 방법 -->
+    <video id="video" controls poster="img/poster.jpg">
+        <source src="test.mp4" type="video/mp4">
+        <source src="test.webm" type="video/webm">
+        <!--<video> 태그 안의 콘텐츠는 브라우저가 <video> 요소를 지원하지 않을 때 보여집니다.-->
+        <p>브라우저가 HTML5 video를 지원하지 않습니다.
+            <a href="">여기에서</a> 비디오를 직접 보실 수 있습니다.
+        </p>
+    </video>
+
+    <!-- js를 이용하는 방법 -->
+    <script>
+        const canvas = document.createElement("canvas");
+        const warning = document.createElement("strong");
+
+        // context 객체 : 화면에 그래픽을 그려주는 각종 도구를 제공
+        const ctx = canvas.getContext("webgl");
+
+        if (ctx) {
+            document.body.appendChild(canvas);
+        } else {
+            warning.innerHTML = "이 사이트는 구형 브라우저에서 사용이 어렵습니다. 브라우저를 업데이트 해주세요 :)";
+        }
+    </script>
+
+</body>
+
+</html>
