@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        article {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .viewer {
+            display: block;
+            font-size: 24px;
+            color: green;
+            margin: 50px 0 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <strong class="viewer"></strong>
+        <label for="inpTxt">입력어</label>
+        <input id="inpTxt" type="text" class="inp-txt">
+        <button type="button" class="btn-push">적용</button>
+    </article>
+
+    <script src="textManager.js"></script>
+    <script src="viewManager.js"></script>
+    <script>
+
+        (() => {
+            const viewerEl = document.querySelector('.viewer');
+            const inpTxt = document.querySelector('.inp-txt');
+            const btnEl = document.querySelector('.btn-push');
+
+            const textManager = new TextManager();
+            const viewManager = new ViewManager(textManager, { viewerEl, inpTxt, btnEl });
+
+            viewManager.updateView();
+        })();
+
+    </script>
+</body>
+
+</html>
