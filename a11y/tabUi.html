@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아리아 탭</title>
+    <style>
+        body {
+            padding: 30px;
+        }
+
+        .tab-list {
+            display: flex;
+            margin: 20px;
+            padding: 0;
+            list-style: none;
+            border: 1px solid black;
+        }
+
+        .tab-list li {
+            font-size: 20px;
+            border: 1px solid black;
+            margin-right: 20px;
+        }
+
+        .tab-list li a {
+            padding: 10px;
+        }
+
+        .tab-list li.tab-active a {
+            background-color: green;
+        }
+
+        .section-tab {
+            display: none;
+            margin: 20px;
+            width: 500px;
+            border: 1px solid black;
+            font-size: 18px;
+        }
+
+        .section-tab .section-active {
+            display: block;
+        }
+
+        .section-active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>aria로 만들어보는 탭</h1>
+    </header>
+    <nav>
+        <ul class="tab-list" role="tablist" aria-label="탭의 제목">
+            <li role="tab" id="tab1" class="tab-active" aria-controls="section1"><a href="#section1">첫번째</a></li>
+            <li role="tab" id="tab2" aria-controls="section2"><a href="#section2">두번째</a></li>
+            <li role="tab" id="tab3" aria-controls="section3"><a href="#section3">세번째</a></li>
+            <li role="tab" id="tab4" aria-controls="section4"><a href="#section4">네번째</a></li>
+        </ul>
+    </nav>
+    <section id="section1" role="tabpanel" aria-labelledby="tab1" class="section-tab section-active">
+        <h2>첫번째 내용</h2>
+        첫번째 내용 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia enim aliquam quas amet incidunt? Aut
+        animi, eos placeat fugiat, magni reiciendis maiores culpa sunt soluta dicta est atque aliquid at!
+    </section>
+    <section id="section2" role="tabpanel" aria-labelledby="tab2" class="section-tab">
+        <h2>두번째 내용</h2>
+        첫번째 내용 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia enim aliquam quas amet incidunt? Aut
+        animi, eos placeat fugiat, magni reiciendis maiores culpa sunt soluta dicta est atque aliquid at!
+    </section>
+    <section id="section3" role="tabpanel" aria-labelledby="tab3" class="section-tab">
+        <h2>세번째 내용</h2>
+        첫번째 내용 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia enim aliquam quas amet incidunt? Aut
+        animi, eos placeat fugiat, magni reiciendis maiores culpa sunt soluta dicta est atque aliquid at!
+    </section>
+    <section id="section4" role="tabpanel" aria-labelledby="tab4" class="section-tab">
+        <h2>네번째 내용</h2>
+        첫번째 내용 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia enim aliquam quas amet incidunt? Aut
+        animi, eos placeat fugiat, magni reiciendis maiores culpa sunt soluta dicta est atque aliquid at!
+    </section>
+
+    <script>
+        const tabList = document.querySelector(".tab-list");
+        const tabListItem = document.querySelectorAll('.tab-list li');
+        const tabPanels = document.querySelectorAll('.section-tab');
+
+        // 이벤트 위임
+        tabList.addEventListener('click', (event) => {
+            event.stopPropagation;
+            const tabClicked = event.target;
+            // 클릭한 요소가 앵커라면
+            if (tabClicked.tagName == 'A') {
+                const tab = tabClicked.parentElement;
+                tabOn(tab);
+                tabpanelOn(tab);
+            }
+        })
+
+
+        function tabOn(tab) {
+            for (let item of tabListItem) {
+                if (item.classList.contains('tab-active')) {
+                    item.classList.remove('tab-active');
+                }
+                item.setAttribute('aria-selected', 'false');
+            }
+            tab.classList.add('tab-active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.focus(); // focus() : 요소에 포커스를 부여합니다.
+        }
+
+        function tabpanelOn(tab) {
+            for (let item of tabPanels) {
+                if (item.classList.contains('section-active')) {
+                    item.classList.remove('section-active');
+                }
+            }
+            const panel = document.querySelector(`#${tab.getAttribute('aria-controls')}`);
+            panel.classList.add('section-active');
+        }
+    </script>
+</body>
+
+</html>

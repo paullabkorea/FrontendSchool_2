@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스킵네비게이션 실습</title>
+    <style>
+        header {
+            height: 200px;
+            background-color: royalblue;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        main {
+            height: 1000px;
+            background-color: pink;
+        }
+
+        footer {
+            height: 200px;
+            background-color: lightgreen;
+        }
+
+        .skip {
+            position: absolute;
+            top: -100%;
+            z-index: 1000;
+            border: 3px solid red;
+            background-color: black;
+            color: #fff;
+        }
+
+        .skip:focus {
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#navMain" class="skip">메인메뉴 바로가기</a>
+    <a href="#contMain" class="skip">본문 바로가기</a>
+    <a href="#contFooter" class="skip">푸터 바로가기</a>
+    <article>
+        <h1>제목입니다.</h1>
+        <header>
+            <h2>헤더영역입니다.</h2>
+            <nav id="navMain">
+                <ul>
+                    <li><a href="">메뉴1</a></li>
+                    <li><a href="">메뉴2</a></li>
+                    <li><a href="">메뉴3</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="contMain">
+            <h2>메인 영역입니다.</h2>
+        </main>
+        <footer id="contFooter">
+            <h2>푸터 영역입니다.</h2>
+        </footer>
+    </article>
+</body>
+
+</html>
