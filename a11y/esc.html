@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tooltip {
+            position: relative;
+            padding: 30px;
+            border: 1px solid black;
+        }
+
+        .tooltip:hover .tooltip-content,
+        .tooltip:focus .tooltip-content {
+            display: block;
+        }
+
+        .tooltip-content {
+            display: none;
+            position: absolute;
+            top: 90px;
+            left: 0;
+            width: 140px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tooltip" role="tooltip" tabindex="0">
+        구독 게시판
+        <span class="tooltip-content">
+            구독 게시판의 글을 확인해보세요! 구독 좋아요 알람설정까지!!!
+        </span>
+    </div>
+    <form action="">
+        <label for="test">입력하세요</label>
+        <input id="test" type="text" required>
+        <button>제출하기</button>
+    </form>
+
+    <script>
+        const myInp = document.querySelector('#test');
+
+        myInp.addEventListener('invalid', (event) => {
+            event.preventDefault();
+
+        })
+
+        const tooltip = document.querySelector('.tooltip');
+        const toolCont = document.querySelector('.tooltip-content');
+
+        tooltip.addEventListener('keydown', (event) => {
+            if (event.keyCode === 27) {
+                toolCont.style.display = 'none';
+            }
+        })
+
+        tooltip.addEventListener('blur', () => {
+            toolCont.removeAttribute('style');
+        })
+
+        // tooltip.onkeydown = function (event) {
+        //     if (event.keyCode === 27) {
+        //         toolCont.style.display = 'none';
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

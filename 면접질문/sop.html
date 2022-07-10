@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>hello SOP!</h1>
+
+    <iframe class="test" src="test.html" frameborder="0"></iframe>
+
+
+    <iframe class="youtube" width="876" height="493" src="https://www.youtube.com/embed/4TWR90KJl84"
+        title="aespa 에스파 'Next Level' MV" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+
+    <script>
+        // 실행시 live server 로 실행하셔야 합니다.
+        var x = document.querySelector(".test");
+        var y = document.querySelector(".youtube");
+
+        // iframe 로딩이 끝날때까지 기다려야 한다는 점에 주의하세요.
+        // onload : 연결된 리소스의 로딩이 완료되면 이벤트를 실행합니다.
+        x.onload = () => {
+            // contentDocument : 만약 iframe 과 iframe's parent document 가 같은 origin을 가진다면 iframe의 document 객체를 반환합니다.
+            console.log('same origin : ', x.contentDocument);
+            x.contentDocument.body.style.backgroundColor = "red";
+        };
+        y.onload = () => {
+            console.log('other origin : ', y.contentDocument);
+        };
+
+    </script>
+</body>
+
+</html>
