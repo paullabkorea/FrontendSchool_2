@@ -733,8 +733,6 @@ console.log(l.fullData())
 
 
 // 더블 링크드 리스트의 기본 형태
-
-
 const list = {
     head: null
 }
