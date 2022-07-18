@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+.artcl_main {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.artcl_main input {
+    flex-grow: 1;
+    font-size: 1.2em;
+}
+
+.artcl_main button {
+    flex-shrink: 0;
+    font-size: 1.2em;
+    width: 100px;
+}
+
+.list_todo {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    background-color: goldenrod;
+    border-radius: 5px;
+}
+
+.list_todo li {
+    padding: 5px 15px;
+    background-color: whitesmoke;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    color: #222;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(50, 50, 50, 0.3);
+}
+
+.list_todo li+li {
+    margin-top: 20px;
+}
+
+.list_todo li button {
+    float: right;
+    padding: 10px;
+    vertical-align: top;
+    border: none;
+    border-radius: 10px;
+    background-color: #fff;
+    color: teal;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.list_todo li button:hover {
+    background-color: tomato;
+}
+
+.btn {
+    display: none;
+    margin-top: 20px;
+    width: 200px;
+    float: right;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: teal;
+    color: #fff;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: tomato;
+}
+
+.done {
+    text-decoration: line-through;
+}
