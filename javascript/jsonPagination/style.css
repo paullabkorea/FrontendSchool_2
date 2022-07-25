@@ -1,0 +1,62 @@
+article {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(50, 50, 50, .1)
+}
+
+.img-card {
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.name-card {
+    display: block;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.list-info dt,
+.list-info dd {
+    display: inline-block;
+}
+
+.list-info div {
+    position: relative;
+}
+
+.list-info dd {
+    margin: 0;
+    position: absolute;
+    left: 70px;
+}
+
+.list-pages {
+    display: flex;
+    padding: 0;
+    list-style: none;
+    justify-content: center;
+    gap: 5px;
+}
+
+.list-pages li {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    padding-top: 3px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+.list-pages li:hover {
+    background-color: teal;
+    color: #fff;
+}
+
+.active {
+    background-color: teal;
+    color: #fff;
+}
