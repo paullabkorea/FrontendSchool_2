@@ -1,0 +1,49 @@
+body {
+    background-color: #333;
+    padding: 20px;
+}
+
+#mainForm {
+    width: 50%;
+    border-radius: 10px;
+    background-color: teal;
+    padding: 20px;
+}
+
+#mainForm fieldset {
+    border: none;
+}
+
+#mainForm legend {
+    display: block;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#mainForm label {
+    display: block;
+}
+
+#mainForm input {
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#mainForm input:valid {
+    background-color: royalblue;
+}
+
+#mainForm button {
+    background-color: darkslategrey;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#mainForm progress {
+    width: 100%;
+}

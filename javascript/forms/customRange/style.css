@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.range {
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+}
+
+.rangeValue {
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: teal;
+    width: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.rangeValue::before {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    margin-left: -5px;
+    content: '';
+    display: block;
+    border: 5px solid transparent;
+    border-bottom: 10px solid teal;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form id="mainForm">
+        <fieldset>
+            <legend>진행상황을 보여주는 설문지</legend>
+            <progress max="100" value="0" id="progress"></progress>
+            <p class="msg">설문지를 작성하세요!</p>
+
+            <label for="q1">질문 1.</label>
+            <input type="text" id="q1" required>
+            <label for="q2">질문 2.</label>
+            <input type="text" id="q2" required>
+            <label for="q3">질문 3.</label>
+            <input type="text" id="q3" required>
+            <label for="q4">질문 4.</label>
+            <input type="text" id="q4" required>
+            <label for="q5">질문 5.</label>
+            <input type="text" id="q5" required>
+
+            <button type="submit">제출</button>
+        </fieldset>
+    </form>
+
+    <script>
+        const progressBar = document.querySelector('#progress');
+        const message = document.querySelector('.msg');
+        const mainForm = document.querySelector('#mainForm');
+        const inputs = document.querySelectorAll('#mainForm input');
+
+        mainForm.addEventListener('keyup', () => {
+            let validCounter = 0;
+
+            inputs.forEach((item) => {
+                if (item.validity.valid) {
+                    validCounter++;
+                }
+            });
+
+            switch (validCounter) {
+                case 1:
+                    message.textContent = "좋습니다. 계속 진행하세요!";
+                    progressBar.setAttribute('value', '20');
+                    break;
+                case 2:
+                    message.textContent = "좋은 답변이군요!! 다음으로 가볼까요?";
+                    progressBar.setAttribute('value', '40');
+                    break;
+                case 3:
+                    message.textContent = "절반이상 지났습니다!";
+                    progressBar.setAttribute('value', '60');
+                    break;
+                case 4:
+                    message.textContent = "거의 완료되었습니다!";
+                    progressBar.setAttribute('value', '80');
+                    break;
+                case 5:
+                    message.textContent = "수고하셨습니다! 제출해주세요~";
+                    progressBar.setAttribute('value', '100');
+                    break;
+            }
+        })
+
+    </script>
+</body>
+
+</html>

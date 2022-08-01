@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="wrapper">
+        <article class="picker">
+            <label for="bg">배경색 : </label>
+            <input type="color" id="bg" class="inp-picker" data-id="bgColor">
+        </article>
+
+        <article class="picker">
+            <label for="txt">글씨색 : </label>
+            <input type="color" id="txt" class="inp-picker" data-id="txtColor">
+        </article>
+    </section>
+    <main>
+        <h1>Color Picker!!</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum possimus sint, voluptatem alias facere veniam
+            doloremque voluptas optio a omnis, ullam quae! Autem eveniet animi tempora pariatur dolorum ad laboriosam!
+        </p>
+    </main>
+
+    <script>
+        const inpPicker = document.querySelectorAll('.inp-picker');
+
+        inpPicker.forEach((item) => {
+            item.addEventListener('input', (event) => {
+                const name = `--main-${event.target.getAttribute('data-id')}`;
+                console.log(name);
+
+                const root = document.querySelector(':root');
+                root.style.setProperty(name, event.target.value);
+            })
+        })
+    </script>
+</body>
+
+</html>

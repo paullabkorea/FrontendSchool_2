@@ -1,0 +1,29 @@
+:root {
+    --main-bgColor: teal;
+    --main-txtColor: white;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 1.5em;
+    background-color: var(--main-bgColor);
+}
+
+.wrapper {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.picker {
+    display: inline-block;
+}
+
+.picker+.picker {
+    margin-left: 30px;
+}
+
+main {
+    color: var(--main-txtColor);
+}
